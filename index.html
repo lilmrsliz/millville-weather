@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liz's Weather Dashboard</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0e1a;
+      --surface: #141a2e;
+      --surface2: #1c2340;
+      --border: #2a3356;
+      --text: #e8eaf6;
+      --text-dim: #8892b0;
+      --cyan: #4cc9f0;
+      --pink: #f72585;
+      --purple: #7209b7;
+      --green: #06d6a0;
+      --orange: #ff9f1c;
+      --yellow: #ffe566;
+      --red: #ef233c;
+      --radius: 16px;
+      --radius-sm: 10px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Nunito', sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    .site-header {
+      background: linear-gradient(135deg, #0d1226 0%, #141a2e 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .site-title { font-size: 1.5rem; font-weight: 900; background: linear-gradient(90deg, var(--cyan), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .site-meta { font-size: 0.8rem; color: var(--text-dim); }
+    .rapid-badge { background: #ef233c22; color: #ef233c; border: 1px solid #ef233c; border-radius: 20px; padding: 3px 10px; font-size: 0.75rem; font-weight: 700; animation: pulse 1s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+
+    /* ── Tabs ── */
+    .tabs { display: flex; gap: 4px; padding: 16px 24px 0; border-bottom: 1px solid var(--border); background: #0d1226; }
+    .tab-btn {
+      background: none; border: none; color: var(--text-dim); font-family: 'Nunito', sans-serif;
+      font-size: 0.95rem; font-weight: 700; padding: 10px 20px; cursor: pointer;
+      border-bottom: 3px solid transparent; border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+      transition: all 0.2s;
+    }
+    .tab-btn:hover { color: var(--text); background: var(--surface); }
+    .tab-btn.active { color: var(--cyan); border-bottom-color: var(--cyan); }
+
+    /* ── Tab content ── */
+    .tab-content { display: none; padding: 24px; max-width: 1400px; margin: 0 auto; }
+    .tab-content.active { display: block; }
+
+    /* ── Summary banner ── */
+    .summary-banner {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 20px;
+      margin-bottom: 20px;
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    /* ── Alert banners ── */
+    .alert-banner {
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 8px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+    .alert-event { font-weight: 900; }
+    .alert-expires { margin-left: auto; opacity: 0.8; }
+
+    /* ── Location cards ── */
+    .loc-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .loc-card.full { }
+    .loc-card.small { padding: 16px; }
+
+    .loc-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; flex-wrap: wrap; gap: 8px; }
+    .loc-name { font-size: 1.3rem; font-weight: 900; }
+    .loc-county { font-size: 0.8rem; color: var(--text-dim); display: block; }
+    .mcas-pill { border-radius: 20px; padding: 4px 14px; font-size: 0.85rem; font-weight: 700; }
+
+    .current-main { display: flex; gap: 24px; flex-wrap: wrap; margin: 16px 0; align-items: center; }
+    .current-big { text-align: center; min-width: 120px; }
+    .current-emoji { font-size: 3.5rem; line-height: 1; }
+    .current-temp { font-size: 3rem; font-weight: 900; color: var(--cyan); }
+    .current-desc { font-size: 1rem; font-weight: 700; margin-top: 2px; }
+    .current-feels { font-size: 0.85rem; color: var(--text-dim); }
+
+    .current-details { flex: 1; min-width: 200px; }
+    .detail-row { padding: 5px 0; font-size: 0.9rem; border-bottom: 1px solid var(--border); }
+    .detail-row:last-child { border-bottom: none; }
+
+    .aq-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+    .aq-pill { background: var(--surface2); border-radius: 20px; padding: 5px 14px; font-size: 0.85rem; }
+
+    /* ── Hourly scroll ── */
+    .hourly-scroll { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 8px; scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
+    .hourly-scroll::-webkit-scrollbar { height: 4px; }
+    .hourly-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+    .hour-card { background: var(--surface2); border-radius: var(--radius-sm); padding: 10px 12px; text-align: center; min-width: 72px; flex-shrink: 0; border: 1px solid var(--border); }
+    .hour-time { font-size: 0.75rem; color: var(--text-dim); font-weight: 700; }
+    .hour-emoji { font-size: 1.4rem; margin: 4px 0; }
+    .hour-temp { font-size: 1rem; font-weight: 800; }
+    .hour-precip { font-size: 0.7rem; color: var(--cyan); }
+    .hour-wind { font-size: 0.7rem; color: var(--text-dim); }
+
+    /* ── 7-day forecast ── */
+    .daily-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
+    @media (max-width: 800px) { .daily-grid { grid-template-columns: repeat(4, 1fr); } }
+    @media (max-width: 500px) { .daily-grid { grid-template-columns: repeat(2, 1fr); } }
+    .day-card { background: var(--surface2); border-radius: var(--radius-sm); padding: 12px 8px; text-align: center; border: 1px solid var(--border); }
+    .day-card.today { border-color: var(--cyan); }
+    .day-name { font-size: 0.8rem; font-weight: 800; color: var(--text-dim); margin-bottom: 4px; }
+    .day-card.today .day-name { color: var(--cyan); }
+    .day-emoji { font-size: 1.6rem; margin: 4px 0; }
+    .day-desc { font-size: 0.65rem; color: var(--text-dim); margin-bottom: 6px; }
+    .day-temps { font-size: 0.95rem; font-weight: 700; }
+    .day-high { color: var(--orange); }
+    .day-low { color: var(--cyan); margin-left: 4px; }
+    .day-precip, .day-uv { font-size: 0.7rem; color: var(--text-dim); margin-top: 3px; }
+
+    /* ── Small location cards ── */
+    .loc-header-small { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .loc-name-small { font-size: 1rem; font-weight: 800; }
+    .loc-emoji-small { font-size: 1.8rem; }
+    .small-temp-row { display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px; }
+    .small-temp { font-size: 1.8rem; font-weight: 900; color: var(--cyan); }
+    .small-feels { font-size: 0.8rem; color: var(--text-dim); }
+    .small-hilo { font-size: 0.8rem; color: var(--text-dim); margin-left: auto; }
+    .small-detail { font-size: 0.8rem; color: var(--text-dim); margin-top: 3px; }
+    .secondary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 600px) { .secondary-grid { grid-template-columns: 1fr; } }
+
+    /* ── Radar map ── */
+    .radar-wrap { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); margin-top: 16px; }
+    #local-map { height: 350px; }
+
+    /* ── Section headers ── */
+    .section-header { font-size: 1.1rem; font-weight: 900; color: var(--cyan); margin: 24px 0 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+    .section-header:first-child { margin-top: 0; }
+
+    /* ── National maps ── */
+    .map-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    @media (max-width: 900px) { .map-grid { grid-template-columns: 1fr; } }
+    .map-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px; }
+    .map-label { font-size: 0.85rem; font-weight: 800; color: var(--text-dim); margin-bottom: 8px; }
+    .wx-map { width: 100%; border-radius: var(--radius-sm); }
+
+    /* ── National alerts ── */
+    .nat-alert-list { display: flex; flex-direction: column; gap: 6px; }
+    .nat-alert-item { background: var(--surface); border-left: 3px solid var(--yellow); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 8px 14px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 0.85rem; }
+    .nat-alert-event { font-weight: 800; }
+    .nat-alert-area { color: var(--text-dim); }
+
+    /* ── Earthquakes ── */
+    .eq-list { display: flex; flex-direction: column; gap: 8px; }
+    .eq-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px 16px; display: flex; align-items: center; gap: 16px; }
+    .eq-mag { font-size: 1.4rem; font-weight: 900; min-width: 60px; }
+    .eq-info { flex: 1; }
+    .eq-place { font-weight: 700; font-size: 0.9rem; }
+    .eq-meta { font-size: 0.8rem; color: var(--text-dim); margin-top: 2px; }
+    .eq-link { font-size: 0.75rem; color: var(--cyan); text-decoration: none; white-space: nowrap; }
+
+    /* ── Volcanoes ── */
+    .volcano-list { display: flex; flex-direction: column; gap: 8px; }
+    .volcano-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px 16px; }
+    .volcano-header { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+    .volcano-name { font-weight: 800; }
+    .volcano-level { font-size: 0.8rem; font-weight: 800; }
+    .volcano-avcolor { font-size: 0.75rem; color: var(--text-dim); }
+    .volcano-msg { font-size: 0.85rem; color: var(--text-dim); }
+    .volcano-time { font-size: 0.75rem; color: var(--text-dim); margin-top: 4px; }
+
+    /* ── GDACS ── */
+    .gdacs-list { display: flex; flex-direction: column; gap: 8px; }
+    .gdacs-card { background: var(--surface); border-left: 3px solid var(--orange); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 12px 16px; }
+    .gdacs-header { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 4px; }
+    .gdacs-type { font-size: 0.85rem; font-weight: 800; }
+    .gdacs-level { font-size: 0.75rem; font-weight: 800; }
+    .gdacs-country { font-size: 0.75rem; color: var(--text-dim); }
+    .gdacs-title { font-weight: 700; font-size: 0.9rem; margin-bottom: 3px; }
+    .gdacs-summary { font-size: 0.82rem; color: var(--text-dim); }
+
+    /* ── Hurricanes ── */
+    .no-storms-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 40px; text-align: center; }
+    .no-storms-emoji { font-size: 3rem; margin-bottom: 12px; }
+    .no-storms-text { font-size: 1.1rem; font-weight: 700; color: var(--text-dim); }
+    .storm-list { display: flex; flex-direction: column; gap: 16px; }
+    .storm-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; }
+    .storm-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px; }
+    .storm-name { font-size: 1.2rem; font-weight: 900; }
+    .storm-basin { font-size: 0.8rem; color: var(--text-dim); }
+    .storm-summary { font-size: 0.88rem; color: var(--text-dim); line-height: 1.5; }
+    .storm-link { display: inline-block; margin-top: 10px; font-size: 0.82rem; color: var(--cyan); text-decoration: none; font-weight: 700; }
+
+    /* ── Tornado overlay ── */
+    #warning-overlay {
+      position: fixed; inset: 0; z-index: 9999;
+      background: rgba(0,0,0,0.93);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .overlay-inner {
+      background: #0d0608;
+      border: 2px solid var(--red);
+      border-radius: var(--radius);
+      padding: 28px;
+      max-width: 860px;
+      width: 100%;
+      max-height: 95vh;
+      overflow-y: auto;
+    }
+    .overlay-badge { font-size: 1.8rem; font-weight: 900; margin-bottom: 8px; }
+    .overlay-area { font-size: 1rem; color: var(--text-dim); margin-bottom: 8px; }
+    .overlay-meta { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 10px; font-size: 0.9rem; font-weight: 700; }
+    .overlay-headline { font-size: 0.88rem; color: var(--text-dim); margin-bottom: 16px; line-height: 1.5; }
+    #warning-map { height: 360px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border); }
+    .overlay-close { margin-top: 16px; background: none; border: 1px solid var(--text-dim); color: var(--text-dim); border-radius: 8px; padding: 8px 18px; cursor: pointer; font-family: 'Nunito', sans-serif; font-size: 0.85rem; }
+    .overlay-close:hover { background: var(--surface); color: var(--text); }
+
+    /* ── Misc ── */
+    .no-data { color: var(--text-dim); font-style: italic; padding: 12px 0; }
+    a { color: var(--cyan); }
+
+    /* ── Farmington section ── */
+    .farmington-wrap { margin-top: 16px; }
+    .farmington-header { font-size: 0.85rem; font-weight: 800; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-title">⛅ Liz's Weather</div>
+  <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+    
+    <div class="site-meta">Updated: Mar 16, 2026, 2:57 PM</div>
+  </div>
+</header>
+
+<nav class="tabs">
+  <button class="tab-btn active" onclick="switchTab('local', this)">🏠 Local</button>
+  <button class="tab-btn" onclick="switchTab('national', this)">🗺️ National</button>
+  <button class="tab-btn" onclick="switchTab('storms', this)">🌀 Storms</button>
+  <button class="tab-btn" onclick="switchTab('earth', this)">🌋 Earth</button>
+</nav>
+
+<!-- ══ LOCAL TAB ══ -->
+<div id="tab-local" class="tab-content active">
+
+  <div class="summary-banner">☁️ 26°F in Bristol — Overcast. ⚠️ Winter Weather Advisory in effect.</div>
+
+  <div class="section-header">🏡 Bristol, IN — Elkhart County</div>
+  <div class="loc-card full">
+      <div class="loc-header">
+        <div class="loc-name-wrap">
+          <span class="loc-name">Bristol, IN</span>
+          <span class="loc-county">Elkhart County</span>
+        </div>
+        <div class="mcas-pill" style="background:#ffe56620;color:#ffe566;border:1px solid #ffe566">🟡 Moderate</div>
+      </div>
+
+      <div class="alert-banner" style="background:#1a1800;border-left:4px solid #ffe566;color:#ffe566">
+      <span class="alert-event">⚠️ Winter Weather Advisory</span>
+      <span class="alert-area">Elkhart; Lagrange; Northern La Porte; Eastern St. Joseph; Western St. Joseph; Cass; St. Joseph; Northern Berrien; Southern Berrien</span>
+      <span class="alert-expires">Until 6:15 PM</span>
+    </div>
+
+      <div class="current-main">
+        <div class="current-big">
+          <div class="current-emoji">☁️</div>
+          <div class="current-temp">26°F</div>
+          <div class="current-desc">Overcast</div>
+          <div class="current-feels">Feels like 12°F</div>
+        </div>
+        <div class="current-details">
+          <div class="detail-row">💧 Humidity: <b>81%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>21°F</b></div>
+          <div class="detail-row">🌬 Wind: <b>20 mph W</b> (Gusts <b>31 mph</b>)</div>
+          <div class="detail-row">👁 Visibility: <b>20 mi</b></div>
+          <div class="detail-row">☀️ UV Index: <b>3.55</b></div>
+          <div class="detail-row">🌡 Pressure: <b>974 hPa</b></div>
+          <div class="detail-row">📈 High: <b>53°F</b> &nbsp;|&nbsp; 📉 Low: <b>19°F</b></div>
+          <div class="detail-row">🌅 Sunrise: <b>7:52 AM</b> &nbsp;|&nbsp; 🌇 Sunset: <b>7:50 PM</b></div>
+          <div class="detail-row">🌒 Waxing Crescent</div>
+        </div>
+      </div>
+
+      <div class="aq-row">
+        <span class="aq-pill">🟢 Air Quality: <b>Good</b></span>
+        <span class="aq-pill">🌿 Pollen: <b>None</b></span>
+        <span class="aq-pill">💨 PM2.5: <b>2</b></span>
+      </div>
+    </div>
+
+  <div class="section-header">🕐 Hourly Forecast</div>
+  <div class="hourly-scroll">
+    <div class="hour-card">
+        <div class="hour-time">3 PM</div>
+        <div class="hour-emoji">❄️</div>
+        <div class="hour-temp">26°</div>
+        <div class="hour-precip">💧31%</div>
+        <div class="hour-wind">18mph</div>
+      </div><div class="hour-card">
+        <div class="hour-time">4 PM</div>
+        <div class="hour-emoji">❄️</div>
+        <div class="hour-temp">27°</div>
+        <div class="hour-precip">💧40%</div>
+        <div class="hour-wind">16mph</div>
+      </div><div class="hour-card">
+        <div class="hour-time">5 PM</div>
+        <div class="hour-emoji">❄️</div>
+        <div class="hour-temp">26°</div>
+        <div class="hour-precip">💧56%</div>
+        <div class="hour-wind">20mph</div>
+      </div><div class="hour-card">
+        <div class="hour-time">6 PM</div>
+        <div class="hour-emoji">❄️</div>
+        <div class="hour-temp">25°</div>
+        <div class="hour-precip">💧29%</div>
+        <div class="hour-wind">21mph</div>
+      </div><div class="hour-card">
+        <div class="hour-time">7 PM</div>
+        <div class="hour-emoji">❄️</div>
+        <div class="hour-temp">23°</div>
+        <div class="hour-precip">💧30%</div>
+        <div class="hour-wind">16mph</div>
+      </div><div class="hour-card">
+        <div class="hour-time">8 PM</div>
+        <div class="hour-emoji">❄️</div>
+        <div class="hour-temp">21°</div>
+        <div class="hour-precip">💧29%</div>
+        <div class="hour-wind">14mph</div>
+      </div><div class="hour-card">
+        <div class="hour-time">9 PM</div>
+        <div class="hour-emoji">❄️</div>
+        <div class="hour-temp">21°</div>
+        <div class="hour-precip">💧40%</div>
+        <div class="hour-wind">13mph</div>
+      </div><div class="hour-card">
+        <div class="hour-time">10 PM</div>
+        <div class="hour-emoji">❄️</div>
+        <div class="hour-temp">21°</div>
+        <div class="hour-precip">💧45%</div>
+        <div class="hour-wind">13mph</div>
+      </div><div class="hour-card">
+        <div class="hour-time">11 PM</div>
+        <div class="hour-emoji">❄️</div>
+        <div class="hour-temp">19°</div>
+        <div class="hour-precip">💧31%</div>
+        <div class="hour-wind">13mph</div>
+      </div>
+  </div>
+
+  <div class="section-header">📅 7-Day Forecast</div>
+  <div class="daily-grid">
+    <div class="day-card today">
+      <div class="day-name">Today</div>
+      <div class="day-emoji">❄️</div>
+      <div class="day-desc">Snow</div>
+      <div class="day-temps"><span class="day-high">53°</span> <span class="day-low">19°</span></div>
+      <div class="day-precip">💧 100%</div>
+      
+    </div><div class="day-card ">
+      <div class="day-name">Tue</div>
+      <div class="day-emoji">❄️</div>
+      <div class="day-desc">Snow</div>
+      <div class="day-temps"><span class="day-high">20°</span> <span class="day-low">11°</span></div>
+      
+      
+    </div><div class="day-card ">
+      <div class="day-name">Wed</div>
+      <div class="day-emoji">❄️</div>
+      <div class="day-desc">Snow</div>
+      <div class="day-temps"><span class="day-high">36°</span> <span class="day-low">15°</span></div>
+      <div class="day-precip">💧 33%</div>
+      
+    </div><div class="day-card ">
+      <div class="day-name">Thu</div>
+      <div class="day-emoji">☁️</div>
+      <div class="day-desc">Overcast</div>
+      <div class="day-temps"><span class="day-high">47°</span> <span class="day-low">31°</span></div>
+      
+      
+    </div><div class="day-card ">
+      <div class="day-name">Fri</div>
+      <div class="day-emoji">☁️</div>
+      <div class="day-desc">Overcast</div>
+      <div class="day-temps"><span class="day-high">65°</span> <span class="day-low">40°</span></div>
+      
+      
+    </div><div class="day-card ">
+      <div class="day-name">Sat</div>
+      <div class="day-emoji">☁️</div>
+      <div class="day-desc">Overcast</div>
+      <div class="day-temps"><span class="day-high">59°</span> <span class="day-low">35°</span></div>
+      
+      
+    </div><div class="day-card ">
+      <div class="day-name">Sun</div>
+      <div class="day-emoji">☁️</div>
+      <div class="day-desc">Overcast</div>
+      <div class="day-temps"><span class="day-high">54°</span> <span class="day-low">29°</span></div>
+      
+      
+    </div>
+  </div>
+
+  <div class="section-header">📡 Live Radar — Elkhart County</div>
+  <div class="radar-wrap">
+    <div id="local-map"></div>
+  </div>
+
+  <div class="section-header">📍 Goshen &amp; Warsaw</div>
+  <div class="secondary-grid">
+    <div class="loc-card small">
+    <div class="loc-header-small">
+      <span class="loc-name-small">Goshen, IN</span>
+      <span class="loc-emoji-small">☁️</span>
+    </div>
+    <div class="alert-banner" style="background:#1a1800;border-left:4px solid #ffe566;color:#ffe566">
+      <span class="alert-event">⚠️ Winter Weather Advisory</span>
+      <span class="alert-area">Elkhart; Lagrange; Northern La Porte; Eastern St. Joseph; Western St. Joseph; Cass; St. Joseph; Northern Berrien; Southern Berrien</span>
+      <span class="alert-expires">Until 6:15 PM</span>
+    </div>
+    <div class="small-temp-row">
+      <span class="small-temp">26°F</span>
+      <span class="small-feels">feels 15°</span>
+      <span class="small-hilo">54° / 20°</span>
+    </div>
+    <div class="small-detail">Overcast</div>
+    <div class="small-detail">💧 86% &nbsp; 🌬 17mph W</div>
+    <div class="small-detail">🟢 Good</div>
+  </div>
+    <div class="loc-card small">
+    <div class="loc-header-small">
+      <span class="loc-name-small">Warsaw, IN</span>
+      <span class="loc-emoji-small">☁️</span>
+    </div>
+    <div class="alert-banner" style="background:#1a1800;border-left:4px solid #ffe566;color:#ffe566">
+      <span class="alert-event">⚠️ Special Weather Statement</span>
+      <span class="alert-area">Steuben; Noble; De Kalb; Starke; Pulaski; Marshall; Fulton; Whitley; Allen; White; Cass; Miami; Wabash; Huntington; Wells; Adams; Grant; Blackford; Jay; Northern Kosciusko; Southern La Porte; Southern Kosciusko; Branch; Hillsdale; Williams; Fulton; Defiance; Henry; Paulding; Putnam; Van Wert; Allen</span>
+      <span class="alert-expires">Until 8:00 PM</span>
+    </div>
+    <div class="small-temp-row">
+      <span class="small-temp">27°F</span>
+      <span class="small-feels">feels 14°</span>
+      <span class="small-hilo">55° / 21°</span>
+    </div>
+    <div class="small-detail">Overcast</div>
+    <div class="small-detail">💧 66% &nbsp; 🌬 19mph WNW</div>
+    <div class="small-detail">🟢 Good</div>
+  </div>
+  </div>
+
+  <div class="farmington-wrap">
+    <div class="farmington-header">📍 Farmington, MO (Friends)</div>
+    <div class="loc-card small">
+    <div class="loc-header-small">
+      <span class="loc-name-small">Farmington, MO</span>
+      <span class="loc-emoji-small">⛅</span>
+    </div>
+    
+    <div class="small-temp-row">
+      <span class="small-temp">26°F</span>
+      <span class="small-feels">feels 13°</span>
+      <span class="small-hilo">34° / 24°</span>
+    </div>
+    <div class="small-detail">Partly cloudy</div>
+    <div class="small-detail">💧 69% &nbsp; 🌬 21mph NW</div>
+    <div class="small-detail">🟢 Good</div>
+  </div>
+  </div>
+
+</div>
+
+<!-- ══ NATIONAL TAB ══ -->
+<div id="tab-national" class="tab-content">
+
+  <div class="section-header">🗺️ National Forecast Maps (NWS/WPC)</div>
+  <p style="font-size:0.8rem;color:var(--text-dim);margin-bottom:12px">Official NOAA/WPC forecast maps — updated 2–4× daily</p>
+  <div class="map-grid">
+    <div class="map-card">
+      <div class="map-label">Today</div>
+      <img src="https://www.wpc.ncep.noaa.gov/noaa/noaad1.gif" alt="Today forecast" class="wx-map" loading="lazy" />
+    </div><div class="map-card">
+      <div class="map-label">Tomorrow</div>
+      <img src="https://www.wpc.ncep.noaa.gov/noaa/noaad2.gif" alt="Tomorrow forecast" class="wx-map" loading="lazy" />
+    </div><div class="map-card">
+      <div class="map-label">Day 3</div>
+      <img src="https://www.wpc.ncep.noaa.gov/noaa/noaad3.gif" alt="Day 3 forecast" class="wx-map" loading="lazy" />
+    </div>
+  </div>
+
+  <div class="section-header">⚠️ Active National Alerts — Extreme &amp; Severe</div>
+  <p class="no-data">No extreme or severe alerts currently active nationwide.</p>
+
+</div>
+
+<!-- ══ STORMS TAB ══ -->
+<div id="tab-storms" class="tab-content">
+  <div class="section-header">🌀 Active Tropical Cyclones</div>
+  <p style="font-size:0.8rem;color:var(--text-dim);margin-bottom:12px">Atlantic, Eastern Pacific, and Central Pacific basins — via NHC</p>
+  <div class="storm-list">
+    <div class="storm-card" style="border-top:3px solid #ef233c">
+        <div class="storm-header">
+          <span class="storm-name" style="color:#ef233c">Hurricane season</span>
+          <span class="storm-basin">Central Pacific</span>
+        </div>
+        <div class="storm-summary">The Central North Pacific hurricane season runs from June 1st through November 30th.</div>
+        <a href="https://www.nhc.noaa.gov/" target="_blank" class="storm-link">Full Advisory →</a>
+      </div><div class="storm-card" style="border-top:3px solid #ef233c">
+        <div class="storm-header">
+          <span class="storm-name" style="color:#ef233c">Hurricane season</span>
+          <span class="storm-basin">Atlantic</span>
+        </div>
+        <div class="storm-summary">The Atlantic hurricane season runs from June 1st through November 30th.</div>
+        <a href="https://www.nhc.noaa.gov/" target="_blank" class="storm-link">Full Advisory →</a>
+      </div><div class="storm-card" style="border-top:3px solid #ef233c">
+        <div class="storm-header">
+          <span class="storm-name" style="color:#ef233c">Hurricane season</span>
+          <span class="storm-basin">Eastern Pacific</span>
+        </div>
+        <div class="storm-summary">The Eastern North Pacific hurricane season runs from May 15th through November 30th.</div>
+        <a href="https://www.nhc.noaa.gov/" target="_blank" class="storm-link">Full Advisory →</a>
+      </div>
+  </div>
+</div>
+
+<!-- ══ EARTH TAB ══ -->
+<div id="tab-earth" class="tab-content">
+
+  <div class="section-header">🌍 Significant Earthquakes (Past 7 Days, M4.5+)</div>
+  <div class="eq-list">
+    <div class="eq-card">
+        <div class="eq-mag" style="color:#06d6a0">M4.7</div>
+        <div class="eq-info">
+          <div class="eq-place">57 km WNW of Pante Makasar, Timor Leste</div>
+          <div class="eq-meta">2h 56m ago &nbsp;|&nbsp; Depth: 80.8km</div>
+        </div>
+        <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sgl9" target="_blank" class="eq-link">Details</a>
+      </div><div class="eq-card">
+        <div class="eq-mag" style="color:#06d6a0">M4.8</div>
+        <div class="eq-info">
+          <div class="eq-place">158 km SSE of Vilyuchinsk, Russia</div>
+          <div class="eq-meta">5h 13m ago &nbsp;|&nbsp; Depth: 43.004km</div>
+        </div>
+        <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sgl1" target="_blank" class="eq-link">Details</a>
+      </div><div class="eq-card">
+        <div class="eq-mag" style="color:#ffe566">M5.4</div>
+        <div class="eq-info">
+          <div class="eq-place">Balleny Islands region</div>
+          <div class="eq-meta">5h 56m ago &nbsp;|&nbsp; Depth: 10km</div>
+        </div>
+        <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sgkw" target="_blank" class="eq-link">Details</a>
+      </div><div class="eq-card">
+        <div class="eq-mag" style="color:#06d6a0">M4.9</div>
+        <div class="eq-info">
+          <div class="eq-place">187 km WNW of Abepura, Indonesia</div>
+          <div class="eq-meta">7h 4m ago &nbsp;|&nbsp; Depth: 10km</div>
+        </div>
+        <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sgku" target="_blank" class="eq-link">Details</a>
+      </div><div class="eq-card">
+        <div class="eq-mag" style="color:#06d6a0">M4.9</div>
+        <div class="eq-info">
+          <div class="eq-place">86 km SSW of Dompu, Indonesia</div>
+          <div class="eq-meta">7h 15m ago &nbsp;|&nbsp; Depth: 79.634km</div>
+        </div>
+        <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sgkr" target="_blank" class="eq-link">Details</a>
+      </div><div class="eq-card">
+        <div class="eq-mag" style="color:#06d6a0">M4.6</div>
+        <div class="eq-info">
+          <div class="eq-place">37 km SE of Itō, Japan</div>
+          <div class="eq-meta">7h 20m ago &nbsp;|&nbsp; Depth: 121.973km</div>
+        </div>
+        <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sgkn" target="_blank" class="eq-link">Details</a>
+      </div><div class="eq-card">
+        <div class="eq-mag" style="color:#06d6a0">M4.6</div>
+        <div class="eq-info">
+          <div class="eq-place">56 km NE of Villa Rica, Peru</div>
+          <div class="eq-meta">9h 38m ago &nbsp;|&nbsp; Depth: 25.524km</div>
+        </div>
+        <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sgkc" target="_blank" class="eq-link">Details</a>
+      </div><div class="eq-card">
+        <div class="eq-mag" style="color:#ffe566">M5.0</div>
+        <div class="eq-info">
+          <div class="eq-place">37 km SE of Molina, Chile</div>
+          <div class="eq-meta">11h 58m ago &nbsp;|&nbsp; Depth: 101.669km</div>
+        </div>
+        <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sgjq" target="_blank" class="eq-link">Details</a>
+      </div><div class="eq-card">
+        <div class="eq-mag" style="color:#06d6a0">M4.9</div>
+        <div class="eq-info">
+          <div class="eq-place">123 km S of Pýrgos, Greece</div>
+          <div class="eq-meta">12h 11m ago &nbsp;|&nbsp; Depth: 35km</div>
+        </div>
+        <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sgjm" target="_blank" class="eq-link">Details</a>
+      </div><div class="eq-card">
+        <div class="eq-mag" style="color:#06d6a0">M4.8</div>
+        <div class="eq-info">
+          <div class="eq-place">south of the Kermadec Islands</div>
+          <div class="eq-meta">12h 18m ago &nbsp;|&nbsp; Depth: 10km</div>
+        </div>
+        <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sgk9" target="_blank" class="eq-link">Details</a>
+      </div><div class="eq-card">
+        <div class="eq-mag" style="color:#06d6a0">M4.6</div>
+        <div class="eq-info">
+          <div class="eq-place">229 km ESE of Attu Station, Alaska</div>
+          <div class="eq-meta">20h 11m ago &nbsp;|&nbsp; Depth: 10km</div>
+        </div>
+        <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sgib" target="_blank" class="eq-link">Details</a>
+      </div><div class="eq-card">
+        <div class="eq-mag" style="color:#ff9f1c">M6.3</div>
+        <div class="eq-info">
+          <div class="eq-place">85 km W of Vallenar, Chile</div>
+          <div class="eq-meta">3d ago &nbsp;|&nbsp; Depth: 10km</div>
+        </div>
+        <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sg0y" target="_blank" class="eq-link">Details</a>
+      </div>
+  </div>
+
+  <div class="section-header">🌋 US Volcano Activity</div>
+  <p class="no-data">No elevated US volcano activity reported.</p>
+
+  <div class="section-header">⚠️ Major Global Disasters (GDACS Orange &amp; Red)</div>
+  <p class="no-data">No major global disaster events currently reported.</p>
+
+</div>
+
+<!-- ══ WARNING OVERLAY ══ -->
+
+
+<script>
+  // Tab switching
+  function switchTab(id, btn) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    btn.classList.add('active');
+    if (id === 'local' && !window._localMapInit) initLocalMap();
+  }
+
+  // Local radar map
+  function initLocalMap() {
+    window._localMapInit = true;
+    const map = L.map('local-map').setView([41.7206, -85.8197], 9);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a>'
+    }).addTo(map);
+
+    // RainViewer radar
+    fetch('https://api.rainviewer.com/public/weather-maps.json')
+      .then(r => r.json())
+      .then(rv => {
+        const past = rv.radar?.past;
+        if (past?.length) {
+          const latest = past[past.length - 1];
+          L.tileLayer('https://tilecache.rainviewer.com' + latest.path + '/256/{z}/{x}/{y}/2/1_1.png', {
+            opacity: 0.6, attribution: 'RainViewer'
+          }).addTo(map);
+        }
+      }).catch(() => {});
+
+    // Bristol marker
+    L.circleMarker([41.7206, -85.8197], {
+      radius: 8, color: '#fff', fillColor: '#f72585', fillOpacity: 1, weight: 2
+    }).bindPopup('<b>Bristol, IN</b>').addTo(map);
+    // Goshen
+    L.circleMarker([41.5728, -85.8336], { radius: 5, color: '#fff', fillColor: '#4cc9f0', fillOpacity: 1, weight: 1 }).bindPopup('Goshen, IN').addTo(map);
+    // Warsaw
+    L.circleMarker([41.2403, -85.8519], { radius: 5, color: '#fff', fillColor: '#4cc9f0', fillOpacity: 1, weight: 1 }).bindPopup('Warsaw, IN').addTo(map);
+  }
+
+  // Init local map on page load (tab is active by default)
+  window.addEventListener('load', () => initLocalMap());
+
+  // Auto-reload if in rapid mode
+  
+</script>
+</body>
+</html>
