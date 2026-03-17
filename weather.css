@@ -100,7 +100,8 @@ body {
   margin-bottom: 20px;
 }
 .loc-card.full { }
-.loc-card.small { padding: 16px; }
+.loc-card.small { padding: 16px; min-width: 0; overflow: hidden; }
+.loc-expanded { min-width: 0; overflow: hidden; }
 
 .loc-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; flex-wrap: wrap; gap: 8px; }
 .loc-name { font-size: 1.3rem; font-weight: 900; }
