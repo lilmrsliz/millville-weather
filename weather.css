@@ -343,9 +343,17 @@ a { color: var(--cyan); }
 
 /* ── Mobile responsive ── */
 @media (max-width: 768px) {
+  /* Lock page width on mobile only */
+  html, body { max-width: 100%; overflow-x: hidden; }
+
   /* Tabs: scrollable row, no wrapping */
   .tabs { padding: 6px 10px 0; overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; gap: 2px; }
   .tab-btn { padding: 8px 10px; font-size: 0.82rem; flex-shrink: 0; white-space: nowrap; }
+
+  /* Prevent ALL overflow on mobile */
+  .tab-content, .loc-card, .forecast-panel, .bristol-layout,
+  .current-main, .current-details, .aq-row, .alert-banner,
+  .detail-row, .summary-banner, .secondary-grid { max-width: 100%; }
 
   /* Content area: tighter padding */
   .tab-content { padding: 12px; }
@@ -363,7 +371,7 @@ a { color: var(--cyan); }
   .current-temp { font-size: 2rem; }
   .current-main { gap: 12px; margin: 10px 0; }
   .current-details { min-width: 160px; }
-  .detail-row { font-size: 0.82rem; word-break: break-word; padding: 4px 0; }
+  .detail-row { font-size: 0.82rem; word-break: break-word; overflow-wrap: break-word; white-space: normal; padding: 4px 0; }
   .loc-card { padding: 14px; margin-bottom: 12px; }
   .loc-name { font-size: 1.1rem; }
   .aq-row { gap: 6px; margin-top: 8px; }
@@ -393,7 +401,9 @@ a { color: var(--cyan); }
   .day-desc { font-size: 0.68rem; }
   .day-precip, .day-uv { font-size: 0.65rem; }
 
-  /* Hourly */
+  /* Hourly — must be capped so it doesn't push page width */
+  .hourly-fade-wrap { max-width: 100%; overflow: hidden; }
+  .hourly-scroll { max-width: 100%; }
   .hour-card { min-width: 62px; padding: 8px; }
   .hour-temp { font-size: 0.9rem; }
 
