@@ -325,3 +325,86 @@ a { color: var(--cyan); }
   font-family: 'Nunito', sans-serif; font-size: 0.9rem;
 }
 #update-banner:hover { background: var(--surface2); }
+
+/* ── Back to top button ── */
+#back-to-top {
+  position: fixed; bottom: 72px; right: 16px; display: none;
+  background: var(--surface); border: 2px solid var(--cyan); color: var(--cyan);
+  border-radius: 50%; width: 44px; height: 44px; font-size: 1.2rem; font-weight: 900;
+  cursor: pointer; z-index: 400; align-items: center; justify-content: center;
+  box-shadow: 0 2px 12px rgba(76,201,240,0.2); font-family: 'Nunito', sans-serif;
+  transition: background 0.2s;
+}
+#back-to-top.visible { display: flex; }
+#back-to-top:hover { background: var(--surface2); }
+
+/* ── Mobile forecast toggle button ── */
+.mobile-forecast-btn { display: none; }
+
+/* ── Mobile responsive ── */
+@media (max-width: 768px) {
+  /* Tabs: scrollable row, no wrapping */
+  .tabs { padding: 6px 10px 0; overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; gap: 2px; }
+  .tab-btn { padding: 8px 10px; font-size: 0.82rem; flex-shrink: 0; white-space: nowrap; }
+
+  /* Content area: tighter padding */
+  .tab-content { padding: 12px; }
+
+  /* Header */
+  .site-header { padding: 10px 14px; gap: 4px; }
+  .site-title { font-size: 1.2rem; }
+  .site-meta { font-size: 0.72rem; }
+
+  /* Summary banner */
+  .summary-banner { font-size: 0.88rem; padding: 12px 14px; margin-bottom: 12px; }
+
+  /* Bristol main card */
+  .current-emoji { font-size: 2.4rem; }
+  .current-temp { font-size: 2rem; }
+  .current-main { gap: 12px; margin: 10px 0; }
+  .current-details { min-width: 160px; }
+  .detail-row { font-size: 0.82rem; word-break: break-word; padding: 4px 0; }
+  .loc-card { padding: 14px; margin-bottom: 12px; }
+  .loc-name { font-size: 1.1rem; }
+  .aq-row { gap: 6px; margin-top: 8px; }
+  .aq-pill { font-size: 0.78rem; padding: 4px 10px; }
+
+  /* Section headers */
+  .section-header { font-size: 0.95rem; margin: 14px 0 10px; padding-left: 10px; }
+
+  /* Forecast panel: hidden on mobile by default, toggled by button */
+  .forecast-panel { display: none; }
+  .mobile-forecast-btn {
+    display: flex; width: 100%; justify-content: space-between; align-items: center;
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    color: var(--text); font-family: 'Nunito', sans-serif; font-size: 0.95rem; font-weight: 800;
+    padding: 14px 16px; cursor: pointer; margin-bottom: 12px;
+    transition: background 0.2s;
+  }
+  .mobile-forecast-btn:hover { background: var(--surface2); }
+  .mobile-forecast-btn .expand-toggle { color: var(--cyan); font-size: 0.9rem; }
+
+  /* 7-day forecast */
+  .daily-grid { grid-template-columns: repeat(4, 1fr); gap: 6px; }
+  .day-card { padding: 8px 4px; }
+  .day-name { font-size: 0.72rem; }
+  .day-emoji { font-size: 1.3rem; margin: 3px 0; }
+  .day-temps { font-size: 0.85rem; }
+  .day-desc { font-size: 0.68rem; }
+  .day-precip, .day-uv { font-size: 0.65rem; }
+
+  /* Hourly */
+  .hour-card { min-width: 62px; padding: 8px; }
+  .hour-temp { font-size: 0.9rem; }
+
+  /* Radar map */
+  #local-map { height: 260px; }
+
+  /* Forecast panel when open on mobile */
+  .forecast-panel.mobile-open { display: block; }
+}
+
+@media (max-width: 480px) {
+  .daily-grid { grid-template-columns: repeat(2, 1fr); }
+  .tab-btn { padding: 7px 8px; font-size: 0.78rem; }
+}
