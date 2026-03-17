@@ -182,6 +182,11 @@
     .radar-wrap { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); margin-top: 16px; }
     #local-map { height: 350px; }
 
+    /* ── Forecast panel (groups hourly + 7-day + NWS) ── */
+    .forecast-panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 0; }
+    .forecast-panel .section-header { margin-top: 20px; }
+    .forecast-panel .section-header:first-child { margin-top: 0; }
+
     /* ── Bristol 2-column layout ── */
     .bristol-layout { display: grid; grid-template-columns: 1fr 440px; gap: 20px; align-items: start; }
     .bristol-right { position: sticky; top: 16px; }
@@ -297,7 +302,7 @@
   <div class="site-title">⛅ Liz's Weather</div>
   <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
     
-    <div class="site-meta">Updated: Mar 16, 2026, 8:09 PM</div>
+    <div class="site-meta">Updated: Mar 16, 2026, 8:12 PM</div>
   </div>
 </header>
 
@@ -369,31 +374,32 @@
       </div>
     </div>
 
-      <div class="section-header">🕐 Hourly Forecast</div>
-      <div class="hourly-scroll">
+      <div class="forecast-panel">
+        <div class="section-header">🕐 Hourly Forecast</div>
+        <div class="hourly-scroll">
     <div class="hour-card hour-freezing">
         <div class="hour-time">9 PM</div>
         <div class="hour-emoji">❄️</div>
         <div class="hour-temp" style="color:#4cc9f0">20° ❄️</div>
-        <div class="hour-precip">💧42%</div>
+        <div class="hour-precip" style="">💧42%</div>
         <div class="hour-wind">12mph</div>
       </div><div class="hour-card hour-freezing">
         <div class="hour-time">10 PM</div>
         <div class="hour-emoji">❄️</div>
         <div class="hour-temp" style="color:#4cc9f0">22° ❄️</div>
-        <div class="hour-precip">💧32%</div>
+        <div class="hour-precip" style="">💧32%</div>
         <div class="hour-wind">18mph</div>
       </div><div class="hour-card hour-freezing">
         <div class="hour-time">11 PM</div>
         <div class="hour-emoji">❄️</div>
         <div class="hour-temp" style="color:#4cc9f0">22° ❄️</div>
-        <div class="hour-precip">💧26%</div>
+        <div class="hour-precip" style="">💧26%</div>
         <div class="hour-wind">14mph</div>
       </div>
   </div>
 
-      <div class="section-header">📅 7-Day Forecast</div>
-      <div class="daily-grid">
+        <div class="section-header">📅 7-Day Forecast</div>
+        <div class="daily-grid">
     <div class="day-card today">
       <div class="day-name">Today</div>
       <div class="day-emoji">❄️</div>
@@ -446,9 +452,9 @@
     </div>
   </div>
 
-      <div class="section-header" style="cursor:pointer" onclick="toggleLocCard('nws-text')">📋 NWS Forecast Details <span class="expand-toggle" id="nws-text-toggle">▼</span></div>
-      <div id="nws-text-body" style="display:none;margin-bottom:20px">
-        <div class="nws-forecast-wrap">
+        <div class="section-header" style="cursor:pointer" onclick="toggleLocCard('nws-text')">📋 NWS Forecast Details <span class="expand-toggle" id="nws-text-toggle">▼</span></div>
+        <div id="nws-text-body" style="display:none">
+          <div class="nws-forecast-wrap">
     <div class="nws-period">
       <div class="nws-period-name">Tonight <span class="nws-period-temp">17°F</span></div>
       <div class="nws-period-text">Snow showers and patchy blowing snow. Mostly cloudy, with a low around 17. Northwest wind 15 to 25 mph, with gusts as high as 40 mph. Chance of precipitation is 90%. New snow accumulation of 2 to 4 inches possible.</div>
@@ -469,6 +475,7 @@
       <div class="nws-period-text">A chance of rain showers between 8am and 2pm. Partly sunny, with a high near 52. Chance of precipitation is 30%.</div>
     </div>
   </div>
+        </div>
       </div>
     </div>
 
@@ -539,19 +546,19 @@
         <div class="hour-time">9 PM</div>
         <div class="hour-emoji">❄️</div>
         <div class="hour-temp" style="color:#4cc9f0">20° ❄️</div>
-        <div class="hour-precip">💧43%</div>
+        <div class="hour-precip" style="">💧43%</div>
         <div class="hour-wind">11mph</div>
       </div><div class="hour-card hour-freezing">
         <div class="hour-time">10 PM</div>
         <div class="hour-emoji">❄️</div>
         <div class="hour-temp" style="color:#4cc9f0">21° ❄️</div>
-        <div class="hour-precip">💧30%</div>
+        <div class="hour-precip" style="">💧30%</div>
         <div class="hour-wind">17mph</div>
       </div><div class="hour-card hour-freezing">
         <div class="hour-time">11 PM</div>
         <div class="hour-emoji">❄️</div>
         <div class="hour-temp" style="color:#4cc9f0">21° ❄️</div>
-        <div class="hour-precip">💧31%</div>
+        <div class="hour-precip" style="">💧31%</div>
         <div class="hour-wind">16mph</div>
       </div>
   </div>
@@ -667,19 +674,19 @@
         <div class="hour-time">9 PM</div>
         <div class="hour-emoji">☁️</div>
         <div class="hour-temp" style="color:#4cc9f0">20° ❄️</div>
-        <div class="hour-precip">💧33%</div>
+        <div class="hour-precip" style="">💧33%</div>
         <div class="hour-wind">13mph</div>
       </div><div class="hour-card hour-freezing">
         <div class="hour-time">10 PM</div>
         <div class="hour-emoji">❄️</div>
         <div class="hour-temp" style="color:#4cc9f0">21° ❄️</div>
-        <div class="hour-precip">💧42%</div>
+        <div class="hour-precip" style="">💧42%</div>
         <div class="hour-wind">18mph</div>
       </div><div class="hour-card hour-freezing">
         <div class="hour-time">11 PM</div>
         <div class="hour-emoji">❄️</div>
         <div class="hour-temp" style="color:#4cc9f0">20° ❄️</div>
-        <div class="hour-precip">💧42%</div>
+        <div class="hour-precip" style="">💧42%</div>
         <div class="hour-wind">18mph</div>
       </div>
   </div>
@@ -784,19 +791,19 @@
         <div class="hour-time">9 PM</div>
         <div class="hour-emoji">☁️</div>
         <div class="hour-temp" style="color:#4cc9f0">26° ❄️</div>
-        
+        <div class="hour-precip" style="visibility:hidden">💧0%</div>
         <div class="hour-wind">16mph</div>
       </div><div class="hour-card hour-freezing">
         <div class="hour-time">10 PM</div>
         <div class="hour-emoji">☁️</div>
         <div class="hour-temp" style="color:#4cc9f0">26° ❄️</div>
-        
+        <div class="hour-precip" style="visibility:hidden">💧0%</div>
         <div class="hour-wind">16mph</div>
       </div><div class="hour-card hour-freezing">
         <div class="hour-time">11 PM</div>
         <div class="hour-emoji">☁️</div>
         <div class="hour-temp" style="color:#4cc9f0">26° ❄️</div>
-        
+        <div class="hour-precip" style="visibility:hidden">💧0%</div>
         <div class="hour-wind">15mph</div>
       </div>
   </div>
@@ -945,89 +952,89 @@
   <div class="section-header">🌍 Significant Earthquakes (Past 7 Days, M4.5+)</div>
   <div class="eq-list">
     <div class="eq-card">
+        <div class="eq-mag" style="color:#06d6a0">M4.8</div>
+        <div class="eq-info">
+          <div class="eq-place">Kepulauan Babar, Indonesia</div>
+          <div class="eq-meta">1h 5m ago &nbsp;|&nbsp; Depth: 157.734km</div>
+        </div>
+        <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sgqm" target="_blank" class="eq-link">Details</a>
+      </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.5</div>
         <div class="eq-info">
           <div class="eq-place">8 km W of Marihatag, Philippines</div>
-          <div class="eq-meta">4h 59m ago &nbsp;|&nbsp; Depth: 83.179km</div>
+          <div class="eq-meta">5h 2m ago &nbsp;|&nbsp; Depth: 83.179km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sgnj" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.7</div>
         <div class="eq-info">
           <div class="eq-place">57 km WNW of Pante Makasar, Timor Leste</div>
-          <div class="eq-meta">8h 8m ago &nbsp;|&nbsp; Depth: 80.8km</div>
+          <div class="eq-meta">8h 11m ago &nbsp;|&nbsp; Depth: 80.8km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sgl9" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.8</div>
         <div class="eq-info">
           <div class="eq-place">158 km SSE of Vilyuchinsk, Russia</div>
-          <div class="eq-meta">10h 25m ago &nbsp;|&nbsp; Depth: 43.004km</div>
+          <div class="eq-meta">10h 27m ago &nbsp;|&nbsp; Depth: 43.004km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sgl1" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#ffe566">M5.4</div>
         <div class="eq-info">
           <div class="eq-place">Balleny Islands region</div>
-          <div class="eq-meta">11h 7m ago &nbsp;|&nbsp; Depth: 10km</div>
+          <div class="eq-meta">11h 10m ago &nbsp;|&nbsp; Depth: 10km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sgkw" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.9</div>
         <div class="eq-info">
           <div class="eq-place">187 km WNW of Abepura, Indonesia</div>
-          <div class="eq-meta">12h 16m ago &nbsp;|&nbsp; Depth: 10km</div>
+          <div class="eq-meta">12h 18m ago &nbsp;|&nbsp; Depth: 10km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sgku" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.9</div>
         <div class="eq-info">
           <div class="eq-place">86 km SSW of Dompu, Indonesia</div>
-          <div class="eq-meta">12h 27m ago &nbsp;|&nbsp; Depth: 79.634km</div>
+          <div class="eq-meta">12h 30m ago &nbsp;|&nbsp; Depth: 79.634km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sgkr" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.6</div>
         <div class="eq-info">
           <div class="eq-place">37 km SE of Itō, Japan</div>
-          <div class="eq-meta">12h 31m ago &nbsp;|&nbsp; Depth: 121.973km</div>
+          <div class="eq-meta">12h 34m ago &nbsp;|&nbsp; Depth: 121.973km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sgkn" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.6</div>
         <div class="eq-info">
           <div class="eq-place">56 km NE of Villa Rica, Peru</div>
-          <div class="eq-meta">14h 50m ago &nbsp;|&nbsp; Depth: 25.524km</div>
+          <div class="eq-meta">14h 53m ago &nbsp;|&nbsp; Depth: 25.524km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sgkc" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#ffe566">M5.0</div>
         <div class="eq-info">
           <div class="eq-place">37 km SE of Molina, Chile</div>
-          <div class="eq-meta">17h 10m ago &nbsp;|&nbsp; Depth: 101.669km</div>
+          <div class="eq-meta">17h 13m ago &nbsp;|&nbsp; Depth: 101.669km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sgjq" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.9</div>
         <div class="eq-info">
           <div class="eq-place">123 km S of Pýrgos, Greece</div>
-          <div class="eq-meta">17h 23m ago &nbsp;|&nbsp; Depth: 35km</div>
+          <div class="eq-meta">17h 25m ago &nbsp;|&nbsp; Depth: 35km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sgjm" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.8</div>
         <div class="eq-info">
           <div class="eq-place">south of the Kermadec Islands</div>
-          <div class="eq-meta">17h 30m ago &nbsp;|&nbsp; Depth: 10km</div>
+          <div class="eq-meta">17h 32m ago &nbsp;|&nbsp; Depth: 10km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sgk9" target="_blank" class="eq-link">Details</a>
-      </div><div class="eq-card">
-        <div class="eq-mag" style="color:#ff9f1c">M6.3</div>
-        <div class="eq-info">
-          <div class="eq-place">85 km W of Vallenar, Chile</div>
-          <div class="eq-meta">3d ago &nbsp;|&nbsp; Depth: 10km</div>
-        </div>
-        <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sg0y" target="_blank" class="eq-link">Details</a>
       </div>
   </div>
 
