@@ -3,8 +3,8 @@
 
 :root {
   --bg: #0a0e1a;
-  --surface: #141a2e;
-  --surface2: #1c2340;
+  --surface: #181f38;
+  --surface2: #1f2845;
   --border: #2a3356;
   --text: #e8eaf6;
   --text-dim: #8892b0;
@@ -112,13 +112,13 @@ body {
 .current-emoji { font-size: 3.5rem; line-height: 1; }
 .current-temp { font-size: 3rem; font-weight: 900; color: var(--cyan); }
 .current-desc { font-size: 1rem; font-weight: 700; margin-top: 2px; }
-.current-feels { font-size: 0.85rem; color: var(--text-dim); }
+.current-feels { font-size: 0.9rem; color: var(--text-dim); font-weight: 600; }
 
 .current-details { flex: 1; min-width: 200px; }
 .detail-row { padding: 5px 0; font-size: 0.9rem; border-bottom: 1px solid var(--border); }
 .detail-row:last-child { border-bottom: none; }
 .nws-label { font-size: 0.7rem; color: var(--text-dim); font-weight: 600; margin-left: 6px; }
-.nws-row { color: var(--cyan); }
+.nws-row { color: var(--text); font-weight: 700; }
 .hour-freezing { border-color: #4cc9f040; background: #081828; }
 
 /* ── NWS forecast text ── */
@@ -158,7 +158,7 @@ body {
 .day-name { font-size: 0.8rem; font-weight: 800; color: var(--text-dim); margin-bottom: 4px; }
 .day-card.today .day-name { color: var(--cyan); }
 .day-emoji { font-size: 1.6rem; margin: 4px 0; }
-.day-desc { font-size: 0.65rem; color: var(--text-dim); margin-bottom: 6px; }
+.day-desc { font-size: 0.75rem; color: var(--text-dim); margin-bottom: 6px; }
 .day-temps { font-size: 0.95rem; font-weight: 700; }
 .day-high { color: var(--orange); }
 .day-low { color: var(--cyan); margin-left: 4px; }
@@ -173,7 +173,8 @@ body {
 .small-feels { font-size: 0.8rem; color: var(--text-dim); }
 .small-hilo { font-size: 0.8rem; color: var(--text-dim); margin-left: auto; }
 .small-detail { font-size: 0.8rem; color: var(--text-dim); margin-top: 3px; }
-.secondary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.secondary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media (max-width: 900px) { .secondary-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 600px) { .secondary-grid { grid-template-columns: 1fr; } }
 
 /* ── Radar map ── */
@@ -193,7 +194,7 @@ body {
 @media (max-width: 1100px) { .bristol-layout { grid-template-columns: 1fr; } .bristol-right { position: static; } .bristol-right #local-map { height: 350px; } }
 
 /* ── Section headers ── */
-.section-header { font-size: 1.1rem; font-weight: 900; color: var(--cyan); margin: 24px 0 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.section-header { font-size: 1.1rem; font-weight: 900; color: var(--text); margin: 24px 0 12px; padding: 0 0 8px 12px; border-bottom: 1px solid var(--border); border-left: 3px solid var(--cyan); }
 .section-header:first-child { margin-top: 0; }
 
 /* ── National maps ── */
@@ -281,13 +282,22 @@ body {
 .no-data { color: var(--text-dim); font-style: italic; padding: 12px 0; }
 a { color: var(--cyan); }
 
-/* ── Farmington section ── */
-.farmington-wrap { margin-top: 16px; }
-.farmington-header { font-size: 0.85rem; font-weight: 800; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+/* ── Summary MCAS block ── */
+.summary-mcas { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.summary-mcas-label { font-size: 0.85rem; font-weight: 700; color: var(--text-dim); }
+.summary-mcas-value { border-radius: 20px; padding: 3px 14px; font-size: 0.95rem; font-weight: 800; }
+
+/* ── Hourly scroll fade ── */
+.hourly-fade-wrap { position: relative; }
+.hourly-fade-wrap::after { content: ''; position: absolute; right: 0; top: 0; bottom: 8px; width: 48px; background: linear-gradient(to right, #181f3800, #181f38); pointer-events: none; z-index: 1; }
+
+/* ── NWS toggle button ── */
+.nws-toggle-btn { background: none; border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text-dim); font-family: 'Nunito', sans-serif; font-size: 0.85rem; font-weight: 700; padding: 6px 16px; cursor: pointer; margin-bottom: 12px; transition: all 0.2s; display: flex; align-items: center; gap: 8px; }
+.nws-toggle-btn:hover { background: var(--surface2); color: var(--text); border-color: var(--cyan); }
 
 /* ── Expandable small cards ── */
 .loc-card.expandable .loc-header-small:hover { opacity: 0.85; }
-.expand-toggle { font-size: 0.8rem; color: var(--cyan); font-weight: 900; transition: transform 0.2s; display: inline-block; }
+.expand-toggle { font-size: 0.75rem; color: var(--text-dim); font-weight: 700; transition: transform 0.2s; display: inline-block; }
 .expand-toggle.open { transform: rotate(180deg); }
 .expanded-divider { border-top: 1px solid var(--border); margin: 12px 0 0; }
 .expanded-section-label { font-size: 0.8rem; font-weight: 900; color: var(--cyan); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
