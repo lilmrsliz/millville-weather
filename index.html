@@ -16,7 +16,7 @@
   <div class="site-title">⛅ Liz's Weather</div>
   <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
     
-    <div class="site-meta">Updated: Mar 18, 2026, 12:54 AM</div>
+    <div class="site-meta">Updated: Mar 18, 2026, 1:14 AM</div>
   </div>
 </header>
 
@@ -31,9 +31,9 @@
 <div id="tab-local" class="tab-content active">
 
   <div class="summary-banner">☁️ 20°F in Bristol — Overcast. No active alerts.
-    <div class="summary-mcas" style="border-top:1px solid #06d6a030;margin-top:10px;padding-top:10px">
+    <div class="summary-mcas" style="border-top:1px solid #ffe56630;margin-top:10px;padding-top:10px">
       <span class="summary-mcas-label">🧬 MCAS Comfort Index:</span>
-      <span class="summary-mcas-value" style="background:#06d6a020;border:1px solid #06d6a0;color:#06d6a0">🟢 Good Day</span>
+      <span class="summary-mcas-value" style="background:#ffe56620;border:1px solid #ffe566;color:#ffe566">🟡 Moderate</span>
     </div></div>
 
   <div class="bristol-layout">
@@ -47,7 +47,7 @@
         </div>
         <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
           
-          <div class="mcas-pill" style="background:#06d6a020;color:#06d6a0;border:1px solid #06d6a0">🟢 Good Day</div>
+          <div class="mcas-pill" style="background:#ffe56620;color:#ffe566;border:1px solid #ffe566">🟡 Moderate</div>
         </div>
       </div>
 
@@ -62,8 +62,8 @@
         </div>
         <div class="current-details">
           <div class="detail-row">💧 Humidity: <b>67%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>11°F</b></div>
-          <div class="detail-row">🌬 Wind: <b>5 mph SSW</b> (Gusts <b>11 mph</b>)</div>
-          <div class="detail-row">👁 Visibility: <b>51 mi</b></div>
+          <div class="detail-row">🌬 Wind: <b>6 mph S</b> (Gusts <b>12 mph</b>)</div>
+          <div class="detail-row">👁 Visibility: <b>52 mi</b></div>
           <div class="detail-row">☀️ UV Index: <b>0</b></div>
           <div class="detail-row">🌡 Pressure: <b>994 hPa</b></div>
           <div class="detail-row">📈 High: <b>39°F</b> &nbsp;|&nbsp; 📉 Low: <b>31°F</b></div>
@@ -72,7 +72,11 @@
         </div>
       </div>
 
-      
+      <div class="aq-row">
+        <span class="aq-pill">🟢 Air Quality: <b>Good</b></span>
+        <span class="aq-pill">🌿 Pollen: <b>None</b></span>
+        <span class="aq-pill">💨 PM2.5: <b>9</b></span>
+      </div>
     </div>
 
       <button class="mobile-forecast-btn" id="forecast-toggle-btn" onclick="toggleForecastPanel()">
@@ -341,23 +345,27 @@
       <span class="small-hilo">39° / 31°</span>
     </div>
     <div class="small-detail">Overcast</div>
-    <div class="small-detail">💧 71% &nbsp; 🌬 3mph SSW</div>
-    
+    <div class="small-detail">💧 71% &nbsp; 🌬 3mph S</div>
+    <div class="small-detail">🟢 Good</div>
     
 
     <div class="loc-expanded" id="expand-goshenin-body" style="display:none">
       <div class="expanded-divider"></div>
       <div class="current-details" style="margin:12px 0">
         <div class="detail-row">💧 Humidity: <b>71%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>12°F</b></div>
-        <div class="detail-row">🌬 Wind: <b>3 mph SSW</b> (Gusts <b>9 mph</b>)</div>
-        <div class="detail-row">👁 Visibility: <b>50 mi</b></div>
+        <div class="detail-row">🌬 Wind: <b>3 mph S</b> (Gusts <b>10 mph</b>)</div>
+        <div class="detail-row">👁 Visibility: <b>49 mi</b></div>
         <div class="detail-row">☀️ UV Index: <b>0</b></div>
-        <div class="detail-row">🌡 Pressure: <b>994 hPa</b></div>
+        <div class="detail-row">🌡 Pressure: <b>993 hPa</b></div>
         <div class="detail-row">📈 High: <b>39°F</b> &nbsp;|&nbsp; 📉 Low: <b>31°F</b></div>
         <div class="detail-row">🌅 Sunrise: <b>7:49 AM</b> &nbsp;|&nbsp; 🌇 Sunset: <b>7:53 PM</b></div>
         <div class="detail-row">🌒 Waxing Crescent</div>
       </div>
-      
+      <div class="aq-row" style="margin-bottom:12px">
+        <span class="aq-pill">🟢 Air Quality: <b>Good</b></span>
+        <span class="aq-pill">🌿 Pollen: <b>None</b></span>
+        <span class="aq-pill">💨 PM2.5: <b>9</b></span>
+      </div>
       <div class="expanded-section-label">🕐 Hourly</div>
       <div class="hourly-fade-wrap"><div class="hourly-scroll">
     <div class="hour-card hour-freezing">
@@ -575,27 +583,31 @@
     
     <div class="small-temp-row">
       <span class="small-temp">20°F</span>
-      <span class="small-feels">feels 11°</span>
+      <span class="small-feels">feels 12°</span>
       <span class="small-hilo">39° / 32°</span>
     </div>
     <div class="small-detail">Overcast</div>
-    <div class="small-detail">💧 66% &nbsp; 🌬 5mph S</div>
-    
+    <div class="small-detail">💧 67% &nbsp; 🌬 4mph S</div>
+    <div class="small-detail">🟢 Good</div>
     
 
     <div class="loc-expanded" id="expand-syracusein-body" style="display:none">
       <div class="expanded-divider"></div>
       <div class="current-details" style="margin:12px 0">
-        <div class="detail-row">💧 Humidity: <b>66%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>10°F</b></div>
-        <div class="detail-row">🌬 Wind: <b>5 mph S</b> (Gusts <b>11 mph</b>)</div>
-        <div class="detail-row">👁 Visibility: <b>51 mi</b></div>
+        <div class="detail-row">💧 Humidity: <b>67%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>10°F</b></div>
+        <div class="detail-row">🌬 Wind: <b>4 mph S</b> (Gusts <b>10 mph</b>)</div>
+        <div class="detail-row">👁 Visibility: <b>52 mi</b></div>
         <div class="detail-row">☀️ UV Index: <b>0</b></div>
         <div class="detail-row">🌡 Pressure: <b>991 hPa</b></div>
         <div class="detail-row">📈 High: <b>39°F</b> &nbsp;|&nbsp; 📉 Low: <b>32°F</b></div>
         <div class="detail-row">🌅 Sunrise: <b>7:49 AM</b> &nbsp;|&nbsp; 🌇 Sunset: <b>7:52 PM</b></div>
         <div class="detail-row">🌒 Waxing Crescent</div>
       </div>
-      
+      <div class="aq-row" style="margin-bottom:12px">
+        <span class="aq-pill">🟢 Air Quality: <b>Good</b></span>
+        <span class="aq-pill">🌿 Pollen: <b>None</b></span>
+        <span class="aq-pill">💨 PM2.5: <b>7</b></span>
+      </div>
       <div class="expanded-section-label">🕐 Hourly</div>
       <div class="hourly-fade-wrap"><div class="hourly-scroll">
     <div class="hour-card hour-freezing">
@@ -815,28 +827,32 @@
     </div>
     
     <div class="small-temp-row">
-      <span class="small-temp">33°F</span>
+      <span class="small-temp">32°F</span>
       <span class="small-feels">feels 23°</span>
       <span class="small-hilo">65° / 44°</span>
     </div>
     <div class="small-detail">Overcast</div>
-    <div class="small-detail">💧 58% &nbsp; 🌬 10mph SSE</div>
-    
+    <div class="small-detail">💧 59% &nbsp; 🌬 9mph SE</div>
+    <div class="small-detail">🟢 Good</div>
     
 
     <div class="loc-expanded" id="expand-farmingtonmo-body" style="display:none">
       <div class="expanded-divider"></div>
       <div class="current-details" style="margin:12px 0">
-        <div class="detail-row">💧 Humidity: <b>58%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>20°F</b></div>
-        <div class="detail-row">🌬 Wind: <b>10 mph SSE</b> (Gusts <b>20 mph</b>)</div>
-        <div class="detail-row">👁 Visibility: <b>65 mi</b></div>
+        <div class="detail-row">💧 Humidity: <b>59%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>19°F</b></div>
+        <div class="detail-row">🌬 Wind: <b>9 mph SE</b> (Gusts <b>20 mph</b>)</div>
+        <div class="detail-row">👁 Visibility: <b>62 mi</b></div>
         <div class="detail-row">☀️ UV Index: <b>0</b></div>
-        <div class="detail-row">🌡 Pressure: <b>985 hPa</b></div>
+        <div class="detail-row">🌡 Pressure: <b>984 hPa</b></div>
         <div class="detail-row">📈 High: <b>65°F</b> &nbsp;|&nbsp; 📉 Low: <b>44°F</b></div>
         <div class="detail-row">🌅 Sunrise: <b>8:07 AM</b> &nbsp;|&nbsp; 🌇 Sunset: <b>8:11 PM</b></div>
         <div class="detail-row">🌒 Waxing Crescent</div>
       </div>
-      
+      <div class="aq-row" style="margin-bottom:12px">
+        <span class="aq-pill">🟢 Air Quality: <b>Good</b></span>
+        <span class="aq-pill">🌿 Pollen: <b>None</b></span>
+        <span class="aq-pill">💨 PM2.5: <b>6</b></span>
+      </div>
       <div class="expanded-section-label">🕐 Hourly</div>
       <div class="hourly-fade-wrap"><div class="hourly-scroll">
     <div class="hour-card">
@@ -1134,87 +1150,87 @@
   <div class="section-header">🌍 Significant Earthquakes (Past 7 Days, M4.5+)</div>
   <div class="eq-list">
     <div class="eq-card">
-        <div class="eq-mag" style="color:#ffe566">M5.2</div>
+        <div class="eq-mag" style="color:#06d6a0">M4.9</div>
         <div class="eq-info">
-          <div class="eq-place">227 km ESE of Attu Station, Alaska</div>
-          <div class="eq-meta">17m ago &nbsp;|&nbsp; Depth: 12.8km</div>
+          <div class="eq-place">234 km ESE of Attu Station, Alaska</div>
+          <div class="eq-meta">37m ago &nbsp;|&nbsp; Depth: 6.784km</div>
         </div>
-        <a href="https://earthquake.usgs.gov/earthquakes/eventpage/aka2026fjwjfq" target="_blank" class="eq-link">Details</a>
+        <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sh32" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.9</div>
         <div class="eq-info">
           <div class="eq-place">19 km NNW of Port-Olry, Vanuatu</div>
-          <div class="eq-meta">5h 26m ago &nbsp;|&nbsp; Depth: 84.489km</div>
+          <div class="eq-meta">5h 46m ago &nbsp;|&nbsp; Depth: 84.489km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sh1y" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.5</div>
         <div class="eq-info">
           <div class="eq-place">66 km S of Fuengirola, Spain</div>
-          <div class="eq-meta">5h 29m ago &nbsp;|&nbsp; Depth: 75.676km</div>
+          <div class="eq-meta">5h 49m ago &nbsp;|&nbsp; Depth: 75.676km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sh1w" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.5</div>
         <div class="eq-info">
           <div class="eq-place">80 km S of Kushiro, Japan</div>
-          <div class="eq-meta">7h 40m ago &nbsp;|&nbsp; Depth: 35km</div>
+          <div class="eq-meta">8h 0m ago &nbsp;|&nbsp; Depth: 35km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sh1g" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.6</div>
         <div class="eq-info">
           <div class="eq-place">7 km W of Cañas Gordas, Panama</div>
-          <div class="eq-meta">8h 28m ago &nbsp;|&nbsp; Depth: 49.43km</div>
+          <div class="eq-meta">8h 48m ago &nbsp;|&nbsp; Depth: 49.43km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sh19" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#ffe566">M5.0</div>
         <div class="eq-info">
           <div class="eq-place">Ascension Island region</div>
-          <div class="eq-meta">9h 0m ago &nbsp;|&nbsp; Depth: 10km</div>
+          <div class="eq-meta">9h 20m ago &nbsp;|&nbsp; Depth: 10km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sh12" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#ffe566">M5.3</div>
         <div class="eq-info">
           <div class="eq-place">237 km ESE of Attu Station, Alaska</div>
-          <div class="eq-meta">12h 32m ago &nbsp;|&nbsp; Depth: 10km</div>
+          <div class="eq-meta">12h 52m ago &nbsp;|&nbsp; Depth: 10km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sgvw" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#ffe566">M5.0</div>
         <div class="eq-info">
           <div class="eq-place">Kuril Islands</div>
-          <div class="eq-meta">14h 21m ago &nbsp;|&nbsp; Depth: 43.507km</div>
+          <div class="eq-meta">14h 41m ago &nbsp;|&nbsp; Depth: 43.507km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sgv2" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#ffe566">M5.1</div>
         <div class="eq-info">
           <div class="eq-place">south of the Kermadec Islands</div>
-          <div class="eq-meta">14h 36m ago &nbsp;|&nbsp; Depth: 10km</div>
+          <div class="eq-meta">14h 56m ago &nbsp;|&nbsp; Depth: 10km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sguy" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.8</div>
         <div class="eq-info">
           <div class="eq-place">179 km SW of Lorengau, Papua New Guinea</div>
-          <div class="eq-meta">17h 20m ago &nbsp;|&nbsp; Depth: 10km</div>
+          <div class="eq-meta">17h 40m ago &nbsp;|&nbsp; Depth: 10km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sgue" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.9</div>
         <div class="eq-info">
           <div class="eq-place">32 km NNE of Ola, Russia</div>
-          <div class="eq-meta">17h 48m ago &nbsp;|&nbsp; Depth: 10km</div>
+          <div class="eq-meta">18h 8m ago &nbsp;|&nbsp; Depth: 10km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sguc" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.5</div>
         <div class="eq-info">
           <div class="eq-place">37 km SW of Mohr, Iran</div>
-          <div class="eq-meta">21h 54m ago &nbsp;|&nbsp; Depth: 10km</div>
+          <div class="eq-meta">22h 14m ago &nbsp;|&nbsp; Depth: 10km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sgsq" target="_blank" class="eq-link">Details</a>
       </div>
@@ -1333,7 +1349,7 @@
   
   // Poll for new data every 2 minutes — shows refresh banner when crawl has run
   (function() {
-    var GENERATED = '2026-03-18T04:54:02.007Z';
+    var GENERATED = '2026-03-18T05:14:02.167Z';
     setInterval(function() {
       fetch('/api/data', { cache: 'no-store' })
         .then(function(r) { return r.json(); })
