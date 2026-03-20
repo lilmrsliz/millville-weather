@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pollen Report — Bristol, IN</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',sans-serif;background:#0d0f18;color:#e8eaf0;min-height:100vh}
+a{text-decoration:none}
+
+.top-bar{background:#12141f;border-bottom:1px solid #ffffff12;padding:14px 20px;display:flex;align-items:center;gap:14px;position:sticky;top:0;z-index:100}
+.back-btn{color:#7b8cc4;font-size:0.9rem;font-weight:700;display:flex;align-items:center;gap:5px}
+.back-btn:hover{color:#a0b4e8}
+.top-bar-title{font-size:1rem;font-weight:800}
+.top-bar-sub{font-size:0.78rem;color:#7b8cc4;margin-left:auto;text-align:right}
+
+.container{max-width:920px;margin:0 auto;padding:28px 16px 60px}
+
+.section-label{font-size:0.7rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:#7b8cc4;margin-bottom:14px;margin-top:36px}
+
+/* Gauge */
+.score-section{text-align:center;margin-top:4px}
+.gauge-outer{position:relative;display:inline-block;width:200px;height:200px}
+.gauge-outer svg{display:block}
+.gauge-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-52%);text-align:center;pointer-events:none}
+.gauge-num{font-size:3.2rem;font-weight:900;line-height:1}
+.gauge-lbl{font-size:1rem;font-weight:800;margin-top:2px}
+.updated-sub{font-size:0.78rem;color:#7b8cc450;margin-top:8px}
+
+.predom-label{font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:#7b8cc4;margin:16px 0 10px}
+.predom-chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.predom-chip{background:#ffffff0f;border:1px solid #ffffff18;border-radius:20px;padding:6px 14px;font-size:0.85rem;font-weight:700;display:flex;align-items:center;gap:6px}
+
+/* Allergen cards */
+.allergen-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.allergen-card{background:#12141f;border:1px solid #ffffff10;border-radius:14px;padding:16px}
+.allergen-card.season-only{border-style:dashed;border-color:#ffffff18}
+.card-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px;gap:8px}
+.card-name{font-size:0.9rem;font-weight:800;line-height:1.3}
+.live-badge{font-size:0.66rem;font-weight:800;color:#4ade80;background:#4ade8015;border:1px solid #4ade8030;border-radius:8px;padding:2px 7px;white-space:nowrap;flex-shrink:0}
+.season-badge{font-size:0.66rem;font-weight:800;color:#facc15;background:#facc1515;border:1px solid #facc1530;border-radius:8px;padding:2px 7px;white-space:nowrap;flex-shrink:0}
+.bar-row{display:flex;justify-content:space-between;margin-bottom:5px;font-size:0.78rem;font-weight:700}
+.bar-track{background:#ffffff0f;border-radius:6px;height:8px;overflow:hidden}
+.bar-fill{height:100%;border-radius:6px}
+.card-note{font-size:0.76rem;color:#9ba3bc;line-height:1.55;margin-top:8px}
+.card-meta{display:flex;gap:7px;margin-top:10px;flex-wrap:wrap;align-items:center}
+.meta-pill{font-size:0.68rem;font-weight:700;background:#ffffff0d;border-radius:10px;padding:2px 8px;color:#c8cedf}
+.allerg-pill{font-size:0.68rem;font-weight:800;border-radius:10px;padding:2px 8px}
+
+/* Overlaps */
+.overlap-list{display:flex;flex-direction:column;gap:10px}
+.overlap-card{background:#1e1222;border:1px solid #b5179e28;border-radius:12px;padding:14px 16px}
+.overlap-title{font-size:0.9rem;font-weight:800;margin-bottom:5px;color:#d4a0e8}
+.overlap-note{font-size:0.78rem;color:#9ba3bc;line-height:1.5}
+.no-overlaps{font-size:0.85rem;color:#7b8cc4;font-style:italic;padding:4px 0}
+
+/* Calendar */
+.cal-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.cal{width:100%;border-collapse:separate;border-spacing:2px;min-width:560px}
+table.cal th{font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:#5a6180;padding:4px 2px;text-align:center}
+table.cal th.cur{color:#e8eaf0;font-weight:900}
+table.cal td.cal-label{font-size:0.72rem;font-weight:700;color:#c8cedf;white-space:nowrap;padding:3px 10px 3px 0;text-align:left}
+.cal-cell{border-radius:4px;padding:4px 2px;text-align:center;font-size:0.62rem;font-weight:700;height:22px;display:flex;align-items:center;justify-content:center}
+.cal-cell.cur-month{outline:2px solid #ffffff35;outline-offset:-2px;border-radius:4px}
+.cal-note{font-size:0.72rem;color:#5a6180;margin-top:10px;font-style:italic;line-height:1.5}
+
+.page-footer{font-size:0.72rem;color:#5a6180;text-align:center;margin-top:40px}
+
+@media(max-width:600px){
+  .top-bar-sub{display:none}
+  .allergen-grid{grid-template-columns:1fr}
+  .gauge-outer{width:170px;height:170px}
+  .gauge-num{font-size:2.6rem}
+}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="index.html" class="back-btn">← Weather</a>
+  <div class="top-bar-title">🌿 Pollen Report</div>
+  <div class="top-bar-sub">Bristol, IN &nbsp;·&nbsp; Friday, March 20, 2026</div>
+</div>
+
+<div class="container">
+
+  <!-- ── Today's Score ── -->
+  <div class="score-section">
+    <div class="gauge-outer">
+      <svg width="200" height="200" viewBox="0 0 200 200" style="transform:rotate(135deg)">
+        <!-- background track: 270° arc -->
+        <circle cx="100" cy="100" r="72" fill="none" stroke="#ffffff0d" stroke-width="15"
+          stroke-dasharray="339.29 452.39" stroke-linecap="round"/>
+        <!-- fill arc -->
+        <circle cx="100" cy="100" r="72" fill="none" stroke="#ef4444" stroke-width="15"
+          stroke-dasharray="295.18 452.39" stroke-linecap="round"/>
+      </svg>
+      <div class="gauge-center">
+        <div class="gauge-num" style="color:#ef4444">8.7</div>
+        <div class="gauge-lbl" style="color:#ef4444">High</div>
+      </div>
+    </div>
+    <div class="updated-sub">Updated Mar 20, 2026, 8:27 AM</div>
+
+    
+    <div class="predom-label">Predominant allergens</div>
+    <div class="predom-chips">
+      <div class="predom-chip">🌲 Juniper</div><div class="predom-chip">🍁 Maple</div><div class="predom-chip">🌳 Elm</div><div class="predom-chip">🌿 Ash</div>
+    </div>
+  </div>
+
+  <!-- ── Active Allergens ── -->
+  <div class="section-label">Active Allergens</div>
+  <div class="allergen-grid">
+    <div class="allergen-card season-only">
+  <div class="card-top">
+    <div class="card-name">🌲 Juniper / Eastern Red Cedar</div>
+    <span class="season-badge">◌ Seasonal</span>
+  </div>
+  <div class="bar-row">
+    <span style="color:#ef4444">High</span>
+    <span style="color:#5a6180">9.0/10</span>
+  </div>
+  <div class="bar-track"><div class="bar-fill" style="width:90%;background:#ef4444"></div></div>
+  <div class="card-note">One of the most potent tree allergens in the Midwest. Triggers strong reactions in nearly all tree-allergic people. The main cause of "cedar fever" in Indiana and Missouri — and it peaks before most people realize spring has started.</div>
+  <div class="card-meta">
+    <span class="allerg-pill" style="color:#ef4444;background:#ef444415;border:1px solid #ef444430">Severe allergen</span>
+    <span class="meta-pill">📅 December – April</span>
+    <span class="meta-pill" style="color:#d4a0e8">⚠️ Cross-reactive</span>
+  </div>
+</div><div class="allergen-card season-only">
+  <div class="card-top">
+    <div class="card-name">🍁 Maple</div>
+    <span class="season-badge">◌ Seasonal</span>
+  </div>
+  <div class="bar-row">
+    <span style="color:#ef4444">High</span>
+    <span style="color:#5a6180">9.0/10</span>
+  </div>
+  <div class="bar-track"><div class="bar-fill" style="width:90%;background:#ef4444"></div></div>
+  <div class="card-note">One of the first trees to release pollen in Indiana — often while the tree still looks bare. Highly allergenic. Most people don't suspect it because the trees don't look like they're doing anything yet.</div>
+  <div class="card-meta">
+    <span class="allerg-pill" style="color:#ef4444;background:#ef444415;border:1px solid #ef444430">Severe allergen</span>
+    <span class="meta-pill">📅 February – April</span>
+    <span class="meta-pill" style="color:#d4a0e8">⚠️ Cross-reactive</span>
+  </div>
+</div><div class="allergen-card season-only">
+  <div class="card-top">
+    <div class="card-name">🌳 Elm</div>
+    <span class="season-badge">◌ Seasonal</span>
+  </div>
+  <div class="bar-row">
+    <span style="color:#fb923c">Med-High</span>
+    <span style="color:#5a6180">7.5/10</span>
+  </div>
+  <div class="bar-track"><div class="bar-fill" style="width:75%;background:#fb923c"></div></div>
+  <div class="card-note">Moderate allergen that peaks in early spring alongside maple and juniper. Common in Indiana and adds to total tree pollen load during the heaviest overlap weeks.</div>
+  <div class="card-meta">
+    <span class="allerg-pill" style="color:#facc15;background:#facc1515;border:1px solid #facc1530">Moderate allergen</span>
+    <span class="meta-pill">📅 February – April</span>
+    
+  </div>
+</div><div class="allergen-card season-only">
+  <div class="card-top">
+    <div class="card-name">🌿 Ash</div>
+    <span class="season-badge">◌ Seasonal</span>
+  </div>
+  <div class="bar-row">
+    <span style="color:#facc15">Medium</span>
+    <span style="color:#5a6180">5.0/10</span>
+  </div>
+  <div class="bar-track"><div class="bar-fill" style="width:50%;background:#facc15"></div></div>
+  <div class="card-note">Moderate allergen, common in Indiana river valleys. Cross-reacts with olive trees. Often underestimated because it overlaps with peak birch season and gets lost in the noise.</div>
+  <div class="card-meta">
+    <span class="allerg-pill" style="color:#facc15;background:#facc1515;border:1px solid #facc1530">Moderate allergen</span>
+    <span class="meta-pill">📅 March – May</span>
+    <span class="meta-pill" style="color:#d4a0e8">⚠️ Cross-reactive</span>
+  </div>
+</div><div class="allergen-card season-only">
+  <div class="card-top">
+    <div class="card-name">🌳 Oak</div>
+    <span class="season-badge">◌ Seasonal</span>
+  </div>
+  <div class="bar-row">
+    <span style="color:#a3e635">Low-Med</span>
+    <span style="color:#5a6180">2.5/10</span>
+  </div>
+  <div class="bar-track"><div class="bar-fill" style="width:25%;background:#a3e635"></div></div>
+  <div class="card-note">Produces enormous quantities of pollen — the yellow-green dust coating cars in April is usually oak. Moderate allergenicity per grain, but sheer volume makes it significant.</div>
+  <div class="card-meta">
+    <span class="allerg-pill" style="color:#facc15;background:#facc1515;border:1px solid #facc1530">Moderate allergen</span>
+    <span class="meta-pill">📅 April – May</span>
+    <span class="meta-pill" style="color:#d4a0e8">⚠️ Cross-reactive</span>
+  </div>
+</div><div class="allergen-card season-only">
+  <div class="card-top">
+    <div class="card-name">🌿 Cottonwood / Poplar</div>
+    <span class="season-badge">◌ Seasonal</span>
+  </div>
+  <div class="bar-row">
+    <span style="color:#a3e635">Low-Med</span>
+    <span style="color:#5a6180">2.5/10</span>
+  </div>
+  <div class="bar-track"><div class="bar-fill" style="width:25%;background:#a3e635"></div></div>
+  <div class="card-note">The white fluffy "snow" in spring is seed casing — not pollen. The actual allergenic pollen is released before the fluff appears. Many people blame the visible fluff and miss the real trigger window.</div>
+  <div class="card-meta">
+    <span class="allerg-pill" style="color:#facc15;background:#facc1515;border:1px solid #facc1530">Moderate allergen</span>
+    <span class="meta-pill">📅 April – May</span>
+    
+  </div>
+</div>
+  </div>
+
+  <!-- ── Cross-Reactivity ── -->
+  <div class="section-label">Overlapping Right Now</div>
+  <div class="overlap-list">
+    <div class="overlap-card">
+  <div class="overlap-title">🌲 Juniper + 🍁 Maple — Double Load</div>
+  <div class="overlap-note">These two pollens cross-react with each other. If you're sensitive to one, your immune system likely treats the other as the same threat — compounding your total reaction load while both are active simultaneously. This is one of the heaviest periods of the season.</div>
+</div><div class="overlap-card">
+  <div class="overlap-title">🌲 Juniper + 🌳 Elm — Double Load</div>
+  <div class="overlap-note">These two pollens cross-react with each other. If you're sensitive to one, your immune system likely treats the other as the same threat — compounding your total reaction load while both are active simultaneously. This is one of the heaviest periods of the season.</div>
+</div><div class="overlap-card">
+  <div class="overlap-title">🍁 Maple + 🌿 Ash — Double Load</div>
+  <div class="overlap-note">These two pollens cross-react with each other. If you're sensitive to one, your immune system likely treats the other as the same threat — compounding your total reaction load while both are active simultaneously. This is one of the heaviest periods of the season.</div>
+</div>
+  </div>
+
+  <!-- ── Year Calendar ── -->
+  <div class="section-label">Indiana Pollen Calendar</div>
+  <div class="cal-wrap">
+  <table class="cal">
+    <thead>
+      <tr>
+        <th></th>
+        <th class="">Jan</th><th class="">Feb</th><th class="cur">Mar ▾</th><th class="">Apr</th><th class="">May</th><th class="">Jun</th><th class="">Jul</th><th class="">Aug</th><th class="">Sep</th><th class="">Oct</th><th class="">Nov</th><th class="">Dec</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+    <td class="cal-label">🌲 Juniper </td>
+    <td><div class="cal-cell" style="background:#facc1560;color:#fff">Mod</div></td><td><div class="cal-cell" style="background:#fb923ca0;color:#fff">High</div></td><td><div class="cal-cell cur-month" style="background:#ef4444cc;color:#fff">Peak</div></td><td><div class="cal-cell" style="background:#facc1560;color:#fff">Mod</div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#4ade8030;color:#555">Low</div></td>
+  </tr><tr>
+    <td class="cal-label">🍁 Maple</td>
+    <td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#facc1560;color:#fff">Mod</div></td><td><div class="cal-cell cur-month" style="background:#ef4444cc;color:#fff">Peak</div></td><td><div class="cal-cell" style="background:#fb923ca0;color:#fff">High</div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td>
+  </tr><tr>
+    <td class="cal-label">🌳 Elm</td>
+    <td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#4ade8030;color:#555">Low</div></td><td><div class="cal-cell cur-month" style="background:#fb923ca0;color:#fff">High</div></td><td><div class="cal-cell" style="background:#fb923ca0;color:#fff">High</div></td><td><div class="cal-cell" style="background:#4ade8030;color:#555">Low</div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td>
+  </tr><tr>
+    <td class="cal-label">🌿 Alder</td>
+    <td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#4ade8030;color:#555">Low</div></td><td><div class="cal-cell cur-month" style="background:#fb923ca0;color:#fff">High</div></td><td><div class="cal-cell" style="background:#facc1560;color:#fff">Mod</div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td>
+  </tr><tr>
+    <td class="cal-label">🌳 Birch</td>
+    <td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell cur-month" style="background:#facc1560;color:#fff">Mod</div></td><td><div class="cal-cell" style="background:#ef4444cc;color:#fff">Peak</div></td><td><div class="cal-cell" style="background:#fb923ca0;color:#fff">High</div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td>
+  </tr><tr>
+    <td class="cal-label">🌿 Ash</td>
+    <td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell cur-month" style="background:#facc1560;color:#fff">Mod</div></td><td><div class="cal-cell" style="background:#fb923ca0;color:#fff">High</div></td><td><div class="cal-cell" style="background:#facc1560;color:#fff">Mod</div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td>
+  </tr><tr>
+    <td class="cal-label">🌳 Oak</td>
+    <td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell cur-month" style="background:#4ade8030;color:#555">Low</div></td><td><div class="cal-cell" style="background:#fb923ca0;color:#fff">High</div></td><td><div class="cal-cell" style="background:#fb923ca0;color:#fff">High</div></td><td><div class="cal-cell" style="background:#4ade8030;color:#555">Low</div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td>
+  </tr><tr>
+    <td class="cal-label">🌿 Cottonwood </td>
+    <td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell cur-month" style="background:#4ade8030;color:#555">Low</div></td><td><div class="cal-cell" style="background:#fb923ca0;color:#fff">High</div></td><td><div class="cal-cell" style="background:#facc1560;color:#fff">Mod</div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td>
+  </tr><tr>
+    <td class="cal-label">🫒 Olive</td>
+    <td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell cur-month" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#4ade8030;color:#555">Low</div></td><td><div class="cal-cell" style="background:#fb923ca0;color:#fff">High</div></td><td><div class="cal-cell" style="background:#facc1560;color:#fff">Mod</div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td>
+  </tr><tr>
+    <td class="cal-label">🌾 Grass</td>
+    <td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell cur-month" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#4ade8030;color:#555">Low</div></td><td><div class="cal-cell" style="background:#fb923ca0;color:#fff">High</div></td><td><div class="cal-cell" style="background:#ef4444cc;color:#fff">Peak</div></td><td><div class="cal-cell" style="background:#ef4444cc;color:#fff">Peak</div></td><td><div class="cal-cell" style="background:#fb923ca0;color:#fff">High</div></td><td><div class="cal-cell" style="background:#4ade8030;color:#555">Low</div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td>
+  </tr><tr>
+    <td class="cal-label">🌿 Mugwort</td>
+    <td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell cur-month" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#facc1560;color:#fff">Mod</div></td><td><div class="cal-cell" style="background:#fb923ca0;color:#fff">High</div></td><td><div class="cal-cell" style="background:#fb923ca0;color:#fff">High</div></td><td><div class="cal-cell" style="background:#4ade8030;color:#555">Low</div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td>
+  </tr><tr>
+    <td class="cal-label">🌿 Ragweed</td>
+    <td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell cur-month" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#4ade8030;color:#555">Low</div></td><td><div class="cal-cell" style="background:#fb923ca0;color:#fff">High</div></td><td><div class="cal-cell" style="background:#ef4444cc;color:#fff">Peak</div></td><td><div class="cal-cell" style="background:#facc1560;color:#fff">Mod</div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td><td><div class="cal-cell" style="background:#1a1a2e;color:#555"></div></td>
+  </tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="cal-note">Historical seasonal estimates for Indiana &amp; Missouri based on multi-year pollen monitoring data. ● Live types updated every 20 minutes from Open-Meteo Air Quality API. ◌ Seasonal types show expected intensity for this month based on historical patterns — no live data available for these species.</div>
+
+  <div class="page-footer">Pollen report generated Mar 20, 2026, 8:27 AM · Part of Liz's Weather Dashboard</div>
+
+</div>
+</body>
+</html>
