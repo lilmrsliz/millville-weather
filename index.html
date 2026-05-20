@@ -16,7 +16,7 @@
   <div class="site-title">⛅ Millville Weather</div>
   <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
     
-    <div class="site-meta">Updated: May 19, 2026, 10:29 PM</div>
+    <div class="site-meta">Updated: May 19, 2026, 10:49 PM</div>
   </div>
 </header>
 
@@ -30,7 +30,7 @@
 <!-- ══ LOCAL TAB ══ -->
 <div id="tab-local" class="tab-content active">
 
-  <div class="summary-banner">☁️ 68°F in Bristol — Overcast. No active alerts.
+  <div class="summary-banner">☁️ 67°F in Bristol — Overcast. No active alerts.
     <div class="summary-mcas" style="border-top:1px solid #ffe56630;margin-top:10px;padding-top:10px">
       <span class="summary-mcas-label">🧬 Comfort Index:</span>
       <span class="summary-mcas-value" style="background:#ffe56620;border:1px solid #ffe566;color:#ffe566">🟡 Moderate</span>
@@ -56,14 +56,14 @@
       <div class="current-main">
         <div class="current-big">
           <div class="current-emoji">☁️</div>
-          <div class="current-temp">68°F</div>
+          <div class="current-temp">67°F</div>
           <div class="current-desc">Overcast</div>
-          <div class="current-feels">Feels like 68°F</div>
+          <div class="current-feels">Feels like 66°F</div>
         </div>
         <div class="current-details">
-          <div class="detail-row">💧 Humidity: <b>80%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>62°F</b></div>
-          <div class="detail-row">🌬 Wind: <b>10 mph NW</b></div>
-          <div class="detail-row">👁 Visibility: <b>43 mi</b></div>
+          <div class="detail-row">💧 Humidity: <b>80%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>60°F</b></div>
+          <div class="detail-row">🌬 Wind: <b>9 mph NW</b></div>
+          <div class="detail-row">👁 Visibility: <b>38 mi</b></div>
           <div class="detail-row">☀️ UV Index: <b>0</b></div>
           <div class="detail-row">🌡 Pressure: <b>989 hPa</b></div>
           <div class="detail-row">📈 High: <b>65°F</b> &nbsp;|&nbsp; 📉 Low: <b>44°F</b></div>
@@ -72,14 +72,28 @@
         </div>
       </div>
 
-      
+      <div class="metar-strip" style="margin-top:10px;padding:8px 12px;background:rgba(96,165,250,0.08);border-left:3px solid #60a5fa;border-radius:6px;font-size:0.85rem;color:#cbd5e1">
+    <span style="color:#60a5fa;font-weight:700;font-size:0.78rem;letter-spacing:0.04em">✈ Goshen Airport</span>
+    <span style="opacity:0.55;font-size:0.75rem">&nbsp;57m ago</span>
+    <div style="margin-top:4px">
+      ☁️ <b style="color:#e6e8ef">71°F</b> <span style="color:#9ca3af;font-size:0.78rem">(+4° vs forecast)</span>
+       &nbsp;·&nbsp; 💦 dew 63°
+       &nbsp;·&nbsp; 🌬 10mph W
+       &nbsp;·&nbsp; 👁 10+ mi
+    </div>
+  </div>
 
-      
+      <div class="aq-row">
+        <span class="aq-pill">🟢 Air Quality: <b>Good</b></span>
+        <a href="pollen.html" class="aq-pill aq-pill-link" title="View full pollen breakdown">🌿 Pollen: <b>None</b> <span style="font-size:0.75em;opacity:0.7">↗</span></a>
+        <span class="aq-pill">💨 PM2.5: <b>7</b></span>
+        <span class="aq-pill" style="color:#facc15">🍄 Mold: <b>Moderate</b></span>
+      </div>
 
       <div class="mcas-breakdown" style="border-top:1px solid #ffe56625;margin-top:10px;padding-top:10px">
         <div class="mcas-breakdown-header" style="color:#ffe566;font-weight:700;font-size:0.85rem;margin-bottom:6px">
           🧬 Comfort Index — Moderate
-          <span style="font-weight:400;opacity:0.6;font-size:0.8rem;margin-left:6px">score: 29/100</span>
+          <span style="font-weight:400;opacity:0.6;font-size:0.8rem;margin-left:6px">score: 34/100</span>
         </div>
         <div class="mcas-factors">
           <div class="mcas-factor-row" style="color:#ffe566cc">
@@ -90,13 +104,22 @@
             <span class="mcas-factor-text">Humidity 80% — moderate trigger level</span>
           </div><div class="mcas-factor-row" style="color:#ffe566cc">
             <span class="mcas-factor-icon">💦</span>
-            <span class="mcas-factor-text">Dew point 62°F — elevated moisture, mast cell activation likely</span>
+            <span class="mcas-factor-text">Dew point 60°F — elevated moisture, mast cell activation likely</span>
+          </div><div class="mcas-factor-row" style="color:#ffe566cc">
+            <span class="mcas-factor-icon">💨</span>
+            <span class="mcas-factor-text">PM2.5 7 µg/m³ — mild particulate load</span>
           </div>
         </div>
         <div class="mcas-good-factors" style="margin-top:6px">
           <div class="mcas-factor-row mcas-good" style="color:#06d6a090">
+            <span class="mcas-factor-icon">🌿</span>
+            <span class="mcas-factor-text">Pollen low — no significant pollen trigger</span>
+          </div><div class="mcas-factor-row mcas-good" style="color:#06d6a090">
+            <span class="mcas-factor-icon">🌬</span>
+            <span class="mcas-factor-text">Ozone 66 µg/m³ — within safe range</span>
+          </div><div class="mcas-factor-row mcas-good" style="color:#06d6a090">
             <span class="mcas-factor-icon">🌡</span>
-            <span class="mcas-factor-text">Pressure rising 3 hPa in 3h — stabilizing, generally better for mast cell</span>
+            <span class="mcas-factor-text">Pressure stable (+2 hPa in 3h)</span>
           </div>
         </div>
       </div>
@@ -363,29 +386,43 @@
     </div>
     
     <div class="small-temp-row">
-      <span class="small-temp">70°F</span>
-      <span class="small-feels">feels 71°</span>
+      <span class="small-temp">69°F</span>
+      <span class="small-feels">feels 68°</span>
       <span class="small-hilo">65° / 45°</span>
     </div>
     <div class="small-detail">Overcast</div>
-    <div class="small-detail">💧 76% &nbsp; 🌬 10mph NW</div>
-    
+    <div class="small-detail">💧 72% &nbsp; 🌬 10mph WNW</div>
+    <div class="small-detail">🟢 Good</div>
     <div class="small-detail" style="color:#ffe566;font-weight:700;margin-top:4px">🟡 Moderate</div>
 
     <div class="loc-expanded" id="expand-goshenin-body" style="display:none">
       <div class="expanded-divider"></div>
       <div class="current-details" style="margin:12px 0">
-        <div class="detail-row">💧 Humidity: <b>76%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>63°F</b></div>
-        <div class="detail-row">🌬 Wind: <b>10 mph NW</b></div>
-        <div class="detail-row">👁 Visibility: <b>39 mi</b></div>
+        <div class="detail-row">💧 Humidity: <b>72%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>59°F</b></div>
+        <div class="detail-row">🌬 Wind: <b>10 mph WNW</b> (Gusts <b>17 mph</b>)</div>
+        <div class="detail-row">👁 Visibility: <b>44 mi</b></div>
         <div class="detail-row">☀️ UV Index: <b>0</b></div>
-        <div class="detail-row">🌡 Pressure: <b>988 hPa</b></div>
+        <div class="detail-row">🌡 Pressure: <b>989 hPa</b></div>
         <div class="detail-row">📈 High: <b>65°F</b> &nbsp;|&nbsp; 📉 Low: <b>45°F</b></div>
         <div class="detail-row">🌅 Sunrise: <b>6:19 AM</b> &nbsp;|&nbsp; 🌇 Sunset: <b>8:59 PM</b></div>
         <div class="detail-row">🌓 First Quarter</div>
       </div>
-      
-      
+      <div class="metar-strip" style="margin-top:10px;padding:8px 12px;background:rgba(96,165,250,0.08);border-left:3px solid #60a5fa;border-radius:6px;font-size:0.85rem;color:#cbd5e1">
+    <span style="color:#60a5fa;font-weight:700;font-size:0.78rem;letter-spacing:0.04em">✈ Goshen Airport</span>
+    <span style="opacity:0.55;font-size:0.75rem">&nbsp;57m ago</span>
+    <div style="margin-top:4px">
+      ☁️ <b style="color:#e6e8ef">71°F</b> <span style="color:#9ca3af;font-size:0.78rem">(+2° vs forecast)</span>
+       &nbsp;·&nbsp; 💦 dew 63°
+       &nbsp;·&nbsp; 🌬 10mph W
+       &nbsp;·&nbsp; 👁 10+ mi
+    </div>
+  </div>
+      <div class="aq-row" style="margin-bottom:12px;margin-top:12px">
+        <span class="aq-pill">🟢 Air Quality: <b>Good</b></span>
+        <a href="pollen.html" class="aq-pill aq-pill-link" title="View full pollen breakdown">🌿 Pollen: <b>None</b> <span style="font-size:0.75em;opacity:0.7">↗</span></a>
+        <span class="aq-pill">💨 PM2.5: <b>7</b></span>
+        <span class="aq-pill" style="color:#facc15">🍄 Mold: <b>Moderate</b></span>
+      </div>
       <div class="expanded-section-label">🕐 Hourly</div>
       <div class="hourly-fade-wrap"><div class="hourly-scroll">
     <div class="hour-card">
@@ -596,35 +633,49 @@
         
       </div>
       <div style="display:flex;align-items:center;gap:10px">
-        <span class="loc-emoji-small">⛅</span>
+        <span class="loc-emoji-small">☁️</span>
         <span class="expand-toggle" id="expand-syracusein-toggle">details ▼</span>
       </div>
     </div>
     
     <div class="small-temp-row">
-      <span class="small-temp">70°F</span>
-      <span class="small-feels">feels 72°</span>
+      <span class="small-temp">69°F</span>
+      <span class="small-feels">feels 71°</span>
       <span class="small-hilo">65° / 46°</span>
     </div>
-    <div class="small-detail">Partly cloudy</div>
-    <div class="small-detail">💧 80% &nbsp; 🌬 5mph W</div>
-    
-    <div class="small-detail" style="color:#ffe566;font-weight:700;margin-top:4px">🟡 Moderate</div>
+    <div class="small-detail">Overcast</div>
+    <div class="small-detail">💧 83% &nbsp; 🌬 7mph WSW</div>
+    <div class="small-detail">🟢 Good</div>
+    <div class="small-detail" style="color:#ff9f1c;font-weight:700;margin-top:4px">🟠 Rough Day</div>
 
     <div class="loc-expanded" id="expand-syracusein-body" style="display:none">
       <div class="expanded-divider"></div>
       <div class="current-details" style="margin:12px 0">
-        <div class="detail-row">💧 Humidity: <b>80%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>63°F</b></div>
-        <div class="detail-row">🌬 Wind: <b>5 mph W</b> (Gusts <b>17 mph</b>)</div>
+        <div class="detail-row">💧 Humidity: <b>83%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>64°F</b></div>
+        <div class="detail-row">🌬 Wind: <b>7 mph WSW</b> (Gusts <b>21 mph</b>)</div>
         <div class="detail-row">👁 Visibility: <b>34 mi</b></div>
         <div class="detail-row">☀️ UV Index: <b>0</b></div>
-        <div class="detail-row">🌡 Pressure: <b>985 hPa</b></div>
+        <div class="detail-row">🌡 Pressure: <b>986 hPa</b></div>
         <div class="detail-row">📈 High: <b>65°F</b> &nbsp;|&nbsp; 📉 Low: <b>46°F</b></div>
         <div class="detail-row">🌅 Sunrise: <b>6:20 AM</b> &nbsp;|&nbsp; 🌇 Sunset: <b>8:58 PM</b></div>
         <div class="detail-row">🌓 First Quarter</div>
       </div>
-      
-      
+      <div class="metar-strip" style="margin-top:10px;padding:8px 12px;background:rgba(96,165,250,0.08);border-left:3px solid #60a5fa;border-radius:6px;font-size:0.85rem;color:#cbd5e1">
+    <span style="color:#60a5fa;font-weight:700;font-size:0.78rem;letter-spacing:0.04em">✈ Goshen Airport</span>
+    <span style="opacity:0.55;font-size:0.75rem">&nbsp;57m ago</span>
+    <div style="margin-top:4px">
+      ☁️ <b style="color:#e6e8ef">71°F</b> <span style="color:#9ca3af;font-size:0.78rem">(+2° vs forecast)</span>
+       &nbsp;·&nbsp; 💦 dew 63°
+       &nbsp;·&nbsp; 🌬 10mph W
+       &nbsp;·&nbsp; 👁 10+ mi
+    </div>
+  </div>
+      <div class="aq-row" style="margin-bottom:12px;margin-top:12px">
+        <span class="aq-pill">🟢 Air Quality: <b>Good</b></span>
+        <a href="pollen.html" class="aq-pill aq-pill-link" title="View full pollen breakdown">🌿 Pollen: <b>None</b> <span style="font-size:0.75em;opacity:0.7">↗</span></a>
+        <span class="aq-pill">💨 PM2.5: <b>7</b></span>
+        <span class="aq-pill" style="color:#facc15">🍄 Mold: <b>Moderate</b></span>
+      </div>
       <div class="expanded-section-label">🕐 Hourly</div>
       <div class="hourly-fade-wrap"><div class="hourly-scroll">
     <div class="hour-card">
@@ -844,29 +895,43 @@
     </div>
     
     <div class="small-temp-row">
-      <span class="small-temp">71°F</span>
-      <span class="small-feels">feels 76°</span>
+      <span class="small-temp">70°F</span>
+      <span class="small-feels">feels 74°</span>
       <span class="small-hilo">63° / 51°</span>
     </div>
     <div class="small-detail">Overcast</div>
-    <div class="small-detail">💧 84% &nbsp; 🌬 3mph NNW</div>
-    
+    <div class="small-detail">💧 86% &nbsp; 🌬 7mph NNW</div>
+    <div class="small-detail">🟢 Good</div>
     <div class="small-detail" style="color:#ff9f1c;font-weight:700;margin-top:4px">🟠 Rough Day</div>
 
     <div class="loc-expanded" id="expand-farmingtonmo-body" style="display:none">
       <div class="expanded-divider"></div>
       <div class="current-details" style="margin:12px 0">
-        <div class="detail-row">💧 Humidity: <b>84%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>66°F</b></div>
-        <div class="detail-row">🌬 Wind: <b>3 mph NNW</b></div>
-        <div class="detail-row">👁 Visibility: <b>35 mi</b></div>
+        <div class="detail-row">💧 Humidity: <b>86%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>66°F</b></div>
+        <div class="detail-row">🌬 Wind: <b>7 mph NNW</b> (Gusts <b>14 mph</b>)</div>
+        <div class="detail-row">👁 Visibility: <b>31 mi</b></div>
         <div class="detail-row">☀️ UV Index: <b>0</b></div>
-        <div class="detail-row">🌡 Pressure: <b>985 hPa</b></div>
+        <div class="detail-row">🌡 Pressure: <b>986 hPa</b></div>
         <div class="detail-row">📈 High: <b>63°F</b> &nbsp;|&nbsp; 📉 Low: <b>51°F</b></div>
         <div class="detail-row">🌅 Sunrise: <b>6:48 AM</b> &nbsp;|&nbsp; 🌇 Sunset: <b>9:08 PM</b></div>
         <div class="detail-row">🌓 First Quarter</div>
       </div>
-      
-      
+      <div class="metar-strip" style="margin-top:10px;padding:8px 12px;background:rgba(96,165,250,0.08);border-left:3px solid #60a5fa;border-radius:6px;font-size:0.85rem;color:#cbd5e1">
+    <span style="color:#60a5fa;font-weight:700;font-size:0.78rem;letter-spacing:0.04em">✈ Farmington Regional</span>
+    <span style="opacity:0.55;font-size:0.75rem">&nbsp;54m ago</span>
+    <div style="margin-top:4px">
+      ☀️ <b style="color:#e6e8ef">69°F</b>
+       &nbsp;·&nbsp; 💦 dew 66°
+       &nbsp;·&nbsp; 🌬 7mph NNW
+       &nbsp;·&nbsp; 👁 10+ mi
+    </div>
+  </div>
+      <div class="aq-row" style="margin-bottom:12px;margin-top:12px">
+        <span class="aq-pill">🟢 Air Quality: <b>Good</b></span>
+        <a href="pollen.html" class="aq-pill aq-pill-link" title="View full pollen breakdown">🌿 Pollen: <b>None</b> <span style="font-size:0.75em;opacity:0.7">↗</span></a>
+        <span class="aq-pill">💨 PM2.5: <b>4</b></span>
+        <span class="aq-pill" style="color:#facc15">🍄 Mold: <b>Moderate</b></span>
+      </div>
       <div class="expanded-section-label">🕐 Hourly</div>
       <div class="hourly-fade-wrap"><div class="hourly-scroll">
     <div class="hour-card">
@@ -1098,51 +1163,51 @@
 
   <div class="section-header">⚠️ Active National Alerts — Extreme &amp; Severe</div>
   <div class="nat-alert-list">
-    <div class="nat-alert-item" style="border-left-color:#f72585">
+    <div class="nat-alert-item" style="border-left-color:#4361ee">
+        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flood Warning</span>
+        <span class="nat-alert-area">Jackson, IN; Lawrence, IN; Washington, IN</span>
+      </div><div class="nat-alert-item" style="border-left-color:#4361ee">
+        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flood Warning</span>
+        <span class="nat-alert-area">Gibson, IN; Knox, IN</span>
+      </div><div class="nat-alert-item" style="border-left-color:#4361ee">
+        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flood Warning</span>
+        <span class="nat-alert-area">Daviess, IN; Greene, IN; Knox, IN</span>
+      </div><div class="nat-alert-item" style="border-left-color:#4361ee">
+        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flood Warning</span>
+        <span class="nat-alert-area">Daviess, IN; Greene, IN; Knox, IN</span>
+      </div><div class="nat-alert-item" style="border-left-color:#4361ee">
+        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flood Warning</span>
+        <span class="nat-alert-area">Bartholomew, IN; Johnson, IN; Shelby, IN</span>
+      </div><div class="nat-alert-item" style="border-left-color:#4361ee">
+        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flood Warning</span>
+        <span class="nat-alert-area">Daviess, IN; Gibson, IN; Knox, IN; Pike, IN</span>
+      </div><div class="nat-alert-item" style="border-left-color:#4361ee">
+        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flood Warning</span>
+        <span class="nat-alert-area">Daviess, IN; Gibson, IN; Knox, IN; Pike, IN</span>
+      </div><div class="nat-alert-item" style="border-left-color:#4361ee">
+        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flood Warning</span>
+        <span class="nat-alert-area">Clay, IN; Greene, IN</span>
+      </div><div class="nat-alert-item" style="border-left-color:#f72585">
         <span class="nat-alert-event" style="color:#f72585">⚠️ Severe Thunderstorm Warning</span>
         <span class="nat-alert-area">Morgan, OH; Perry, OH</span>
       </div><div class="nat-alert-item" style="border-left-color:#f72585">
         <span class="nat-alert-event" style="color:#f72585">⚠️ Severe Thunderstorm Warning</span>
-        <span class="nat-alert-area">Bastrop, TX; Caldwell, TX; Comal, TX; Gonzales, TX; Guadalupe, TX; Hays, TX; Travis, TX</span>
+        <span class="nat-alert-area">Jefferson, NY; Lewis, NY; Oswego, NY</span>
       </div><div class="nat-alert-item" style="border-left-color:#f72585">
         <span class="nat-alert-event" style="color:#f72585">⚠️ Severe Thunderstorm Warning</span>
-        <span class="nat-alert-area">Bell, TX; Milam, TX</span>
-      </div><div class="nat-alert-item" style="border-left-color:#4361ee">
-        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flood Warning</span>
-        <span class="nat-alert-area">Lawrence, IL</span>
+        <span class="nat-alert-area">Blanco, TX; Comal, TX; Hays, TX; Travis, TX; Williamson, TX</span>
       </div><div class="nat-alert-item" style="border-left-color:#ffe566">
-        <span class="nat-alert-event" style="color:#ffe566">⚠️ Severe Thunderstorm Watch</span>
-        <span class="nat-alert-area">Bastrop, TX; Blanco, TX; Burnet, TX; Comal, TX; Hays, TX; Kendall, TX; Lee, TX; Travis, TX; Williamson, TX</span>
-      </div><div class="nat-alert-item" style="border-left-color:#ffe566">
-        <span class="nat-alert-event" style="color:#ffe566">⚠️ Severe Thunderstorm Watch</span>
-        <span class="nat-alert-area">Edwards, TX; Gillespie, TX; Kerr, TX; Llano, TX; Real, TX; Val Verde, TX</span>
-      </div><div class="nat-alert-item" style="border-left-color:#ffe566">
-        <span class="nat-alert-event" style="color:#ffe566">⚠️ Severe Thunderstorm Watch</span>
-        <span class="nat-alert-area">Caldwell, TX; Guadalupe, TX</span>
-      </div><div class="nat-alert-item" style="border-left-color:#f72585">
-        <span class="nat-alert-event" style="color:#f72585">⚠️ Severe Thunderstorm Warning</span>
-        <span class="nat-alert-area">Comal, TX; Kendall, TX</span>
-      </div><div class="nat-alert-item" style="border-left-color:#4361ee">
-        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flash Flood Warning</span>
-        <span class="nat-alert-area">Williamson, TX</span>
+        <span class="nat-alert-event" style="color:#ffe566">⚠️ Special Marine Warning</span>
+        <span class="nat-alert-area">Sodus Bay to Mexico Bay NY; Mexico Bay NY to the St. Lawrence River; Sodus Bay to Mexico Bay NY beyond 5NM off shoreline to US-Canadian border; Mexico Bay NY to the St. Lawrence River beyond 5NM off shoreline to US-Canadian border; St. Lawrence River above Ogdensburg NY</span>
       </div><div class="nat-alert-item" style="border-left-color:#f72585">
         <span class="nat-alert-event" style="color:#f72585">⚠️ Severe Thunderstorm Warning</span>
         <span class="nat-alert-area">Williamson, TX</span>
       </div><div class="nat-alert-item" style="border-left-color:#f72585">
         <span class="nat-alert-event" style="color:#f72585">⚠️ Severe Thunderstorm Warning</span>
-        <span class="nat-alert-area">Kimble, TX; Sutton, TX</span>
+        <span class="nat-alert-area">Beauregard, LA; Calcasieu, LA; Jasper, TX; Newton, TX; Orange, TX</span>
       </div><div class="nat-alert-item" style="border-left-color:#f72585">
         <span class="nat-alert-event" style="color:#f72585">⚠️ Severe Thunderstorm Warning</span>
-        <span class="nat-alert-area">Edwards, TX</span>
-      </div><div class="nat-alert-item" style="border-left-color:#f72585">
-        <span class="nat-alert-event" style="color:#f72585">⚠️ Severe Thunderstorm Warning</span>
-        <span class="nat-alert-area">Perry, OH</span>
-      </div><div class="nat-alert-item" style="border-left-color:#4361ee">
-        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flood Warning</span>
-        <span class="nat-alert-area">Daviess, IN; Greene, IN; Knox, IN; Lawrence, IN; Martin, IN</span>
-      </div><div class="nat-alert-item" style="border-left-color:#f72585">
-        <span class="nat-alert-event" style="color:#f72585">⚠️ Severe Thunderstorm Warning</span>
-        <span class="nat-alert-area">Williamson, TX</span>
+        <span class="nat-alert-area">Bandera, TX; Edwards, TX; Kerr, TX; Real, TX</span>
       </div>
   </div>
 
@@ -1165,10 +1230,10 @@
   <div class="sw-grid"><div class="sw-card">
       <div class="sw-card-header">
         <span class="sw-card-title">🌍 Geomagnetic Activity</span>
-        <span class="sw-value" style="color:#a3e635">Kp 2.7</span>
+        <span class="sw-value" style="color:#a3e635">Kp 3.0</span>
       </div>
       <div class="sw-label" style="color:#a3e635">Unsettled</div>
-      <div class="sw-bar-track"><div class="sw-bar-fill" style="width:30%;background:#a3e635"></div></div>
+      <div class="sw-bar-track"><div class="sw-bar-fill" style="width:33%;background:#a3e635"></div></div>
       <div class="sw-desc">The Kp index measures geomagnetic disturbance on a scale of 0–9. Values below 4 are normal. G-storm levels (G1–G5) begin at Kp 5 and can disrupt GPS, radio, power grids, and satellite operations.</div>
       
     </div><div class="sw-card">
@@ -1187,84 +1252,84 @@
         <div class="eq-mag" style="color:#06d6a0">M4.7</div>
         <div class="eq-info">
           <div class="eq-place">44 km W of Bandar Abbas, Iran</div>
-          <div class="eq-meta">2h 49m ago &nbsp;|&nbsp; Depth: 10km</div>
+          <div class="eq-meta">3h 9m ago &nbsp;|&nbsp; Depth: 10km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000syve" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.5</div>
         <div class="eq-info">
           <div class="eq-place">25 km NW of Takayama, Japan</div>
-          <div class="eq-meta">3h 17m ago &nbsp;|&nbsp; Depth: 262.435km</div>
+          <div class="eq-meta">3h 37m ago &nbsp;|&nbsp; Depth: 262.435km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000syva" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#ffe566">M5.0</div>
         <div class="eq-info">
           <div class="eq-place">35 km WNW of Gazli, Uzbekistan</div>
-          <div class="eq-meta">5h 48m ago &nbsp;|&nbsp; Depth: 10km</div>
+          <div class="eq-meta">6h 8m ago &nbsp;|&nbsp; Depth: 10km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000syu7" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.5</div>
         <div class="eq-info">
           <div class="eq-place">31 km NE of Tobelo, Indonesia</div>
-          <div class="eq-meta">6h 56m ago &nbsp;|&nbsp; Depth: 104.217km</div>
+          <div class="eq-meta">7h 16m ago &nbsp;|&nbsp; Depth: 104.217km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sytr" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#ffe566">M5.8</div>
         <div class="eq-info">
           <div class="eq-place">20 km ESE of Pampa de Tate, Peru</div>
-          <div class="eq-meta">8h 31m ago &nbsp;|&nbsp; Depth: 56.53km</div>
+          <div class="eq-meta">8h 51m ago &nbsp;|&nbsp; Depth: 56.53km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000syt5" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.5</div>
         <div class="eq-info">
           <div class="eq-place">21 km SSW of Yovon, Tajikistan</div>
-          <div class="eq-meta">8h 46m ago &nbsp;|&nbsp; Depth: 10km</div>
+          <div class="eq-meta">9h 6m ago &nbsp;|&nbsp; Depth: 10km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000syt3" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.8</div>
         <div class="eq-info">
           <div class="eq-place">13 km SSW of Port-Vila, Vanuatu</div>
-          <div class="eq-meta">12h 10m ago &nbsp;|&nbsp; Depth: 62.148km</div>
+          <div class="eq-meta">12h 30m ago &nbsp;|&nbsp; Depth: 62.148km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000syr2" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.7</div>
         <div class="eq-info">
           <div class="eq-place">67 km SSW of Intipucá, El Salvador</div>
-          <div class="eq-meta">12h 11m ago &nbsp;|&nbsp; Depth: 64.898km</div>
+          <div class="eq-meta">12h 32m ago &nbsp;|&nbsp; Depth: 64.898km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000syr1" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.7</div>
         <div class="eq-info">
           <div class="eq-place">79 km SSE of Kimbe, Papua New Guinea</div>
-          <div class="eq-meta">13h 9m ago &nbsp;|&nbsp; Depth: 60.428km</div>
+          <div class="eq-meta">13h 29m ago &nbsp;|&nbsp; Depth: 60.428km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000syqy" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.8</div>
         <div class="eq-info">
           <div class="eq-place">23 km WSW of Nūrābād, Iran</div>
-          <div class="eq-meta">14h 39m ago &nbsp;|&nbsp; Depth: 10km</div>
+          <div class="eq-meta">14h 59m ago &nbsp;|&nbsp; Depth: 10km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000syqi" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.8</div>
         <div class="eq-info">
           <div class="eq-place">26 km W of Ruby, Alaska</div>
-          <div class="eq-meta">14h 48m ago &nbsp;|&nbsp; Depth: 13.5km</div>
+          <div class="eq-meta">15h 8m ago &nbsp;|&nbsp; Depth: 13.5km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/aka2026jvukrx" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.5</div>
         <div class="eq-info">
           <div class="eq-place">91 km ENE of Hachinohe, Japan</div>
-          <div class="eq-meta">16h 5m ago &nbsp;|&nbsp; Depth: 70.49km</div>
+          <div class="eq-meta">16h 26m ago &nbsp;|&nbsp; Depth: 70.49km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000syq4" target="_blank" class="eq-link">Details</a>
       </div>
@@ -1384,7 +1449,7 @@
   
   // Poll for new data every 2 minutes — shows refresh banner when crawl has run
   (function() {
-    var GENERATED = '2026-05-20T02:29:29.696Z';
+    var GENERATED = '2026-05-20T02:49:39.225Z';
     setInterval(function() {
       fetch('/api/data', { cache: 'no-store' })
         .then(function(r) { return r.json(); })
