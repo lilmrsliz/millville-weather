@@ -16,7 +16,7 @@
   <div class="site-title">⛅ Millville Weather</div>
   <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
     
-    <div class="site-meta">Updated: Jun 16, 2026, 12:53 PM</div>
+    <div class="site-meta">Updated: Jun 16, 2026, 1:13 PM</div>
   </div>
 </header>
 
@@ -30,7 +30,7 @@
 <!-- ══ LOCAL TAB ══ -->
 <div id="tab-local" class="tab-content active">
 
-  <div class="summary-banner">☁️ 74°F in Bristol — Overcast. No active alerts.
+  <div class="summary-banner">☁️ 74°F in Bristol — Overcast. ⚠️ Hydrologic Outlook in effect.
     <div class="summary-mcas" style="border-top:1px solid #ffe56630;margin-top:10px;padding-top:10px">
       <span class="summary-mcas-label">🧬 Comfort Index:</span>
       <span class="summary-mcas-value" style="background:#ffe56620;border:1px solid #ffe566;color:#ffe566">🟡 Moderate</span>
@@ -51,20 +51,35 @@
         </div>
       </div>
 
-      
+      <div class="alert-banner" style="background:#1a1800;border-left:4px solid #ffe566;color:#ffe566">
+      <div class="alert-top" onclick="toggleAlert('alert-bristolinhttpsapiweathergovalertsurnoid0')" style="cursor:pointer">
+        <span class="alert-event">⚠️ Hydrologic Outlook</span>
+        <span class="alert-area">Adams, IN; Allen, IN; Blackford, IN; Cass, IN; De Kalb, IN; Elkhart, IN; Fulton, IN; Grant, IN; Huntington, IN; Jay, IN; Kosciusko, IN; Lagrange, IN; La Porte, IN; Marshall, IN; Miami, IN; Noble, IN; Pulaski, IN; St. Joseph, IN; Starke, IN; Steuben, IN; Wabash, IN; Wells, IN; White, IN; Whitley, IN; Berrien, MI; Branch, MI; Cass, MI; Hillsdale, MI; St. Joseph, MI; Allen, OH; Defiance, OH; Fulton, OH; Henry, OH; Paulding, OH; Putnam, OH; Van Wert, OH; Williams, OH</span>
+        <div style="display:flex;align-items:center;gap:8px;margin-left:auto">
+          <span class="alert-expires">Until 12:00 AM</span>
+          <span class="alert-expand-toggle" id="alert-bristolinhttpsapiweathergovalertsurnoid0-toggle" style="color:#ffe566;font-weight:900;font-size:0.8rem;transition:transform 0.2s;display:inline-block">▼</span>
+        </div>
+      </div>
+      <div class="alert-detail" id="alert-bristolinhttpsapiweathergovalertsurnoid0-body" style="display:none">
+        <div class="alert-detail-divider" style="border-top:1px solid #ffe56640;margin:8px 0"></div>
+        <div class="alert-headline">Hydrologic Outlook issued June 16 at 12:58PM EDT by NWS Northern Indiana</div>
+        <div class="alert-desc">ESFIWX<br><br>Periods of showers and thunderstorms expected on Wednesday. Thunderstorms are expected be fairly efficient rain producers with some areas seeing 1 to 2 inches of rainfall in as little as an hour. Even with the fast storm motions forecasted some nuisance flooding and flash flooding will be possible, especially in areas prone to past flooding issues.<br><br>Area rivers and drainages could also see quick rises even with the relatively dry soil conditions present.<br><br>Anyone in or around flood prone areas should closely monitor conditions and be prepared to retreat to higher ground.<br><br>Be sure to have multiple ways to receive warnings.</div>
+        
+      </div>
+    </div>
 
       <div class="current-main">
         <div class="current-big">
           <div class="current-emoji">☁️</div>
           <div class="current-temp">74°F</div>
           <div class="current-desc">Overcast</div>
-          <div class="current-feels">Feels like 68°F</div>
+          <div class="current-feels">Feels like 67°F</div>
         </div>
         <div class="current-details">
-          <div class="detail-row">💧 Humidity: <b>45%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>52°F</b></div>
-          <div class="detail-row">🌬 Wind: <b>18 mph SW</b> (Gusts <b>25 mph</b>)</div>
-          <div class="detail-row">👁 Visibility: <b>93 mi</b></div>
-          <div class="detail-row">☀️ UV Index: <b>5.05</b></div>
+          <div class="detail-row">💧 Humidity: <b>45%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>51°F</b></div>
+          <div class="detail-row">🌬 Wind: <b>17 mph SSW</b> (Gusts <b>25 mph</b>)</div>
+          <div class="detail-row">👁 Visibility: <b>88 mi</b></div>
+          <div class="detail-row">☀️ UV Index: <b>5.9</b></div>
           <div class="detail-row">🌡 Pressure: <b>979 hPa</b></div>
           <div class="detail-row">📈 High: <b>74°F</b> &nbsp;|&nbsp; 📉 Low: <b>54°F</b></div>
           <div class="detail-row">🌅 Sunrise: <b>6:08 AM</b> &nbsp;|&nbsp; 🌇 Sunset: <b>9:19 PM</b></div>
@@ -72,7 +87,16 @@
         </div>
       </div>
 
-      
+      <div class="metar-strip" style="margin-top:10px;padding:8px 12px;background:rgba(96,165,250,0.08);border-left:3px solid #60a5fa;border-radius:6px;font-size:0.85rem;color:#cbd5e1">
+    <span style="color:#60a5fa;font-weight:700;font-size:0.78rem;letter-spacing:0.04em">✈ Goshen Airport</span>
+    <span style="opacity:0.55;font-size:0.75rem">&nbsp;21m ago</span>
+    <div style="margin-top:4px">
+      ☁️ <b style="color:#e6e8ef">71°F</b> <span style="color:#9ca3af;font-size:0.78rem">(-3° vs forecast)</span>
+       &nbsp;·&nbsp; 💦 dew 50°
+       &nbsp;·&nbsp; 🌬 20mph SW (G35)
+       &nbsp;·&nbsp; 👁 10+ mi
+    </div>
+  </div>
 
       <div class="aq-row">
         <span class="aq-pill">🟢 Air Quality: <b>Good</b></span>
@@ -84,7 +108,7 @@
       <div class="mcas-breakdown" style="border-top:1px solid #ffe56625;margin-top:10px;padding-top:10px">
         <div class="mcas-breakdown-header" style="color:#ffe566;font-weight:700;font-size:0.85rem;margin-bottom:6px">
           🧬 Comfort Index — Moderate
-          <span style="font-weight:400;opacity:0.6;font-size:0.8rem;margin-left:6px">score: 18/100</span>
+          <span style="font-weight:400;opacity:0.6;font-size:0.8rem;margin-left:6px">score: 25/100</span>
         </div>
         <div class="mcas-factors">
           <div class="mcas-factor-row" style="color:#ffe566cc">
@@ -92,7 +116,7 @@
             <span class="mcas-factor-text">Mold season active — outdoor fungal spores elevated, contributing to histamine load</span>
           </div><div class="mcas-factor-row" style="color:#ffe566cc">
             <span class="mcas-factor-icon">🌬</span>
-            <span class="mcas-factor-text">Ozone 96 µg/m³ — mild elevation, watch breathing</span>
+            <span class="mcas-factor-text">Ozone 101 µg/m³ — elevated, airway inflammation risk</span>
           </div>
         </div>
         <div class="mcas-good-factors" style="margin-top:6px">
@@ -101,7 +125,7 @@
             <span class="mcas-factor-text">Humidity 45% — comfortable range</span>
           </div><div class="mcas-factor-row mcas-good" style="color:#06d6a090">
             <span class="mcas-factor-icon">💦</span>
-            <span class="mcas-factor-text">Dew point 52°F — low moisture load</span>
+            <span class="mcas-factor-text">Dew point 51°F — low moisture load</span>
           </div><div class="mcas-factor-row mcas-good" style="color:#06d6a090">
             <span class="mcas-factor-icon">💨</span>
             <span class="mcas-factor-text">PM2.5 2 µg/m³ — clean air</span>
@@ -123,68 +147,62 @@
         <div class="section-header">🕐 Hourly Forecast</div>
         <div class="hourly-fade-wrap"><div class="hourly-scroll">
     <div class="hour-card">
-        <div class="hour-time">12 PM</div>
-        <div class="hour-emoji">⛈️</div>
-        <div class="hour-temp" style="">71°</div>
-        <div class="hour-precip" style="">💧51%</div>
-        <div class="hour-wind">15mph</div>
-      </div><div class="hour-card">
         <div class="hour-time">1 PM</div>
         <div class="hour-emoji">⛈️</div>
-        <div class="hour-temp" style="">71°</div>
-        <div class="hour-precip" style="">💧72%</div>
+        <div class="hour-temp" style="">70°</div>
+        <div class="hour-precip" style="">💧50%</div>
         <div class="hour-wind">15mph</div>
       </div><div class="hour-card">
         <div class="hour-time">2 PM</div>
         <div class="hour-emoji">⛈️</div>
-        <div class="hour-temp" style="">72°</div>
-        <div class="hour-precip" style="">💧67%</div>
+        <div class="hour-temp" style="">70°</div>
+        <div class="hour-precip" style="">💧59%</div>
         <div class="hour-wind">15mph</div>
       </div><div class="hour-card">
         <div class="hour-time">3 PM</div>
         <div class="hour-emoji">⛈️</div>
         <div class="hour-temp" style="">70°</div>
-        <div class="hour-precip" style="">💧57%</div>
+        <div class="hour-precip" style="">💧62%</div>
         <div class="hour-wind">15mph</div>
       </div><div class="hour-card">
         <div class="hour-time">4 PM</div>
         <div class="hour-emoji">⛈️</div>
         <div class="hour-temp" style="">70°</div>
-        <div class="hour-precip" style="">💧49%</div>
+        <div class="hour-precip" style="">💧56%</div>
         <div class="hour-wind">15mph</div>
       </div><div class="hour-card">
         <div class="hour-time">5 PM</div>
         <div class="hour-emoji">⛈️</div>
         <div class="hour-temp" style="">69°</div>
-        <div class="hour-precip" style="">💧55%</div>
+        <div class="hour-precip" style="">💧56%</div>
         <div class="hour-wind">15mph</div>
       </div><div class="hour-card">
         <div class="hour-time">6 PM</div>
         <div class="hour-emoji">⛈️</div>
         <div class="hour-temp" style="">68°</div>
-        <div class="hour-precip" style="">💧95%</div>
+        <div class="hour-precip" style="">💧82%</div>
         <div class="hour-wind">15mph</div>
       </div><div class="hour-card">
         <div class="hour-time">7 PM</div>
         <div class="hour-emoji">⛈️</div>
         <div class="hour-temp" style="">67°</div>
-        <div class="hour-precip" style="">💧67%</div>
+        <div class="hour-precip" style="">💧64%</div>
         <div class="hour-wind">15mph</div>
       </div><div class="hour-card">
         <div class="hour-time">8 PM</div>
         <div class="hour-emoji">⛈️</div>
         <div class="hour-temp" style="">66°</div>
-        <div class="hour-precip" style="visibility:hidden">💧0%</div>
+        <div class="hour-precip" style="">💧27%</div>
         <div class="hour-wind">10mph</div>
       </div><div class="hour-card">
         <div class="hour-time">9 PM</div>
-        <div class="hour-emoji">⛈️</div>
+        <div class="hour-emoji">🌦️</div>
         <div class="hour-temp" style="">64°</div>
         <div class="hour-precip" style="visibility:hidden">💧0%</div>
         <div class="hour-wind">10mph</div>
       </div><div class="hour-card">
         <div class="hour-time">10 PM</div>
-        <div class="hour-emoji">⛈️</div>
+        <div class="hour-emoji">⛅</div>
         <div class="hour-temp" style="">62°</div>
         <div class="hour-precip" style="visibility:hidden">💧0%</div>
         <div class="hour-wind">5mph</div>
@@ -264,7 +282,13 @@
         <div class="hour-time">11 AM</div>
         <div class="hour-emoji">🌦️</div>
         <div class="hour-temp" style="">67°</div>
-        <div class="hour-precip" style="visibility:hidden">💧0%</div>
+        <div class="hour-precip" style="">💧22%</div>
+        <div class="hour-wind">10mph</div>
+      </div><div class="hour-card">
+        <div class="hour-time">12 PM</div>
+        <div class="hour-emoji">🌦️</div>
+        <div class="hour-temp" style="">68°</div>
+        <div class="hour-precip" style="">💧45%</div>
         <div class="hour-wind">10mph</div>
       </div>
   </div></div>
@@ -274,23 +298,23 @@
     <div class="day-card today">
       <div class="day-name">Today</div>
       <div class="day-emoji">⛈️</div>
-      <div class="day-desc">Slight Chance Showers And Thunderstorms</div>
+      <div class="day-desc">Showers And Thunderstorms Likely</div>
       <div class="day-temps"><span class="day-high">74°</span> <span class="day-low">54°</span></div>
-      <div class="day-precip">💧 95%</div>
+      <div class="day-precip">💧 82%</div>
       <div class="day-uv">☀️ UV 7.4</div>
     </div><div class="day-card ">
       <div class="day-name">Wed</div>
       <div class="day-emoji">⛈️</div>
       <div class="day-desc">Showers And Thunderstorms</div>
       <div class="day-temps"><span class="day-high">72°</span> <span class="day-low">59°</span></div>
-      <div class="day-precip">💧 96% · 6.9"</div>
+      <div class="day-precip">💧 97% · 6.9"</div>
       
     </div><div class="day-card ">
       <div class="day-name">Thu</div>
       <div class="day-emoji">🌦️</div>
       <div class="day-desc">Slight Chance Rain Showers</div>
       <div class="day-temps"><span class="day-high">70°</span> <span class="day-low">55°</span></div>
-      <div class="day-precip">💧 26%</div>
+      
       
     </div><div class="day-card ">
       <div class="day-name">Fri</div>
@@ -308,8 +332,8 @@
       <div class="day-uv">☀️ UV 7.45</div>
     </div><div class="day-card ">
       <div class="day-name">Sun</div>
-      <div class="day-emoji">⛈️</div>
-      <div class="day-desc">Chance Showers And Thunderstorms</div>
+      <div class="day-emoji">🌦️</div>
+      <div class="day-desc">Chance Rain Showers</div>
       <div class="day-temps"><span class="day-high">75°</span> <span class="day-low">57°</span></div>
       <div class="day-precip">💧 57%</div>
       
@@ -329,22 +353,22 @@
           <div class="nws-forecast-wrap">
     <div class="nws-period">
       <div class="nws-period-name">This Afternoon <span class="nws-period-temp">74°F</span></div>
-      <div class="nws-period-text">A slight chance of showers and thunderstorms before 1pm, then showers and thunderstorms likely between 1pm and 4pm, then a chance of showers and thunderstorms. Mostly cloudy. High near 74, with temperatures falling to around 69 in the afternoon. Southwest wind around 15 mph, with gusts as high as 30 mph. Chance of precipitation is 70%. New rainfall amounts between a quarter and half of an inch possible.</div>
+      <div class="nws-period-text">Showers and thunderstorms likely before 4pm, then showers and thunderstorms likely. Mostly cloudy. High near 74, with temperatures falling to around 69 in the afternoon. Southwest wind around 15 mph, with gusts as high as 30 mph. Chance of precipitation is 60%. New rainfall amounts between a quarter and half of an inch possible.</div>
     </div><div class="nws-period">
       <div class="nws-period-name">Tonight <span class="nws-period-temp">54°F</span></div>
-      <div class="nws-period-text">Showers and thunderstorms likely before 7pm, then a chance of showers and thunderstorms between 7pm and 8pm, then a chance of showers and thunderstorms between 8pm and 10pm, then a slight chance of showers and thunderstorms between 10pm and 11pm. Partly cloudy, with a low around 54. Southwest wind 5 to 15 mph, with gusts as high as 30 mph. Chance of precipitation is 100%. New rainfall amounts between a quarter and half of an inch possible.</div>
+      <div class="nws-period-text">Showers and thunderstorms before 10pm. Partly cloudy, with a low around 54. Southwest wind 5 to 15 mph, with gusts as high as 30 mph. Chance of precipitation is 80%. New rainfall amounts between a quarter and half of an inch possible.</div>
     </div><div class="nws-period">
       <div class="nws-period-name">Wednesday <span class="nws-period-temp">72°F</span></div>
-      <div class="nws-period-text">A chance of rain showers between 11am and 1pm, then showers and thunderstorms. Some of the storms could be severe and produce heavy rain. Mostly cloudy, with a high near 72. South wind 5 to 20 mph, with gusts as high as 35 mph. Chance of precipitation is 80%. New rainfall amounts between 1 and 2 inches possible.</div>
+      <div class="nws-period-text">Rain showers likely between 11am and 2pm, then showers and thunderstorms. Some of the storms could be severe and produce heavy rain. Mostly cloudy, with a high near 72. South wind 5 to 20 mph, with gusts as high as 35 mph. Chance of precipitation is 90%. New rainfall amounts between 1 and 2 inches possible.</div>
     </div><div class="nws-period">
       <div class="nws-period-name">Wednesday Night <span class="nws-period-temp">59°F</span></div>
-      <div class="nws-period-text">Showers and thunderstorms. Some of the storms could be severe and produce heavy rain. Mostly cloudy, with a low around 59. Southwest wind 15 to 20 mph, with gusts as high as 35 mph. Chance of precipitation is 100%. New rainfall amounts between 1 and 2 inches possible.</div>
+      <div class="nws-period-text">Showers and thunderstorms before 10pm, then a chance of showers and thunderstorms between 10pm and midnight. Some of the storms could be severe and produce heavy rain. Mostly cloudy, with a low around 59. Southwest wind 15 to 20 mph, with gusts as high as 35 mph. Chance of precipitation is 100%. New rainfall amounts between 1 and 2 inches possible.</div>
     </div><div class="nws-period">
       <div class="nws-period-name">Thursday <span class="nws-period-temp">70°F</span></div>
-      <div class="nws-period-text">A slight chance of rain showers. Partly sunny, with a high near 70. West wind 15 to 20 mph, with gusts as high as 35 mph. Chance of precipitation is 30%.</div>
+      <div class="nws-period-text">A slight chance of rain showers between 8am and 2pm. Partly sunny, with a high near 70. West wind 15 to 20 mph, with gusts as high as 35 mph. Chance of precipitation is 20%.</div>
     </div><div class="nws-period">
       <div class="nws-period-name">Thursday Night <span class="nws-period-temp">55°F</span></div>
-      <div class="nws-period-text">A slight chance of rain showers before 8pm. Mostly clear, with a low around 55.</div>
+      <div class="nws-period-text">Mostly clear, with a low around 55.</div>
     </div>
   </div>
         </div>
@@ -375,14 +399,29 @@
         <span class="expand-toggle" id="expand-goshenin-toggle">details ▼</span>
       </div>
     </div>
-    
+    <div class="alert-banner" style="background:#1a1800;border-left:4px solid #ffe566;color:#ffe566">
+      <div class="alert-top" onclick="toggleAlert('alert-gosheninhttpsapiweathergovalertsurnoid0')" style="cursor:pointer">
+        <span class="alert-event">⚠️ Hydrologic Outlook</span>
+        <span class="alert-area">Adams, IN; Allen, IN; Blackford, IN; Cass, IN; De Kalb, IN; Elkhart, IN; Fulton, IN; Grant, IN; Huntington, IN; Jay, IN; Kosciusko, IN; Lagrange, IN; La Porte, IN; Marshall, IN; Miami, IN; Noble, IN; Pulaski, IN; St. Joseph, IN; Starke, IN; Steuben, IN; Wabash, IN; Wells, IN; White, IN; Whitley, IN; Berrien, MI; Branch, MI; Cass, MI; Hillsdale, MI; St. Joseph, MI; Allen, OH; Defiance, OH; Fulton, OH; Henry, OH; Paulding, OH; Putnam, OH; Van Wert, OH; Williams, OH</span>
+        <div style="display:flex;align-items:center;gap:8px;margin-left:auto">
+          <span class="alert-expires">Until 12:00 AM</span>
+          <span class="alert-expand-toggle" id="alert-gosheninhttpsapiweathergovalertsurnoid0-toggle" style="color:#ffe566;font-weight:900;font-size:0.8rem;transition:transform 0.2s;display:inline-block">▼</span>
+        </div>
+      </div>
+      <div class="alert-detail" id="alert-gosheninhttpsapiweathergovalertsurnoid0-body" style="display:none">
+        <div class="alert-detail-divider" style="border-top:1px solid #ffe56640;margin:8px 0"></div>
+        <div class="alert-headline">Hydrologic Outlook issued June 16 at 12:58PM EDT by NWS Northern Indiana</div>
+        <div class="alert-desc">ESFIWX<br><br>Periods of showers and thunderstorms expected on Wednesday. Thunderstorms are expected be fairly efficient rain producers with some areas seeing 1 to 2 inches of rainfall in as little as an hour. Even with the fast storm motions forecasted some nuisance flooding and flash flooding will be possible, especially in areas prone to past flooding issues.<br><br>Area rivers and drainages could also see quick rises even with the relatively dry soil conditions present.<br><br>Anyone in or around flood prone areas should closely monitor conditions and be prepared to retreat to higher ground.<br><br>Be sure to have multiple ways to receive warnings.</div>
+        
+      </div>
+    </div>
     <div class="small-temp-row">
       <span class="small-temp">74°F</span>
-      <span class="small-feels">feels 70°</span>
+      <span class="small-feels">feels 69°</span>
       <span class="small-hilo">74° / 54°</span>
     </div>
     <div class="small-detail">Overcast</div>
-    <div class="small-detail">💧 46% &nbsp; 🌬 16mph SSW</div>
+    <div class="small-detail">💧 46% &nbsp; 🌬 17mph SSW</div>
     <div class="small-detail">🟢 Good</div>
     <div class="small-detail" style="color:#ffe566;font-weight:700;margin-top:4px">🟡 Moderate</div>
 
@@ -390,15 +429,24 @@
       <div class="expanded-divider"></div>
       <div class="current-details" style="margin:12px 0">
         <div class="detail-row">💧 Humidity: <b>46%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>52°F</b></div>
-        <div class="detail-row">🌬 Wind: <b>16 mph SSW</b> (Gusts <b>25 mph</b>)</div>
-        <div class="detail-row">👁 Visibility: <b>83 mi</b></div>
-        <div class="detail-row">☀️ UV Index: <b>5.3</b></div>
+        <div class="detail-row">🌬 Wind: <b>17 mph SSW</b> (Gusts <b>24 mph</b>)</div>
+        <div class="detail-row">👁 Visibility: <b>85 mi</b></div>
+        <div class="detail-row">☀️ UV Index: <b>6</b></div>
         <div class="detail-row">🌡 Pressure: <b>979 hPa</b></div>
         <div class="detail-row">📈 High: <b>74°F</b> &nbsp;|&nbsp; 📉 Low: <b>54°F</b></div>
         <div class="detail-row">🌅 Sunrise: <b>6:08 AM</b> &nbsp;|&nbsp; 🌇 Sunset: <b>9:19 PM</b></div>
         <div class="detail-row">🌓 First Quarter</div>
       </div>
-      
+      <div class="metar-strip" style="margin-top:10px;padding:8px 12px;background:rgba(96,165,250,0.08);border-left:3px solid #60a5fa;border-radius:6px;font-size:0.85rem;color:#cbd5e1">
+    <span style="color:#60a5fa;font-weight:700;font-size:0.78rem;letter-spacing:0.04em">✈ Goshen Airport</span>
+    <span style="opacity:0.55;font-size:0.75rem">&nbsp;21m ago</span>
+    <div style="margin-top:4px">
+      ☁️ <b style="color:#e6e8ef">71°F</b> <span style="color:#9ca3af;font-size:0.78rem">(-3° vs forecast)</span>
+       &nbsp;·&nbsp; 💦 dew 50°
+       &nbsp;·&nbsp; 🌬 20mph SW (G35)
+       &nbsp;·&nbsp; 👁 10+ mi
+    </div>
+  </div>
       <div class="aq-row" style="margin-bottom:12px;margin-top:12px">
         <span class="aq-pill">🟢 Air Quality: <b>Good</b></span>
         <a href="pollen.html" class="aq-pill aq-pill-link" title="View full pollen breakdown">🌿 Pollen: <b>None</b> <span style="font-size:0.75em;opacity:0.7">↗</span></a>
@@ -408,68 +456,62 @@
       <div class="expanded-section-label">🕐 Hourly</div>
       <div class="hourly-fade-wrap"><div class="hourly-scroll">
     <div class="hour-card">
-        <div class="hour-time">12 PM</div>
-        <div class="hour-emoji">⛈️</div>
-        <div class="hour-temp" style="">71°</div>
-        <div class="hour-precip" style="">💧50%</div>
-        <div class="hour-wind">15mph</div>
-      </div><div class="hour-card">
         <div class="hour-time">1 PM</div>
         <div class="hour-emoji">⛈️</div>
-        <div class="hour-temp" style="">71°</div>
-        <div class="hour-precip" style="">💧64%</div>
+        <div class="hour-temp" style="">72°</div>
+        <div class="hour-precip" style="">💧46%</div>
         <div class="hour-wind">15mph</div>
       </div><div class="hour-card">
         <div class="hour-time">2 PM</div>
         <div class="hour-emoji">⛈️</div>
-        <div class="hour-temp" style="">72°</div>
-        <div class="hour-precip" style="">💧76%</div>
+        <div class="hour-temp" style="">71°</div>
+        <div class="hour-precip" style="">💧66%</div>
         <div class="hour-wind">15mph</div>
       </div><div class="hour-card">
         <div class="hour-time">3 PM</div>
         <div class="hour-emoji">⛈️</div>
         <div class="hour-temp" style="">70°</div>
-        <div class="hour-precip" style="">💧54%</div>
+        <div class="hour-precip" style="">💧55%</div>
         <div class="hour-wind">15mph</div>
       </div><div class="hour-card">
         <div class="hour-time">4 PM</div>
         <div class="hour-emoji">⛈️</div>
         <div class="hour-temp" style="">70°</div>
-        <div class="hour-precip" style="">💧46%</div>
+        <div class="hour-precip" style="">💧56%</div>
         <div class="hour-wind">15mph</div>
       </div><div class="hour-card">
         <div class="hour-time">5 PM</div>
         <div class="hour-emoji">⛈️</div>
         <div class="hour-temp" style="">70°</div>
-        <div class="hour-precip" style="">💧56%</div>
+        <div class="hour-precip" style="">💧52%</div>
         <div class="hour-wind">15mph</div>
       </div><div class="hour-card">
         <div class="hour-time">6 PM</div>
         <div class="hour-emoji">⛈️</div>
         <div class="hour-temp" style="">68°</div>
-        <div class="hour-precip" style="">💧94%</div>
+        <div class="hour-precip" style="">💧81%</div>
         <div class="hour-wind">15mph</div>
       </div><div class="hour-card">
         <div class="hour-time">7 PM</div>
         <div class="hour-emoji">⛈️</div>
         <div class="hour-temp" style="">68°</div>
-        <div class="hour-precip" style="">💧57%</div>
+        <div class="hour-precip" style="">💧59%</div>
         <div class="hour-wind">15mph</div>
       </div><div class="hour-card">
         <div class="hour-time">8 PM</div>
-        <div class="hour-emoji">⛈️</div>
+        <div class="hour-emoji">🌦️</div>
         <div class="hour-temp" style="">67°</div>
-        <div class="hour-precip" style="visibility:hidden">💧0%</div>
+        <div class="hour-precip" style="">💧29%</div>
         <div class="hour-wind">10mph</div>
       </div><div class="hour-card">
         <div class="hour-time">9 PM</div>
-        <div class="hour-emoji">⛈️</div>
+        <div class="hour-emoji">🌦️</div>
         <div class="hour-temp" style="">65°</div>
         <div class="hour-precip" style="visibility:hidden">💧0%</div>
         <div class="hour-wind">10mph</div>
       </div><div class="hour-card">
         <div class="hour-time">10 PM</div>
-        <div class="hour-emoji">⛈️</div>
+        <div class="hour-emoji">⛅</div>
         <div class="hour-temp" style="">63°</div>
         <div class="hour-precip" style="visibility:hidden">💧0%</div>
         <div class="hour-wind">10mph</div>
@@ -547,9 +589,15 @@
         <div class="hour-wind">5mph</div>
       </div><div class="hour-card">
         <div class="hour-time">11 AM</div>
-        <div class="hour-emoji">🌦️</div>
+        <div class="hour-emoji">🌥️</div>
         <div class="hour-temp" style="">68°</div>
         <div class="hour-precip" style="visibility:hidden">💧0%</div>
+        <div class="hour-wind">10mph</div>
+      </div><div class="hour-card">
+        <div class="hour-time">12 PM</div>
+        <div class="hour-emoji">🌦️</div>
+        <div class="hour-temp" style="">68°</div>
+        <div class="hour-precip" style="">💧38%</div>
         <div class="hour-wind">10mph</div>
       </div>
   </div></div>
@@ -558,23 +606,23 @@
     <div class="day-card today">
       <div class="day-name">Today</div>
       <div class="day-emoji">⛈️</div>
-      <div class="day-desc">Slight Chance Showers And Thunderstorms</div>
+      <div class="day-desc">Showers And Thunderstorms Likely</div>
       <div class="day-temps"><span class="day-high">74°</span> <span class="day-low">54°</span></div>
-      <div class="day-precip">💧 94%</div>
+      <div class="day-precip">💧 81%</div>
       <div class="day-uv">☀️ UV 7.5</div>
     </div><div class="day-card ">
       <div class="day-name">Wed</div>
       <div class="day-emoji">⛈️</div>
-      <div class="day-desc">Showers And Thunderstorms</div>
+      <div class="day-desc">Mostly Cloudy then Showers And Thunderstorms</div>
       <div class="day-temps"><span class="day-high">72°</span> <span class="day-low">60°</span></div>
-      <div class="day-precip">💧 97% · 1.4"</div>
+      <div class="day-precip">💧 98% · 1.4"</div>
       
     </div><div class="day-card ">
       <div class="day-name">Thu</div>
       <div class="day-emoji">🌦️</div>
       <div class="day-desc">Slight Chance Rain Showers</div>
       <div class="day-temps"><span class="day-high">71°</span> <span class="day-low">55°</span></div>
-      <div class="day-precip">💧 22%</div>
+      
       
     </div><div class="day-card ">
       <div class="day-name">Fri</div>
@@ -593,7 +641,7 @@
     </div><div class="day-card ">
       <div class="day-name">Sun</div>
       <div class="day-emoji">⛈️</div>
-      <div class="day-desc">Chance Showers And Thunderstorms</div>
+      <div class="day-desc">Chance Rain Showers then Chance Showers And Thunderstorms</div>
       <div class="day-temps"><span class="day-high">75°</span> <span class="day-low">58°</span></div>
       <div class="day-precip">💧 58% · 0.1"</div>
       
@@ -619,30 +667,54 @@
         <span class="expand-toggle" id="expand-syracusein-toggle">details ▼</span>
       </div>
     </div>
-    
+    <div class="alert-banner" style="background:#1a1800;border-left:4px solid #ffe566;color:#ffe566">
+      <div class="alert-top" onclick="toggleAlert('alert-syracuseinhttpsapiweathergovalertsurnoid0')" style="cursor:pointer">
+        <span class="alert-event">⚠️ Hydrologic Outlook</span>
+        <span class="alert-area">Adams, IN; Allen, IN; Blackford, IN; Cass, IN; De Kalb, IN; Elkhart, IN; Fulton, IN; Grant, IN; Huntington, IN; Jay, IN; Kosciusko, IN; Lagrange, IN; La Porte, IN; Marshall, IN; Miami, IN; Noble, IN; Pulaski, IN; St. Joseph, IN; Starke, IN; Steuben, IN; Wabash, IN; Wells, IN; White, IN; Whitley, IN; Berrien, MI; Branch, MI; Cass, MI; Hillsdale, MI; St. Joseph, MI; Allen, OH; Defiance, OH; Fulton, OH; Henry, OH; Paulding, OH; Putnam, OH; Van Wert, OH; Williams, OH</span>
+        <div style="display:flex;align-items:center;gap:8px;margin-left:auto">
+          <span class="alert-expires">Until 12:00 AM</span>
+          <span class="alert-expand-toggle" id="alert-syracuseinhttpsapiweathergovalertsurnoid0-toggle" style="color:#ffe566;font-weight:900;font-size:0.8rem;transition:transform 0.2s;display:inline-block">▼</span>
+        </div>
+      </div>
+      <div class="alert-detail" id="alert-syracuseinhttpsapiweathergovalertsurnoid0-body" style="display:none">
+        <div class="alert-detail-divider" style="border-top:1px solid #ffe56640;margin:8px 0"></div>
+        <div class="alert-headline">Hydrologic Outlook issued June 16 at 12:58PM EDT by NWS Northern Indiana</div>
+        <div class="alert-desc">ESFIWX<br><br>Periods of showers and thunderstorms expected on Wednesday. Thunderstorms are expected be fairly efficient rain producers with some areas seeing 1 to 2 inches of rainfall in as little as an hour. Even with the fast storm motions forecasted some nuisance flooding and flash flooding will be possible, especially in areas prone to past flooding issues.<br><br>Area rivers and drainages could also see quick rises even with the relatively dry soil conditions present.<br><br>Anyone in or around flood prone areas should closely monitor conditions and be prepared to retreat to higher ground.<br><br>Be sure to have multiple ways to receive warnings.</div>
+        
+      </div>
+    </div>
     <div class="small-temp-row">
-      <span class="small-temp">73°F</span>
+      <span class="small-temp">74°F</span>
       <span class="small-feels">feels 70°</span>
       <span class="small-hilo">74° / 54°</span>
     </div>
     <div class="small-detail">Overcast</div>
-    <div class="small-detail">💧 49% &nbsp; 🌬 17mph SSW</div>
+    <div class="small-detail">💧 47% &nbsp; 🌬 16mph SSW</div>
     <div class="small-detail">🟢 Good</div>
     <div class="small-detail" style="color:#ffe566;font-weight:700;margin-top:4px">🟡 Moderate</div>
 
     <div class="loc-expanded" id="expand-syracusein-body" style="display:none">
       <div class="expanded-divider"></div>
       <div class="current-details" style="margin:12px 0">
-        <div class="detail-row">💧 Humidity: <b>49%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>53°F</b></div>
-        <div class="detail-row">🌬 Wind: <b>17 mph SSW</b> (Gusts <b>25 mph</b>)</div>
-        <div class="detail-row">👁 Visibility: <b>84 mi</b></div>
-        <div class="detail-row">☀️ UV Index: <b>5.3</b></div>
+        <div class="detail-row">💧 Humidity: <b>47%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>52°F</b></div>
+        <div class="detail-row">🌬 Wind: <b>16 mph SSW</b> (Gusts <b>24 mph</b>)</div>
+        <div class="detail-row">👁 Visibility: <b>85 mi</b></div>
+        <div class="detail-row">☀️ UV Index: <b>5.9</b></div>
         <div class="detail-row">🌡 Pressure: <b>977 hPa</b></div>
         <div class="detail-row">📈 High: <b>74°F</b> &nbsp;|&nbsp; 📉 Low: <b>54°F</b></div>
         <div class="detail-row">🌅 Sunrise: <b>6:08 AM</b> &nbsp;|&nbsp; 🌇 Sunset: <b>9:18 PM</b></div>
         <div class="detail-row">🌓 First Quarter</div>
       </div>
-      
+      <div class="metar-strip" style="margin-top:10px;padding:8px 12px;background:rgba(96,165,250,0.08);border-left:3px solid #60a5fa;border-radius:6px;font-size:0.85rem;color:#cbd5e1">
+    <span style="color:#60a5fa;font-weight:700;font-size:0.78rem;letter-spacing:0.04em">✈ Goshen Airport</span>
+    <span style="opacity:0.55;font-size:0.75rem">&nbsp;21m ago</span>
+    <div style="margin-top:4px">
+      ☁️ <b style="color:#e6e8ef">71°F</b> <span style="color:#9ca3af;font-size:0.78rem">(-3° vs forecast)</span>
+       &nbsp;·&nbsp; 💦 dew 50°
+       &nbsp;·&nbsp; 🌬 20mph SW (G35)
+       &nbsp;·&nbsp; 👁 10+ mi
+    </div>
+  </div>
       <div class="aq-row" style="margin-bottom:12px;margin-top:12px">
         <span class="aq-pill">🟢 Air Quality: <b>Good</b></span>
         <a href="pollen.html" class="aq-pill aq-pill-link" title="View full pollen breakdown">🌿 Pollen: <b>None</b> <span style="font-size:0.75em;opacity:0.7">↗</span></a>
@@ -652,22 +724,16 @@
       <div class="expanded-section-label">🕐 Hourly</div>
       <div class="hourly-fade-wrap"><div class="hourly-scroll">
     <div class="hour-card">
-        <div class="hour-time">12 PM</div>
-        <div class="hour-emoji">⛅</div>
-        <div class="hour-temp" style="">70°</div>
-        <div class="hour-precip" style="">💧36%</div>
-        <div class="hour-wind">15mph</div>
-      </div><div class="hour-card">
         <div class="hour-time">1 PM</div>
         <div class="hour-emoji">⛈️</div>
         <div class="hour-temp" style="">71°</div>
-        <div class="hour-precip" style="">💧43%</div>
+        <div class="hour-precip" style="">💧31%</div>
         <div class="hour-wind">15mph</div>
       </div><div class="hour-card">
         <div class="hour-time">2 PM</div>
         <div class="hour-emoji">⛈️</div>
-        <div class="hour-temp" style="">72°</div>
-        <div class="hour-precip" style="">💧81%</div>
+        <div class="hour-temp" style="">71°</div>
+        <div class="hour-precip" style="">💧67%</div>
         <div class="hour-wind">15mph</div>
       </div><div class="hour-card">
         <div class="hour-time">3 PM</div>
@@ -679,41 +745,41 @@
         <div class="hour-time">4 PM</div>
         <div class="hour-emoji">⛈️</div>
         <div class="hour-temp" style="">70°</div>
-        <div class="hour-precip" style="">💧45%</div>
+        <div class="hour-precip" style="">💧55%</div>
         <div class="hour-wind">15mph</div>
       </div><div class="hour-card">
         <div class="hour-time">5 PM</div>
         <div class="hour-emoji">⛈️</div>
         <div class="hour-temp" style="">69°</div>
-        <div class="hour-precip" style="">💧48%</div>
+        <div class="hour-precip" style="">💧43%</div>
         <div class="hour-wind">15mph</div>
       </div><div class="hour-card">
         <div class="hour-time">6 PM</div>
         <div class="hour-emoji">⛈️</div>
         <div class="hour-temp" style="">68°</div>
-        <div class="hour-precip" style="">💧93%</div>
+        <div class="hour-precip" style="">💧77%</div>
         <div class="hour-wind">15mph</div>
       </div><div class="hour-card">
         <div class="hour-time">7 PM</div>
         <div class="hour-emoji">⛈️</div>
         <div class="hour-temp" style="">67°</div>
-        <div class="hour-precip" style="">💧63%</div>
+        <div class="hour-precip" style="">💧61%</div>
         <div class="hour-wind">15mph</div>
       </div><div class="hour-card">
         <div class="hour-time">8 PM</div>
         <div class="hour-emoji">⛈️</div>
         <div class="hour-temp" style="">67°</div>
-        <div class="hour-precip" style="visibility:hidden">💧0%</div>
+        <div class="hour-precip" style="">💧30%</div>
         <div class="hour-wind">10mph</div>
       </div><div class="hour-card">
         <div class="hour-time">9 PM</div>
-        <div class="hour-emoji">⛈️</div>
+        <div class="hour-emoji">🌦️</div>
         <div class="hour-temp" style="">65°</div>
         <div class="hour-precip" style="visibility:hidden">💧0%</div>
         <div class="hour-wind">10mph</div>
       </div><div class="hour-card">
         <div class="hour-time">10 PM</div>
-        <div class="hour-emoji">⛈️</div>
+        <div class="hour-emoji">🌤️</div>
         <div class="hour-temp" style="">63°</div>
         <div class="hour-precip" style="visibility:hidden">💧0%</div>
         <div class="hour-wind">10mph</div>
@@ -791,9 +857,15 @@
         <div class="hour-wind">5mph</div>
       </div><div class="hour-card">
         <div class="hour-time">11 AM</div>
-        <div class="hour-emoji">🌦️</div>
+        <div class="hour-emoji">🌥️</div>
         <div class="hour-temp" style="">68°</div>
         <div class="hour-precip" style="visibility:hidden">💧0%</div>
+        <div class="hour-wind">10mph</div>
+      </div><div class="hour-card">
+        <div class="hour-time">12 PM</div>
+        <div class="hour-emoji">🌦️</div>
+        <div class="hour-temp" style="">68°</div>
+        <div class="hour-precip" style="">💧27%</div>
         <div class="hour-wind">10mph</div>
       </div>
   </div></div>
@@ -804,19 +876,19 @@
       <div class="day-emoji">⛈️</div>
       <div class="day-desc">Showers And Thunderstorms Likely</div>
       <div class="day-temps"><span class="day-high">74°</span> <span class="day-low">54°</span></div>
-      <div class="day-precip">💧 93%</div>
+      <div class="day-precip">💧 77%</div>
       <div class="day-uv">☀️ UV 7.45</div>
     </div><div class="day-card ">
       <div class="day-name">Wed</div>
       <div class="day-emoji">⛈️</div>
-      <div class="day-desc">Showers And Thunderstorms</div>
+      <div class="day-desc">Partly Sunny then Showers And Thunderstorms</div>
       <div class="day-temps"><span class="day-high">72°</span> <span class="day-low">61°</span></div>
-      <div class="day-precip">💧 98% · 2.3"</div>
+      <div class="day-precip">💧 99% · 2.3"</div>
       
     </div><div class="day-card ">
       <div class="day-name">Thu</div>
       <div class="day-emoji">🌦️</div>
-      <div class="day-desc">Slight Chance Rain Showers</div>
+      <div class="day-desc">Partly Sunny then Slight Chance Rain Showers</div>
       <div class="day-temps"><span class="day-high">71°</span> <span class="day-low">55°</span></div>
       
       
@@ -837,14 +909,14 @@
     </div><div class="day-card ">
       <div class="day-name">Sun</div>
       <div class="day-emoji">⛈️</div>
-      <div class="day-desc">Chance Showers And Thunderstorms</div>
+      <div class="day-desc">Chance Rain Showers then Chance Showers And Thunderstorms</div>
       <div class="day-temps"><span class="day-high">75°</span> <span class="day-low">59°</span></div>
       <div class="day-precip">💧 60% · 0.1"</div>
       
     </div><div class="day-card ">
       <div class="day-name">Mon</div>
       <div class="day-emoji">⛈️</div>
-      <div class="day-desc">Chance Showers And Thunderstorms</div>
+      <div class="day-desc">Showers And Thunderstorms Likely</div>
       <div class="day-temps"><span class="day-high">76°</span> <span class="day-low">57°</span></div>
       <div class="day-precip">💧 55%</div>
       <div class="day-uv">☀️ UV 7.5</div>
@@ -868,22 +940,22 @@
     </div>
     
     <div class="small-temp-row">
-      <span class="small-temp">80°F</span>
-      <span class="small-feels">feels 79°</span>
+      <span class="small-temp">79°F</span>
+      <span class="small-feels">feels 76°</span>
       <span class="small-hilo">83° / 59°</span>
     </div>
     <div class="small-detail">Overcast</div>
-    <div class="small-detail">💧 43% &nbsp; 🌬 10mph WSW</div>
+    <div class="small-detail">💧 44% &nbsp; 🌬 11mph W</div>
     <div class="small-detail">🟢 Good</div>
     <div class="small-detail" style="color:#ffe566;font-weight:700;margin-top:4px">🟡 Moderate</div>
 
     <div class="loc-expanded" id="expand-farmingtonmo-body" style="display:none">
       <div class="expanded-divider"></div>
       <div class="current-details" style="margin:12px 0">
-        <div class="detail-row">💧 Humidity: <b>43%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>55°F</b></div>
-        <div class="detail-row">🌬 Wind: <b>10 mph WSW</b> (Gusts <b>20 mph</b>)</div>
-        <div class="detail-row">👁 Visibility: <b>93 mi</b></div>
-        <div class="detail-row">☀️ UV Index: <b>7.3</b></div>
+        <div class="detail-row">💧 Humidity: <b>44%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>55°F</b></div>
+        <div class="detail-row">🌬 Wind: <b>11 mph W</b> (Gusts <b>20 mph</b>)</div>
+        <div class="detail-row">👁 Visibility: <b>91 mi</b></div>
+        <div class="detail-row">☀️ UV Index: <b>7.7</b></div>
         <div class="detail-row">🌡 Pressure: <b>979 hPa</b></div>
         <div class="detail-row">📈 High: <b>83°F</b> &nbsp;|&nbsp; 📉 Low: <b>59°F</b></div>
         <div class="detail-row">🌅 Sunrise: <b>6:39 AM</b> &nbsp;|&nbsp; 🌇 Sunset: <b>9:25 PM</b></div>
@@ -891,64 +963,58 @@
       </div>
       <div class="metar-strip" style="margin-top:10px;padding:8px 12px;background:rgba(96,165,250,0.08);border-left:3px solid #60a5fa;border-radius:6px;font-size:0.85rem;color:#cbd5e1">
     <span style="color:#60a5fa;font-weight:700;font-size:0.78rem;letter-spacing:0.04em">✈ Farmington Regional</span>
-    <span style="opacity:0.55;font-size:0.75rem">&nbsp;58m ago</span>
+    <span style="opacity:0.55;font-size:0.75rem">&nbsp;18m ago</span>
     <div style="margin-top:4px">
-      ☀️ <b style="color:#e6e8ef">78°F</b> <span style="color:#9ca3af;font-size:0.78rem">(-2° vs forecast)</span>
+      ⛅ <b style="color:#e6e8ef">79°F</b>
        &nbsp;·&nbsp; 💦 dew 59°
-       &nbsp;·&nbsp; 🌬 12mph SW
+       &nbsp;·&nbsp; 🌬 8mph W
        &nbsp;·&nbsp; 👁 10+ mi
     </div>
   </div>
       <div class="aq-row" style="margin-bottom:12px;margin-top:12px">
         <span class="aq-pill">🟢 Air Quality: <b>Good</b></span>
         <a href="pollen.html" class="aq-pill aq-pill-link" title="View full pollen breakdown">🌿 Pollen: <b>None</b> <span style="font-size:0.75em;opacity:0.7">↗</span></a>
-        <span class="aq-pill">💨 PM2.5: <b>1</b></span>
+        <span class="aq-pill">💨 PM2.5: <b>2</b></span>
         <span class="aq-pill" style="color:#fb923c">🍄 Mold: <b>High</b></span>
       </div>
       <div class="expanded-section-label">🕐 Hourly</div>
       <div class="hourly-fade-wrap"><div class="hourly-scroll">
     <div class="hour-card">
-        <div class="hour-time">12 PM</div>
-        <div class="hour-emoji">☀️</div>
-        <div class="hour-temp" style="">77°</div>
-        <div class="hour-precip" style="visibility:hidden">💧0%</div>
-        <div class="hour-wind">9mph</div>
-      </div><div class="hour-card">
         <div class="hour-time">1 PM</div>
-        <div class="hour-emoji">🌦️</div>
-        <div class="hour-temp" style="">79°</div>
+        <div class="hour-emoji">☀️</div>
+        <div class="hour-temp" style="">78°</div>
         <div class="hour-precip" style="visibility:hidden">💧0%</div>
-        <div class="hour-wind">10mph</div>
+        <div class="hour-wind">6mph</div>
       </div><div class="hour-card">
         <div class="hour-time">2 PM</div>
         <div class="hour-emoji">⛈️</div>
         <div class="hour-temp" style="">80°</div>
-        <div class="hour-precip" style="">💧34%</div>
-        <div class="hour-wind">10mph</div>
+        <div class="hour-precip" style="">💧36%</div>
+        <div class="hour-wind">8mph</div>
       </div><div class="hour-card">
         <div class="hour-time">3 PM</div>
         <div class="hour-emoji">⛈️</div>
         <div class="hour-temp" style="">81°</div>
-        <div class="hour-precip" style="">💧38%</div>
-        <div class="hour-wind">10mph</div>
+        <div class="hour-precip" style="">💧31%</div>
+        <div class="hour-wind">12mph</div>
       </div><div class="hour-card">
         <div class="hour-time">4 PM</div>
         <div class="hour-emoji">⛈️</div>
-        <div class="hour-temp" style="">82°</div>
-        <div class="hour-precip" style="">💧35%</div>
-        <div class="hour-wind">12mph</div>
+        <div class="hour-temp" style="">81°</div>
+        <div class="hour-precip" style="visibility:hidden">💧0%</div>
+        <div class="hour-wind">10mph</div>
       </div><div class="hour-card">
         <div class="hour-time">5 PM</div>
         <div class="hour-emoji">⛈️</div>
         <div class="hour-temp" style="">80°</div>
-        <div class="hour-precip" style="">💧25%</div>
-        <div class="hour-wind">12mph</div>
+        <div class="hour-precip" style="visibility:hidden">💧0%</div>
+        <div class="hour-wind">9mph</div>
       </div><div class="hour-card">
         <div class="hour-time">6 PM</div>
-        <div class="hour-emoji">⛈️</div>
-        <div class="hour-temp" style="">80°</div>
+        <div class="hour-emoji">☀️</div>
+        <div class="hour-temp" style="">79°</div>
         <div class="hour-precip" style="visibility:hidden">💧0%</div>
-        <div class="hour-wind">10mph</div>
+        <div class="hour-wind">9mph</div>
       </div><div class="hour-card">
         <div class="hour-time">7 PM</div>
         <div class="hour-emoji">⛅</div>
@@ -1051,6 +1117,12 @@
         <div class="hour-temp" style="">77°</div>
         <div class="hour-precip" style="visibility:hidden">💧0%</div>
         <div class="hour-wind">16mph</div>
+      </div><div class="hour-card">
+        <div class="hour-time">12 PM</div>
+        <div class="hour-emoji">☀️</div>
+        <div class="hour-temp" style="">81°</div>
+        <div class="hour-precip" style="visibility:hidden">💧0%</div>
+        <div class="hour-wind">18mph</div>
       </div>
   </div></div>
       <div class="expanded-section-label" style="margin-top:16px">📅 7-Day Forecast</div>
@@ -1058,9 +1130,9 @@
     <div class="day-card today">
       <div class="day-name">Today</div>
       <div class="day-emoji">⛈️</div>
-      <div class="day-desc">Mostly Sunny then Chance Showers And Thunderstorms</div>
+      <div class="day-desc">Chance Showers And Thunderstorms</div>
       <div class="day-temps"><span class="day-high">83°</span> <span class="day-low">59°</span></div>
-      <div class="day-precip">💧 38%</div>
+      <div class="day-precip">💧 36%</div>
       <div class="day-uv">☀️ UV 7.85</div>
     </div><div class="day-card ">
       <div class="day-name">Wed</div>
@@ -1136,51 +1208,51 @@
 
   <div class="section-header">⚠️ Active National Alerts — Extreme &amp; Severe</div>
   <div class="nat-alert-list">
-    <div class="nat-alert-item" style="border-left-color:#4361ee">
-        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flash Flood Warning</span>
-        <span class="nat-alert-area">Hardin, TX</span>
+    <div class="nat-alert-item" style="border-left-color:#ffe566">
+        <span class="nat-alert-event" style="color:#ffe566">⚠️ Fire Weather Watch</span>
+        <span class="nat-alert-area">West Central Mountains; Middle Rio Grande Valley</span>
       </div><div class="nat-alert-item" style="border-left-color:#ffe566">
-        <span class="nat-alert-event" style="color:#ffe566">⚠️ Special Marine Warning</span>
-        <span class="nat-alert-area">Presque Isle Light to Sturgeon Pt MI Including Thunder Bay National Marine Sanctuary; Lake Huron from Presque Isle Lt. to Sturgeon Point  MI 5NM off shore to US/Canadian border</span>
+        <span class="nat-alert-event" style="color:#ffe566">⚠️ Red Flag Warning</span>
+        <span class="nat-alert-area">North Central Mountains</span>
       </div><div class="nat-alert-item" style="border-left-color:#ffe566">
-        <span class="nat-alert-event" style="color:#ffe566">⚠️ Special Marine Warning</span>
-        <span class="nat-alert-area">St Ignace to False Detour Channel; Lake Huron from 5NM east of Mackinac Bridge to Presque Isle Lt  to the US/Canadian border beyond 5 NM from shore</span>
-      </div><div class="nat-alert-item" style="border-left-color:#4361ee">
-        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flood Watch</span>
-        <span class="nat-alert-area">Leake; Neshoba; Kemper; Lauderdale; Clarke</span>
-      </div><div class="nat-alert-item" style="border-left-color:#4361ee">
-        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flood Watch</span>
-        <span class="nat-alert-area">East Carroll; Richland; Madison; Franklin; Catahoula; Tensas; Concordia; Issaquena; Sharkey; Yazoo; Madison; Warren; Hinds; Rankin; Scott; Newton; Claiborne; Copiah; Simpson; Smith; Jasper; Jefferson; Adams; Franklin; Lincoln; Lawrence; Jefferson Davis; Covington; Jones; Marion; Lamar; Forrest</span>
+        <span class="nat-alert-event" style="color:#ffe566">⚠️ Red Flag Warning</span>
+        <span class="nat-alert-area">Sandia and Manzano Mountains; Central Highlands</span>
+      </div><div class="nat-alert-item" style="border-left-color:#ffe566">
+        <span class="nat-alert-event" style="color:#ffe566">⚠️ Red Flag Warning</span>
+        <span class="nat-alert-area">Northwest Plateau</span>
+      </div><div class="nat-alert-item" style="border-left-color:#ffe566">
+        <span class="nat-alert-event" style="color:#ffe566">⚠️ Red Flag Warning</span>
+        <span class="nat-alert-area">Northwest Plateau</span>
       </div><div class="nat-alert-item" style="border-left-color:#4361ee">
         <span class="nat-alert-event" style="color:#4361ee">⚠️ Flash Flood Warning</span>
-        <span class="nat-alert-area">Tangipahoa, LA; Washington, LA; Pearl River, MS; Walthall, MS</span>
-      </div><div class="nat-alert-item" style="border-left-color:#4361ee">
-        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flood Warning</span>
-        <span class="nat-alert-area">Crawford, IL; Lawrence, IL; Knox, IN; Sullivan, IN</span>
-      </div><div class="nat-alert-item" style="border-left-color:#4361ee">
-        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flood Warning</span>
-        <span class="nat-alert-area">Jim Wells, TX; Kleberg, TX; Nueces, TX; San Patricio, TX</span>
+        <span class="nat-alert-area">Liberty, TX; Montgomery, TX; San Jacinto, TX</span>
       </div><div class="nat-alert-item" style="border-left-color:#f72585">
         <span class="nat-alert-event" style="color:#f72585">⚠️ Severe Thunderstorm Warning</span>
-        <span class="nat-alert-area">Portage, WI</span>
+        <span class="nat-alert-area">Oakland, MI</span>
+      </div><div class="nat-alert-item" style="border-left-color:#ffe566">
+        <span class="nat-alert-event" style="color:#ffe566">⚠️ Red Flag Warning</span>
+        <span class="nat-alert-area">Lower Columbia Basin of Oregon; Lower Columbia Basin</span>
       </div><div class="nat-alert-item" style="border-left-color:#4361ee">
         <span class="nat-alert-event" style="color:#4361ee">⚠️ Flash Flood Warning</span>
-        <span class="nat-alert-area">Allen, LA; Avoyelles, LA; Beauregard, LA; Evangeline, LA; Rapides, LA; St. Landry, LA; Vernon, LA</span>
-      </div><div class="nat-alert-item" style="border-left-color:#4361ee">
-        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flood Watch</span>
-        <span class="nat-alert-area">Zapata; Jim Hogg; Brooks; Inland Kenedy; Starr; Southern Hidalgo; Inland Willacy; Inland Cameron; Coastal Kenedy; Northern Hidalgo; Coastal Willacy; Coastal Cameron; Kenedy Island; Willacy Island; Cameron Island</span>
+        <span class="nat-alert-area">Beauregard, LA; Vernon, LA; Newton, TX</span>
+      </div><div class="nat-alert-item" style="border-left-color:#ffe566">
+        <span class="nat-alert-event" style="color:#ffe566">⚠️ Red Flag Warning</span>
+        <span class="nat-alert-area">Kittitas Valley</span>
+      </div><div class="nat-alert-item" style="border-left-color:#ffe566">
+        <span class="nat-alert-event" style="color:#ffe566">⚠️ Red Flag Warning</span>
+        <span class="nat-alert-area">Kittitas Valley</span>
+      </div><div class="nat-alert-item" style="border-left-color:#ffe566">
+        <span class="nat-alert-event" style="color:#ffe566">⚠️ Red Flag Warning</span>
+        <span class="nat-alert-area">Central Mountains of Oregon</span>
+      </div><div class="nat-alert-item" style="border-left-color:#f72585">
+        <span class="nat-alert-event" style="color:#f72585">⚠️ Severe Thunderstorm Warning</span>
+        <span class="nat-alert-area">Crawford, MI; Ogemaw, MI; Oscoda, MI; Roscommon, MI</span>
       </div><div class="nat-alert-item" style="border-left-color:#4361ee">
         <span class="nat-alert-event" style="color:#4361ee">⚠️ Flash Flood Warning</span>
-        <span class="nat-alert-area">Avoyelles, LA; Rapides, LA</span>
-      </div><div class="nat-alert-item" style="border-left-color:#4361ee">
-        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flood Warning</span>
-        <span class="nat-alert-area">Cass, IN; Kosciusko, IN; Miami, IN; Wabash, IN; Whitley, IN</span>
+        <span class="nat-alert-area">Harris, TX; Montgomery, TX; Waller, TX</span>
       </div><div class="nat-alert-item" style="border-left-color:#4361ee">
         <span class="nat-alert-event" style="color:#4361ee">⚠️ Flash Flood Warning</span>
-        <span class="nat-alert-area">Harris, TX; Montgomery, TX</span>
-      </div><div class="nat-alert-item" style="border-left-color:#4361ee">
-        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flash Flood Warning</span>
-        <span class="nat-alert-area">Hancock, MS; Pearl River, MS</span>
+        <span class="nat-alert-area">Harris, TX</span>
       </div>
   </div>
 
@@ -1267,84 +1339,84 @@ ESTIMATED MINIMUM CENTRA</div>
         <div class="eq-mag" style="color:#06d6a0">M4.9</div>
         <div class="eq-info">
           <div class="eq-place">256 km SSE of Dunhuang, China</div>
-          <div class="eq-meta">3h 26m ago &nbsp;|&nbsp; Depth: 12.517km</div>
+          <div class="eq-meta">3h 46m ago &nbsp;|&nbsp; Depth: 12.517km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000ste2" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.8</div>
         <div class="eq-info">
           <div class="eq-place">65 km S of Kokopo, Papua New Guinea</div>
-          <div class="eq-meta">3h 50m ago &nbsp;|&nbsp; Depth: 66.484km</div>
+          <div class="eq-meta">4h 10m ago &nbsp;|&nbsp; Depth: 66.484km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000stdz" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#ffe566">M5.0</div>
         <div class="eq-info">
           <div class="eq-place">261 km SSE of Dunhuang, China</div>
-          <div class="eq-meta">5h 39m ago &nbsp;|&nbsp; Depth: 10km</div>
+          <div class="eq-meta">5h 59m ago &nbsp;|&nbsp; Depth: 10km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000stdb" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.8</div>
         <div class="eq-info">
           <div class="eq-place">52 km SE of Palu, Indonesia</div>
-          <div class="eq-meta">5h 49m ago &nbsp;|&nbsp; Depth: 10km</div>
+          <div class="eq-meta">6h 9m ago &nbsp;|&nbsp; Depth: 10km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000stdg" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.7</div>
         <div class="eq-info">
           <div class="eq-place">248 km SSE of Dunhuang, China</div>
-          <div class="eq-meta">5h 52m ago &nbsp;|&nbsp; Depth: 10km</div>
+          <div class="eq-meta">6h 12m ago &nbsp;|&nbsp; Depth: 10km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000std9" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#ffe566">M5.5</div>
         <div class="eq-info">
           <div class="eq-place">4 km NW of Noda, Japan</div>
-          <div class="eq-meta">6h 7m ago &nbsp;|&nbsp; Depth: 71.777km</div>
+          <div class="eq-meta">6h 27m ago &nbsp;|&nbsp; Depth: 71.777km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000std7" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.8</div>
         <div class="eq-info">
           <div class="eq-place">90 km WSW of Ternate, Indonesia</div>
-          <div class="eq-meta">6h 29m ago &nbsp;|&nbsp; Depth: 52.503km</div>
+          <div class="eq-meta">6h 49m ago &nbsp;|&nbsp; Depth: 52.503km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000std4" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#ffe566">M5.4</div>
         <div class="eq-info">
           <div class="eq-place">277 km S of Dunhuang, China</div>
-          <div class="eq-meta">7h 8m ago &nbsp;|&nbsp; Depth: 10km</div>
+          <div class="eq-meta">7h 28m ago &nbsp;|&nbsp; Depth: 10km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000stcs" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#ffe566">M5.2</div>
         <div class="eq-info">
           <div class="eq-place">242 km SSE of Dunhuang, China</div>
-          <div class="eq-meta">7h 11m ago &nbsp;|&nbsp; Depth: 10km</div>
+          <div class="eq-meta">7h 31m ago &nbsp;|&nbsp; Depth: 10km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000std2" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#ff9f1c">M6.3</div>
         <div class="eq-info">
           <div class="eq-place">260 km SSE of Dunhuang, China</div>
-          <div class="eq-meta">7h 46m ago &nbsp;|&nbsp; Depth: 10km</div>
+          <div class="eq-meta">8h 6m ago &nbsp;|&nbsp; Depth: 10km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000stbz" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.6</div>
         <div class="eq-info">
           <div class="eq-place">17 km SE of Viqueque, Timor Leste</div>
-          <div class="eq-meta">7h 49m ago &nbsp;|&nbsp; Depth: 10km</div>
+          <div class="eq-meta">8h 9m ago &nbsp;|&nbsp; Depth: 10km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000stbw" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#ffe566">M5.0</div>
         <div class="eq-info">
           <div class="eq-place">49 km ESE of Palu, Indonesia</div>
-          <div class="eq-meta">8h 48m ago &nbsp;|&nbsp; Depth: 48.869km</div>
+          <div class="eq-meta">9h 8m ago &nbsp;|&nbsp; Depth: 48.869km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000stbp" target="_blank" class="eq-link">Details</a>
       </div>
@@ -1464,7 +1536,7 @@ ESTIMATED MINIMUM CENTRA</div>
   
   // Poll for new data every 2 minutes — shows refresh banner when crawl has run
   (function() {
-    var GENERATED = '2026-06-16T16:53:42.321Z';
+    var GENERATED = '2026-06-16T17:13:41.459Z';
     setInterval(function() {
       fetch('/api/data', { cache: 'no-store' })
         .then(function(r) { return r.json(); })
