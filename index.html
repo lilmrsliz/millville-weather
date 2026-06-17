@@ -16,7 +16,7 @@
   <div class="site-title">⛅ Millville Weather</div>
   <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
     
-    <div class="site-meta">Updated: Jun 17, 2026, 2:09 PM</div>
+    <div class="site-meta">Updated: Jun 17, 2026, 2:29 PM</div>
   </div>
 </header>
 
@@ -30,7 +30,7 @@
 <!-- ══ LOCAL TAB ══ -->
 <div id="tab-local" class="tab-content active">
 
-  <div class="summary-banner">⛅ 67°F in Bristol — Partly cloudy. ⚠️ Flood Watch in effect.
+  <div class="summary-banner">☁️ 64°F in Bristol — Overcast. ⚠️ Wind Advisory, Flood Watch in effect.
     <div class="summary-mcas" style="border-top:1px solid #ffe56630;margin-top:10px;padding-top:10px">
       <span class="summary-mcas-label">🧬 Comfort Index:</span>
       <span class="summary-mcas-value" style="background:#ffe56620;border:1px solid #ffe566;color:#ffe566">🟡 Moderate</span>
@@ -51,36 +51,51 @@
         </div>
       </div>
 
-      <div class="alert-banner" style="background:#080818;border-left:4px solid #4361ee;color:#4361ee">
+      <div class="alert-banner" style="background:#1a1800;border-left:4px solid #ffe566;color:#ffe566">
       <div class="alert-top" onclick="toggleAlert('alert-bristolinhttpsapiweathergovalertsurnoid0')" style="cursor:pointer">
-        <span class="alert-event">⚠️ Flood Watch</span>
-        <span class="alert-area">Elkhart; Lagrange; Steuben; Noble; De Kalb; Starke; Pulaski; Marshall; Fulton; Whitley; Allen; White; Cass; Miami; Wabash; Huntington; Northern La Porte; Eastern St. Joseph; Northern Kosciusko; Southern La Porte; Western St. Joseph; Southern Kosciusko; Cass; St. Joseph; Branch; Hillsdale; Northern Berrien; Southern Berrien; Williams; Fulton; Defiance; Henry; Paulding</span>
+        <span class="alert-event">⚠️ Wind Advisory</span>
+        <span class="alert-area">Elkhart; Lagrange; Steuben; Noble; De Kalb; Starke; Marshall; Whitley; Allen; Northern La Porte; Eastern St. Joseph; Northern Kosciusko; Southern La Porte; Western St. Joseph; Southern Kosciusko; Cass; St. Joseph; Branch; Hillsdale; Northern Berrien; Southern Berrien; Williams; Fulton; Defiance; Henry; Paulding; Putnam</span>
         <div style="display:flex;align-items:center;gap:8px;margin-left:auto">
-          <span class="alert-expires">Until 4:00 PM</span>
-          <span class="alert-expand-toggle" id="alert-bristolinhttpsapiweathergovalertsurnoid0-toggle" style="color:#4361ee;font-weight:900;font-size:0.8rem;transition:transform 0.2s;display:inline-block">▼</span>
+          <span class="alert-expires">Until 11:00 PM</span>
+          <span class="alert-expand-toggle" id="alert-bristolinhttpsapiweathergovalertsurnoid0-toggle" style="color:#ffe566;font-weight:900;font-size:0.8rem;transition:transform 0.2s;display:inline-block">▼</span>
         </div>
       </div>
       <div class="alert-detail" id="alert-bristolinhttpsapiweathergovalertsurnoid0-body" style="display:none">
+        <div class="alert-detail-divider" style="border-top:1px solid #ffe56640;margin:8px 0"></div>
+        <div class="alert-headline">Wind Advisory issued June 17 at 2:16PM EDT until June 17 at 11:00PM EDT by NWS Northern Indiana</div>
+        <div class="alert-desc">* WHAT...South winds 15 to 25 mph with gusts up to 50 mph.<br><br>* WHERE...Portions of northern Indiana, southwest Michigan, and northwest Ohio.<br><br>* WHEN...Until 11 PM EDT /10 PM CDT/ this evening.<br><br>* IMPACTS...Gusty winds will blow around unsecured objects. Tree limbs could be blown down and a few power outages may result.<br><br>* ADDITIONAL DETAILS...Over northeast Illinois, wind gusts of 50 to 60 mph have been recorded as a wake low moves through. This area of strong wind will progress east over the next several hours.</div>
+        <div class="alert-instr"><b>⚡ What to do:</b><br>Winds this strong can make driving difficult, especially for high profile vehicles. Use extra caution.<br><br>Secure outdoor objects.</div>
+      </div>
+    </div><div class="alert-banner" style="background:#080818;border-left:4px solid #4361ee;color:#4361ee">
+      <div class="alert-top" onclick="toggleAlert('alert-bristolinhttpsapiweathergovalertsurnoid1')" style="cursor:pointer">
+        <span class="alert-event">⚠️ Flood Watch</span>
+        <span class="alert-area">Elkhart; Lagrange; Steuben; Noble; De Kalb; Starke; Pulaski; Marshall; Fulton; Whitley; Allen; White; Cass; Miami; Wabash; Huntington; Northern La Porte; Eastern St. Joseph; Northern Kosciusko; Southern La Porte; Western St. Joseph; Southern Kosciusko; Cass; St. Joseph; Branch; Hillsdale; Northern Berrien; Southern Berrien; Williams; Fulton; Defiance; Henry; Paulding</span>
+        <div style="display:flex;align-items:center;gap:8px;margin-left:auto">
+          <span class="alert-expires">Until 10:15 PM</span>
+          <span class="alert-expand-toggle" id="alert-bristolinhttpsapiweathergovalertsurnoid1-toggle" style="color:#4361ee;font-weight:900;font-size:0.8rem;transition:transform 0.2s;display:inline-block">▼</span>
+        </div>
+      </div>
+      <div class="alert-detail" id="alert-bristolinhttpsapiweathergovalertsurnoid1-body" style="display:none">
         <div class="alert-detail-divider" style="border-top:1px solid #4361ee40;margin:8px 0"></div>
-        <div class="alert-headline">Flood Watch issued June 17 at 2:37AM EDT until June 18 at 2:00AM EDT by NWS Northern Indiana</div>
-        <div class="alert-desc">* WHAT...Flash flooding caused by excessive rainfall is possible.<br><br>* WHERE...Portions of northern Indiana, including the following areas, Allen IN, Cass IN, De Kalb, Eastern St. Joseph IN, Elkhart, Fulton IN, Huntington, Lagrange, Marshall, Miami, Noble, Northern Kosciusko, Northern La Porte, Pulaski, Southern Kosciusko, Southern La Porte, Starke, Steuben, Wabash, Western St. Joseph IN, White and Whitley, southwest Michigan, including the following areas, Branch, Cass MI, Hillsdale, Northern Berrien, Southern Berrien and St. Joseph MI, and northwest Ohio, including the following areas, Defiance, Fulton OH, Henry, Paulding and Williams.<br><br>* WHEN...From 2 PM EDT  /1 PM CDT/ this afternoon through late tonight.<br><br>* IMPACTS...Excessive runoff may result in flooding of rivers, creeks, streams, and other low-lying and flood-prone locations. Flooding may occur in poor drainage and urban areas.<br><br>* ADDITIONAL DETAILS... - Thunderstorms could produce 2-3 inches of rain in 1-2 hours this afternoon and evening. This may result in areas of flash flooding. - http://www.weather.gov/safety/flood</div>
+        <div class="alert-headline">Flood Watch issued June 17 at 2:11PM EDT until June 18 at 2:00AM EDT by NWS Northern Indiana</div>
+        <div class="alert-desc">* WHAT...Flash flooding caused by excessive rainfall continues to be possible.<br><br>* WHERE...Portions of northern Indiana, including the following areas, Allen IN, Cass IN, De Kalb, Eastern St. Joseph IN, Elkhart, Fulton IN, Huntington, Lagrange, Marshall, Miami, Noble, Northern Kosciusko, Northern La Porte, Pulaski, Southern Kosciusko, Southern La Porte, Starke, Steuben, Wabash, Western St. Joseph IN, White and Whitley, southwest Michigan, including the following areas, Branch, Cass MI, Hillsdale, Northern Berrien, Southern Berrien and St. Joseph MI, and northwest Ohio, including the following areas, Defiance, Fulton OH, Henry, Paulding and Williams.<br><br>* WHEN...Until 2 AM EDT /1 AM CDT/ Thursday.<br><br>* IMPACTS...Excessive runoff may result in flooding of rivers, creeks, streams, and other low-lying and flood-prone locations. Flooding may occur in poor drainage and urban areas.<br><br>* ADDITIONAL DETAILS... - Thunderstorms could produce 2-3 inches of rain in 1-2 hours later this afternoon and evening. This may result in areas of flash flooding. - http://www.weather.gov/safety/flood</div>
         <div class="alert-instr"><b>⚡ What to do:</b><br>You should monitor later forecasts and be prepared to take action should Flash Flood Warnings be issued.</div>
       </div>
     </div>
 
       <div class="current-main">
         <div class="current-big">
-          <div class="current-emoji">⛅</div>
-          <div class="current-temp">67°F</div>
-          <div class="current-desc">Partly cloudy</div>
-          <div class="current-feels">Feels like 62°F</div>
+          <div class="current-emoji">☁️</div>
+          <div class="current-temp">64°F</div>
+          <div class="current-desc">Overcast</div>
+          <div class="current-feels">Feels like 57°F</div>
         </div>
         <div class="current-details">
-          <div class="detail-row">💧 Humidity: <b>49%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>47°F</b></div>
-          <div class="detail-row">🌬 Wind: <b>12 mph SSE</b> (Gusts <b>19 mph</b>)</div>
-          <div class="detail-row">👁 Visibility: <b>82 mi</b></div>
-          <div class="detail-row">☀️ UV Index: <b>1.8</b></div>
-          <div class="detail-row">🌡 Pressure: <b>974 hPa</b></div>
+          <div class="detail-row">💧 Humidity: <b>49%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>44°F</b></div>
+          <div class="detail-row">🌬 Wind: <b>13 mph SSE</b> (Gusts <b>21 mph</b>)</div>
+          <div class="detail-row">👁 Visibility: <b>85 mi</b></div>
+          <div class="detail-row">☀️ UV Index: <b>2.05</b></div>
+          <div class="detail-row">🌡 Pressure: <b>973 hPa</b></div>
           <div class="detail-row">📈 High: <b>72°F</b> &nbsp;|&nbsp; 📉 Low: <b>60°F</b></div>
           <div class="detail-row">🌅 Sunrise: <b>6:08 AM</b> &nbsp;|&nbsp; 🌇 Sunset: <b>9:20 PM</b></div>
           <div class="detail-row">🌓 First Quarter</div>
@@ -89,9 +104,9 @@
 
       <div class="metar-strip" style="margin-top:10px;padding:8px 12px;background:rgba(96,165,250,0.08);border-left:3px solid #60a5fa;border-radius:6px;font-size:0.85rem;color:#cbd5e1">
     <span style="color:#60a5fa;font-weight:700;font-size:0.78rem;letter-spacing:0.04em">✈ Goshen Airport</span>
-    <span style="opacity:0.55;font-size:0.75rem">&nbsp;16m ago</span>
+    <span style="opacity:0.55;font-size:0.75rem">&nbsp;36m ago</span>
     <div style="margin-top:4px">
-      ☁️ <b style="color:#e6e8ef">62°F</b> <span style="color:#f59e0b;font-size:0.78rem">(-5° vs forecast)</span>
+      ☁️ <b style="color:#e6e8ef">62°F</b> <span style="color:#9ca3af;font-size:0.78rem">(-2° vs forecast)</span>
        &nbsp;·&nbsp; 💦 dew 57°
        &nbsp;·&nbsp; 🌬 6mph S
        &nbsp;·&nbsp; 👁 10+ mi
@@ -116,7 +131,7 @@
             <span class="mcas-factor-text">Mold season active — outdoor fungal spores elevated, contributing to histamine load</span>
           </div><div class="mcas-factor-row" style="color:#ffe566cc">
             <span class="mcas-factor-icon">🌡</span>
-            <span class="mcas-factor-text">Pressure dropped 3 hPa in 3h — mild fall, monitor symptoms</span>
+            <span class="mcas-factor-text">Pressure dropped 4 hPa in 3h — mild fall, monitor symptoms</span>
           </div>
         </div>
         <div class="mcas-good-factors" style="margin-top:6px">
@@ -125,7 +140,7 @@
             <span class="mcas-factor-text">Humidity 49% — comfortable range</span>
           </div><div class="mcas-factor-row mcas-good" style="color:#06d6a090">
             <span class="mcas-factor-icon">💦</span>
-            <span class="mcas-factor-text">Dew point 47°F — low moisture load</span>
+            <span class="mcas-factor-text">Dew point 44°F — low moisture load</span>
           </div><div class="mcas-factor-row mcas-good" style="color:#06d6a090">
             <span class="mcas-factor-icon">💨</span>
             <span class="mcas-factor-text">PM2.5 6 µg/m³ — clean air</span>
@@ -147,12 +162,6 @@
         <div class="section-header">🕐 Hourly Forecast</div>
         <div class="hourly-fade-wrap"><div class="hourly-scroll">
     <div class="hour-card">
-        <div class="hour-time">1 PM</div>
-        <div class="hour-emoji">🌦️</div>
-        <div class="hour-temp" style="">66°</div>
-        <div class="hour-precip" style="">💧50%</div>
-        <div class="hour-wind">10mph</div>
-      </div><div class="hour-card">
         <div class="hour-time">2 PM</div>
         <div class="hour-emoji">⛈️</div>
         <div class="hour-temp" style="">67°</div>
@@ -290,6 +299,12 @@
         <div class="hour-temp" style="">65°</div>
         <div class="hour-precip" style="visibility:hidden">💧0%</div>
         <div class="hour-wind">15mph</div>
+      </div><div class="hour-card">
+        <div class="hour-time">1 PM</div>
+        <div class="hour-emoji">⛅</div>
+        <div class="hour-temp" style="">66°</div>
+        <div class="hour-precip" style="visibility:hidden">💧0%</div>
+        <div class="hour-wind">15mph</div>
       </div>
   </div></div>
 
@@ -300,7 +315,7 @@
       <div class="day-emoji">⛈️</div>
       <div class="day-desc">Showers And Thunderstorms</div>
       <div class="day-temps"><span class="day-high">72°</span> <span class="day-low">60°</span></div>
-      <div class="day-precip">💧 99% · 0.6"</div>
+      <div class="day-precip">💧 99% · 2.1"</div>
       
     </div><div class="day-card ">
       <div class="day-name">Thu</div>
@@ -395,43 +410,58 @@
         
       </div>
       <div style="display:flex;align-items:center;gap:10px">
-        <span class="loc-emoji-small">☁️</span>
+        <span class="loc-emoji-small">🌧️</span>
         <span class="expand-toggle" id="expand-goshenin-toggle">details ▼</span>
       </div>
     </div>
-    <div class="alert-banner" style="background:#080818;border-left:4px solid #4361ee;color:#4361ee">
+    <div class="alert-banner" style="background:#1a1800;border-left:4px solid #ffe566;color:#ffe566">
       <div class="alert-top" onclick="toggleAlert('alert-gosheninhttpsapiweathergovalertsurnoid0')" style="cursor:pointer">
-        <span class="alert-event">⚠️ Flood Watch</span>
-        <span class="alert-area">Elkhart; Lagrange; Steuben; Noble; De Kalb; Starke; Pulaski; Marshall; Fulton; Whitley; Allen; White; Cass; Miami; Wabash; Huntington; Northern La Porte; Eastern St. Joseph; Northern Kosciusko; Southern La Porte; Western St. Joseph; Southern Kosciusko; Cass; St. Joseph; Branch; Hillsdale; Northern Berrien; Southern Berrien; Williams; Fulton; Defiance; Henry; Paulding</span>
+        <span class="alert-event">⚠️ Wind Advisory</span>
+        <span class="alert-area">Elkhart; Lagrange; Steuben; Noble; De Kalb; Starke; Marshall; Whitley; Allen; Northern La Porte; Eastern St. Joseph; Northern Kosciusko; Southern La Porte; Western St. Joseph; Southern Kosciusko; Cass; St. Joseph; Branch; Hillsdale; Northern Berrien; Southern Berrien; Williams; Fulton; Defiance; Henry; Paulding; Putnam</span>
         <div style="display:flex;align-items:center;gap:8px;margin-left:auto">
-          <span class="alert-expires">Until 4:00 PM</span>
-          <span class="alert-expand-toggle" id="alert-gosheninhttpsapiweathergovalertsurnoid0-toggle" style="color:#4361ee;font-weight:900;font-size:0.8rem;transition:transform 0.2s;display:inline-block">▼</span>
+          <span class="alert-expires">Until 11:00 PM</span>
+          <span class="alert-expand-toggle" id="alert-gosheninhttpsapiweathergovalertsurnoid0-toggle" style="color:#ffe566;font-weight:900;font-size:0.8rem;transition:transform 0.2s;display:inline-block">▼</span>
         </div>
       </div>
       <div class="alert-detail" id="alert-gosheninhttpsapiweathergovalertsurnoid0-body" style="display:none">
+        <div class="alert-detail-divider" style="border-top:1px solid #ffe56640;margin:8px 0"></div>
+        <div class="alert-headline">Wind Advisory issued June 17 at 2:16PM EDT until June 17 at 11:00PM EDT by NWS Northern Indiana</div>
+        <div class="alert-desc">* WHAT...South winds 15 to 25 mph with gusts up to 50 mph.<br><br>* WHERE...Portions of northern Indiana, southwest Michigan, and northwest Ohio.<br><br>* WHEN...Until 11 PM EDT /10 PM CDT/ this evening.<br><br>* IMPACTS...Gusty winds will blow around unsecured objects. Tree limbs could be blown down and a few power outages may result.<br><br>* ADDITIONAL DETAILS...Over northeast Illinois, wind gusts of 50 to 60 mph have been recorded as a wake low moves through. This area of strong wind will progress east over the next several hours.</div>
+        <div class="alert-instr"><b>⚡ What to do:</b><br>Winds this strong can make driving difficult, especially for high profile vehicles. Use extra caution.<br><br>Secure outdoor objects.</div>
+      </div>
+    </div><div class="alert-banner" style="background:#080818;border-left:4px solid #4361ee;color:#4361ee">
+      <div class="alert-top" onclick="toggleAlert('alert-gosheninhttpsapiweathergovalertsurnoid1')" style="cursor:pointer">
+        <span class="alert-event">⚠️ Flood Watch</span>
+        <span class="alert-area">Elkhart; Lagrange; Steuben; Noble; De Kalb; Starke; Pulaski; Marshall; Fulton; Whitley; Allen; White; Cass; Miami; Wabash; Huntington; Northern La Porte; Eastern St. Joseph; Northern Kosciusko; Southern La Porte; Western St. Joseph; Southern Kosciusko; Cass; St. Joseph; Branch; Hillsdale; Northern Berrien; Southern Berrien; Williams; Fulton; Defiance; Henry; Paulding</span>
+        <div style="display:flex;align-items:center;gap:8px;margin-left:auto">
+          <span class="alert-expires">Until 10:15 PM</span>
+          <span class="alert-expand-toggle" id="alert-gosheninhttpsapiweathergovalertsurnoid1-toggle" style="color:#4361ee;font-weight:900;font-size:0.8rem;transition:transform 0.2s;display:inline-block">▼</span>
+        </div>
+      </div>
+      <div class="alert-detail" id="alert-gosheninhttpsapiweathergovalertsurnoid1-body" style="display:none">
         <div class="alert-detail-divider" style="border-top:1px solid #4361ee40;margin:8px 0"></div>
-        <div class="alert-headline">Flood Watch issued June 17 at 2:37AM EDT until June 18 at 2:00AM EDT by NWS Northern Indiana</div>
-        <div class="alert-desc">* WHAT...Flash flooding caused by excessive rainfall is possible.<br><br>* WHERE...Portions of northern Indiana, including the following areas, Allen IN, Cass IN, De Kalb, Eastern St. Joseph IN, Elkhart, Fulton IN, Huntington, Lagrange, Marshall, Miami, Noble, Northern Kosciusko, Northern La Porte, Pulaski, Southern Kosciusko, Southern La Porte, Starke, Steuben, Wabash, Western St. Joseph IN, White and Whitley, southwest Michigan, including the following areas, Branch, Cass MI, Hillsdale, Northern Berrien, Southern Berrien and St. Joseph MI, and northwest Ohio, including the following areas, Defiance, Fulton OH, Henry, Paulding and Williams.<br><br>* WHEN...From 2 PM EDT  /1 PM CDT/ this afternoon through late tonight.<br><br>* IMPACTS...Excessive runoff may result in flooding of rivers, creeks, streams, and other low-lying and flood-prone locations. Flooding may occur in poor drainage and urban areas.<br><br>* ADDITIONAL DETAILS... - Thunderstorms could produce 2-3 inches of rain in 1-2 hours this afternoon and evening. This may result in areas of flash flooding. - http://www.weather.gov/safety/flood</div>
+        <div class="alert-headline">Flood Watch issued June 17 at 2:11PM EDT until June 18 at 2:00AM EDT by NWS Northern Indiana</div>
+        <div class="alert-desc">* WHAT...Flash flooding caused by excessive rainfall continues to be possible.<br><br>* WHERE...Portions of northern Indiana, including the following areas, Allen IN, Cass IN, De Kalb, Eastern St. Joseph IN, Elkhart, Fulton IN, Huntington, Lagrange, Marshall, Miami, Noble, Northern Kosciusko, Northern La Porte, Pulaski, Southern Kosciusko, Southern La Porte, Starke, Steuben, Wabash, Western St. Joseph IN, White and Whitley, southwest Michigan, including the following areas, Branch, Cass MI, Hillsdale, Northern Berrien, Southern Berrien and St. Joseph MI, and northwest Ohio, including the following areas, Defiance, Fulton OH, Henry, Paulding and Williams.<br><br>* WHEN...Until 2 AM EDT /1 AM CDT/ Thursday.<br><br>* IMPACTS...Excessive runoff may result in flooding of rivers, creeks, streams, and other low-lying and flood-prone locations. Flooding may occur in poor drainage and urban areas.<br><br>* ADDITIONAL DETAILS... - Thunderstorms could produce 2-3 inches of rain in 1-2 hours later this afternoon and evening. This may result in areas of flash flooding. - http://www.weather.gov/safety/flood</div>
         <div class="alert-instr"><b>⚡ What to do:</b><br>You should monitor later forecasts and be prepared to take action should Flash Flood Warnings be issued.</div>
       </div>
     </div>
     <div class="small-temp-row">
-      <span class="small-temp">68°F</span>
-      <span class="small-feels">feels 64°</span>
+      <span class="small-temp">65°F</span>
+      <span class="small-feels">feels 57°</span>
       <span class="small-hilo">72° / 61°</span>
     </div>
-    <div class="small-detail">Overcast</div>
-    <div class="small-detail">💧 46% &nbsp; 🌬 12mph SE</div>
+    <div class="small-detail">Rain</div>
+    <div class="small-detail">💧 46% &nbsp; 🌬 13mph SSE</div>
     <div class="small-detail">🟢 Good</div>
     <div class="small-detail" style="color:#06d6a0;font-weight:700;margin-top:4px">🟢 Good Day</div>
 
     <div class="loc-expanded" id="expand-goshenin-body" style="display:none">
       <div class="expanded-divider"></div>
       <div class="current-details" style="margin:12px 0">
-        <div class="detail-row">💧 Humidity: <b>46%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>47°F</b></div>
-        <div class="detail-row">🌬 Wind: <b>12 mph SE</b> (Gusts <b>20 mph</b>)</div>
-        <div class="detail-row">👁 Visibility: <b>91 mi</b></div>
-        <div class="detail-row">☀️ UV Index: <b>1.9</b></div>
+        <div class="detail-row">💧 Humidity: <b>46%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>43°F</b></div>
+        <div class="detail-row">🌬 Wind: <b>13 mph SSE</b> (Gusts <b>20 mph</b>)</div>
+        <div class="detail-row">👁 Visibility: <b>102 mi</b></div>
+        <div class="detail-row">☀️ UV Index: <b>2</b></div>
         <div class="detail-row">🌡 Pressure: <b>973 hPa</b></div>
         <div class="detail-row">📈 High: <b>72°F</b> &nbsp;|&nbsp; 📉 Low: <b>61°F</b></div>
         <div class="detail-row">🌅 Sunrise: <b>6:08 AM</b> &nbsp;|&nbsp; 🌇 Sunset: <b>9:19 PM</b></div>
@@ -439,9 +469,9 @@
       </div>
       <div class="metar-strip" style="margin-top:10px;padding:8px 12px;background:rgba(96,165,250,0.08);border-left:3px solid #60a5fa;border-radius:6px;font-size:0.85rem;color:#cbd5e1">
     <span style="color:#60a5fa;font-weight:700;font-size:0.78rem;letter-spacing:0.04em">✈ Goshen Airport</span>
-    <span style="opacity:0.55;font-size:0.75rem">&nbsp;16m ago</span>
+    <span style="opacity:0.55;font-size:0.75rem">&nbsp;36m ago</span>
     <div style="margin-top:4px">
-      ☁️ <b style="color:#e6e8ef">62°F</b> <span style="color:#f59e0b;font-size:0.78rem">(-6° vs forecast)</span>
+      ☁️ <b style="color:#e6e8ef">62°F</b> <span style="color:#9ca3af;font-size:0.78rem">(-3° vs forecast)</span>
        &nbsp;·&nbsp; 💦 dew 57°
        &nbsp;·&nbsp; 🌬 6mph S
        &nbsp;·&nbsp; 👁 10+ mi
@@ -456,12 +486,6 @@
       <div class="expanded-section-label">🕐 Hourly</div>
       <div class="hourly-fade-wrap"><div class="hourly-scroll">
     <div class="hour-card">
-        <div class="hour-time">1 PM</div>
-        <div class="hour-emoji">🌦️</div>
-        <div class="hour-temp" style="">67°</div>
-        <div class="hour-precip" style="">💧45%</div>
-        <div class="hour-wind">10mph</div>
-      </div><div class="hour-card">
         <div class="hour-time">2 PM</div>
         <div class="hour-emoji">⛈️</div>
         <div class="hour-temp" style="">67°</div>
@@ -599,6 +623,12 @@
         <div class="hour-temp" style="">65°</div>
         <div class="hour-precip" style="visibility:hidden">💧0%</div>
         <div class="hour-wind">15mph</div>
+      </div><div class="hour-card">
+        <div class="hour-time">1 PM</div>
+        <div class="hour-emoji">⛅</div>
+        <div class="hour-temp" style="">66°</div>
+        <div class="hour-precip" style="visibility:hidden">💧0%</div>
+        <div class="hour-wind">15mph</div>
       </div>
   </div></div>
       <div class="expanded-section-label" style="margin-top:16px">📅 7-Day Forecast</div>
@@ -608,7 +638,7 @@
       <div class="day-emoji">⛈️</div>
       <div class="day-desc">Showers And Thunderstorms</div>
       <div class="day-temps"><span class="day-high">72°</span> <span class="day-low">61°</span></div>
-      <div class="day-precip">💧 100% · 1.1"</div>
+      <div class="day-precip">💧 100% · 1.5"</div>
       
     </div><div class="day-card ">
       <div class="day-name">Thu</div>
@@ -636,7 +666,7 @@
       <div class="day-emoji">⛈️</div>
       <div class="day-desc">Showers And Thunderstorms Likely</div>
       <div class="day-temps"><span class="day-high">75°</span> <span class="day-low">58°</span></div>
-      <div class="day-precip">💧 72% · 1.0"</div>
+      <div class="day-precip">💧 71% · 1.0"</div>
       
     </div><div class="day-card ">
       <div class="day-name">Mon</div>
@@ -647,8 +677,8 @@
       <div class="day-uv">☀️ UV 7.45</div>
     </div><div class="day-card ">
       <div class="day-name">Tue</div>
-      <div class="day-emoji">🌤️</div>
-      <div class="day-desc">Mostly Sunny</div>
+      <div class="day-emoji">☀️</div>
+      <div class="day-desc">Sunny</div>
       <div class="day-temps"><span class="day-high">77°</span> <span class="day-low">57°</span></div>
       
       <div class="day-uv">☀️ UV 7.25</div>
@@ -667,39 +697,54 @@
         <span class="expand-toggle" id="expand-syracusein-toggle">details ▼</span>
       </div>
     </div>
-    <div class="alert-banner" style="background:#080818;border-left:4px solid #4361ee;color:#4361ee">
+    <div class="alert-banner" style="background:#1a1800;border-left:4px solid #ffe566;color:#ffe566">
       <div class="alert-top" onclick="toggleAlert('alert-syracuseinhttpsapiweathergovalertsurnoid0')" style="cursor:pointer">
-        <span class="alert-event">⚠️ Flood Watch</span>
-        <span class="alert-area">Elkhart; Lagrange; Steuben; Noble; De Kalb; Starke; Pulaski; Marshall; Fulton; Whitley; Allen; White; Cass; Miami; Wabash; Huntington; Northern La Porte; Eastern St. Joseph; Northern Kosciusko; Southern La Porte; Western St. Joseph; Southern Kosciusko; Cass; St. Joseph; Branch; Hillsdale; Northern Berrien; Southern Berrien; Williams; Fulton; Defiance; Henry; Paulding</span>
+        <span class="alert-event">⚠️ Wind Advisory</span>
+        <span class="alert-area">Elkhart; Lagrange; Steuben; Noble; De Kalb; Starke; Marshall; Whitley; Allen; Northern La Porte; Eastern St. Joseph; Northern Kosciusko; Southern La Porte; Western St. Joseph; Southern Kosciusko; Cass; St. Joseph; Branch; Hillsdale; Northern Berrien; Southern Berrien; Williams; Fulton; Defiance; Henry; Paulding; Putnam</span>
         <div style="display:flex;align-items:center;gap:8px;margin-left:auto">
-          <span class="alert-expires">Until 4:00 PM</span>
-          <span class="alert-expand-toggle" id="alert-syracuseinhttpsapiweathergovalertsurnoid0-toggle" style="color:#4361ee;font-weight:900;font-size:0.8rem;transition:transform 0.2s;display:inline-block">▼</span>
+          <span class="alert-expires">Until 11:00 PM</span>
+          <span class="alert-expand-toggle" id="alert-syracuseinhttpsapiweathergovalertsurnoid0-toggle" style="color:#ffe566;font-weight:900;font-size:0.8rem;transition:transform 0.2s;display:inline-block">▼</span>
         </div>
       </div>
       <div class="alert-detail" id="alert-syracuseinhttpsapiweathergovalertsurnoid0-body" style="display:none">
+        <div class="alert-detail-divider" style="border-top:1px solid #ffe56640;margin:8px 0"></div>
+        <div class="alert-headline">Wind Advisory issued June 17 at 2:16PM EDT until June 17 at 11:00PM EDT by NWS Northern Indiana</div>
+        <div class="alert-desc">* WHAT...South winds 15 to 25 mph with gusts up to 50 mph.<br><br>* WHERE...Portions of northern Indiana, southwest Michigan, and northwest Ohio.<br><br>* WHEN...Until 11 PM EDT /10 PM CDT/ this evening.<br><br>* IMPACTS...Gusty winds will blow around unsecured objects. Tree limbs could be blown down and a few power outages may result.<br><br>* ADDITIONAL DETAILS...Over northeast Illinois, wind gusts of 50 to 60 mph have been recorded as a wake low moves through. This area of strong wind will progress east over the next several hours.</div>
+        <div class="alert-instr"><b>⚡ What to do:</b><br>Winds this strong can make driving difficult, especially for high profile vehicles. Use extra caution.<br><br>Secure outdoor objects.</div>
+      </div>
+    </div><div class="alert-banner" style="background:#080818;border-left:4px solid #4361ee;color:#4361ee">
+      <div class="alert-top" onclick="toggleAlert('alert-syracuseinhttpsapiweathergovalertsurnoid1')" style="cursor:pointer">
+        <span class="alert-event">⚠️ Flood Watch</span>
+        <span class="alert-area">Elkhart; Lagrange; Steuben; Noble; De Kalb; Starke; Pulaski; Marshall; Fulton; Whitley; Allen; White; Cass; Miami; Wabash; Huntington; Northern La Porte; Eastern St. Joseph; Northern Kosciusko; Southern La Porte; Western St. Joseph; Southern Kosciusko; Cass; St. Joseph; Branch; Hillsdale; Northern Berrien; Southern Berrien; Williams; Fulton; Defiance; Henry; Paulding</span>
+        <div style="display:flex;align-items:center;gap:8px;margin-left:auto">
+          <span class="alert-expires">Until 10:15 PM</span>
+          <span class="alert-expand-toggle" id="alert-syracuseinhttpsapiweathergovalertsurnoid1-toggle" style="color:#4361ee;font-weight:900;font-size:0.8rem;transition:transform 0.2s;display:inline-block">▼</span>
+        </div>
+      </div>
+      <div class="alert-detail" id="alert-syracuseinhttpsapiweathergovalertsurnoid1-body" style="display:none">
         <div class="alert-detail-divider" style="border-top:1px solid #4361ee40;margin:8px 0"></div>
-        <div class="alert-headline">Flood Watch issued June 17 at 2:37AM EDT until June 18 at 2:00AM EDT by NWS Northern Indiana</div>
-        <div class="alert-desc">* WHAT...Flash flooding caused by excessive rainfall is possible.<br><br>* WHERE...Portions of northern Indiana, including the following areas, Allen IN, Cass IN, De Kalb, Eastern St. Joseph IN, Elkhart, Fulton IN, Huntington, Lagrange, Marshall, Miami, Noble, Northern Kosciusko, Northern La Porte, Pulaski, Southern Kosciusko, Southern La Porte, Starke, Steuben, Wabash, Western St. Joseph IN, White and Whitley, southwest Michigan, including the following areas, Branch, Cass MI, Hillsdale, Northern Berrien, Southern Berrien and St. Joseph MI, and northwest Ohio, including the following areas, Defiance, Fulton OH, Henry, Paulding and Williams.<br><br>* WHEN...From 2 PM EDT  /1 PM CDT/ this afternoon through late tonight.<br><br>* IMPACTS...Excessive runoff may result in flooding of rivers, creeks, streams, and other low-lying and flood-prone locations. Flooding may occur in poor drainage and urban areas.<br><br>* ADDITIONAL DETAILS... - Thunderstorms could produce 2-3 inches of rain in 1-2 hours this afternoon and evening. This may result in areas of flash flooding. - http://www.weather.gov/safety/flood</div>
+        <div class="alert-headline">Flood Watch issued June 17 at 2:11PM EDT until June 18 at 2:00AM EDT by NWS Northern Indiana</div>
+        <div class="alert-desc">* WHAT...Flash flooding caused by excessive rainfall continues to be possible.<br><br>* WHERE...Portions of northern Indiana, including the following areas, Allen IN, Cass IN, De Kalb, Eastern St. Joseph IN, Elkhart, Fulton IN, Huntington, Lagrange, Marshall, Miami, Noble, Northern Kosciusko, Northern La Porte, Pulaski, Southern Kosciusko, Southern La Porte, Starke, Steuben, Wabash, Western St. Joseph IN, White and Whitley, southwest Michigan, including the following areas, Branch, Cass MI, Hillsdale, Northern Berrien, Southern Berrien and St. Joseph MI, and northwest Ohio, including the following areas, Defiance, Fulton OH, Henry, Paulding and Williams.<br><br>* WHEN...Until 2 AM EDT /1 AM CDT/ Thursday.<br><br>* IMPACTS...Excessive runoff may result in flooding of rivers, creeks, streams, and other low-lying and flood-prone locations. Flooding may occur in poor drainage and urban areas.<br><br>* ADDITIONAL DETAILS... - Thunderstorms could produce 2-3 inches of rain in 1-2 hours later this afternoon and evening. This may result in areas of flash flooding. - http://www.weather.gov/safety/flood</div>
         <div class="alert-instr"><b>⚡ What to do:</b><br>You should monitor later forecasts and be prepared to take action should Flash Flood Warnings be issued.</div>
       </div>
     </div>
     <div class="small-temp-row">
-      <span class="small-temp">69°F</span>
-      <span class="small-feels">feels 61°</span>
+      <span class="small-temp">65°F</span>
+      <span class="small-feels">feels 56°</span>
       <span class="small-hilo">73° / 62°</span>
     </div>
     <div class="small-detail">Overcast</div>
-    <div class="small-detail">💧 39% &nbsp; 🌬 15mph SSE</div>
+    <div class="small-detail">💧 40% &nbsp; 🌬 15mph SSE</div>
     <div class="small-detail">🟢 Good</div>
     <div class="small-detail" style="color:#ffe566;font-weight:700;margin-top:4px">🟡 Moderate</div>
 
     <div class="loc-expanded" id="expand-syracusein-body" style="display:none">
       <div class="expanded-divider"></div>
       <div class="current-details" style="margin:12px 0">
-        <div class="detail-row">💧 Humidity: <b>39%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>43°F</b></div>
+        <div class="detail-row">💧 Humidity: <b>40%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>40°F</b></div>
         <div class="detail-row">🌬 Wind: <b>15 mph SSE</b> (Gusts <b>23 mph</b>)</div>
-        <div class="detail-row">👁 Visibility: <b>105 mi</b></div>
-        <div class="detail-row">☀️ UV Index: <b>2.1</b></div>
+        <div class="detail-row">👁 Visibility: <b>112 mi</b></div>
+        <div class="detail-row">☀️ UV Index: <b>2.25</b></div>
         <div class="detail-row">🌡 Pressure: <b>971 hPa</b></div>
         <div class="detail-row">📈 High: <b>73°F</b> &nbsp;|&nbsp; 📉 Low: <b>62°F</b></div>
         <div class="detail-row">🌅 Sunrise: <b>6:09 AM</b> &nbsp;|&nbsp; 🌇 Sunset: <b>9:18 PM</b></div>
@@ -707,9 +752,9 @@
       </div>
       <div class="metar-strip" style="margin-top:10px;padding:8px 12px;background:rgba(96,165,250,0.08);border-left:3px solid #60a5fa;border-radius:6px;font-size:0.85rem;color:#cbd5e1">
     <span style="color:#60a5fa;font-weight:700;font-size:0.78rem;letter-spacing:0.04em">✈ Goshen Airport</span>
-    <span style="opacity:0.55;font-size:0.75rem">&nbsp;16m ago</span>
+    <span style="opacity:0.55;font-size:0.75rem">&nbsp;36m ago</span>
     <div style="margin-top:4px">
-      ☁️ <b style="color:#e6e8ef">62°F</b> <span style="color:#f59e0b;font-size:0.78rem">(-7° vs forecast)</span>
+      ☁️ <b style="color:#e6e8ef">62°F</b> <span style="color:#9ca3af;font-size:0.78rem">(-3° vs forecast)</span>
        &nbsp;·&nbsp; 💦 dew 57°
        &nbsp;·&nbsp; 🌬 6mph S
        &nbsp;·&nbsp; 👁 10+ mi
@@ -724,12 +769,6 @@
       <div class="expanded-section-label">🕐 Hourly</div>
       <div class="hourly-fade-wrap"><div class="hourly-scroll">
     <div class="hour-card">
-        <div class="hour-time">1 PM</div>
-        <div class="hour-emoji">🌦️</div>
-        <div class="hour-temp" style="">67°</div>
-        <div class="hour-precip" style="">💧30%</div>
-        <div class="hour-wind">10mph</div>
-      </div><div class="hour-card">
         <div class="hour-time">2 PM</div>
         <div class="hour-emoji">⛈️</div>
         <div class="hour-temp" style="">68°</div>
@@ -867,6 +906,12 @@
         <div class="hour-temp" style="">66°</div>
         <div class="hour-precip" style="visibility:hidden">💧0%</div>
         <div class="hour-wind">15mph</div>
+      </div><div class="hour-card">
+        <div class="hour-time">1 PM</div>
+        <div class="hour-emoji">⛅</div>
+        <div class="hour-temp" style="">66°</div>
+        <div class="hour-precip" style="visibility:hidden">💧0%</div>
+        <div class="hour-wind">15mph</div>
       </div>
   </div></div>
       <div class="expanded-section-label" style="margin-top:16px">📅 7-Day Forecast</div>
@@ -876,7 +921,7 @@
       <div class="day-emoji">⛈️</div>
       <div class="day-desc">Showers And Thunderstorms</div>
       <div class="day-temps"><span class="day-high">73°</span> <span class="day-low">62°</span></div>
-      <div class="day-precip">💧 99% · 0.7"</div>
+      <div class="day-precip">💧 99% · 1.8"</div>
       
     </div><div class="day-card ">
       <div class="day-name">Thu</div>
@@ -969,7 +1014,7 @@
       <div class="current-details" style="margin:12px 0">
         <div class="detail-row">💧 Humidity: <b>53%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>67°F</b></div>
         <div class="detail-row">🌬 Wind: <b>24 mph SSW</b> (Gusts <b>40 mph</b>)</div>
-        <div class="detail-row">👁 Visibility: <b>70 mi</b></div>
+        <div class="detail-row">👁 Visibility: <b>72 mi</b></div>
         <div class="detail-row">☀️ UV Index: <b>8.05</b></div>
         <div class="detail-row">🌡 Pressure: <b>970 hPa</b></div>
         <div class="detail-row">📈 High: <b>90°F</b> &nbsp;|&nbsp; 📉 Low: <b>69°F</b></div>
@@ -978,7 +1023,7 @@
       </div>
       <div class="metar-strip" style="margin-top:10px;padding:8px 12px;background:rgba(96,165,250,0.08);border-left:3px solid #60a5fa;border-radius:6px;font-size:0.85rem;color:#cbd5e1">
     <span style="color:#60a5fa;font-weight:700;font-size:0.78rem;letter-spacing:0.04em">✈ Farmington Regional</span>
-    <span style="opacity:0.55;font-size:0.75rem">&nbsp;13m ago</span>
+    <span style="opacity:0.55;font-size:0.75rem">&nbsp;33m ago</span>
     <div style="margin-top:4px">
       ☀️ <b style="color:#e6e8ef">84°F</b> <span style="color:#9ca3af;font-size:0.78rem">(-2° vs forecast)</span>
        &nbsp;·&nbsp; 💦 dew 70°
@@ -1154,7 +1199,7 @@
       <div class="day-emoji">🌦️</div>
       <div class="day-desc">Mostly Sunny then Slight Chance Rain Showers</div>
       <div class="day-temps"><span class="day-high">86°</span> <span class="day-low">60°</span></div>
-      <div class="day-precip">💧 22% · 0.1"</div>
+      <div class="day-precip">💧 22%</div>
       
     </div><div class="day-card ">
       <div class="day-name">Fri</div>
@@ -1224,50 +1269,50 @@
   <div class="section-header">⚠️ Active National Alerts — Extreme &amp; Severe</div>
   <div class="nat-alert-list">
     <div class="nat-alert-item" style="border-left-color:#4361ee">
-        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flood Watch</span>
-        <span class="nat-alert-area">Gibson; Pike; Posey; Vanderburgh; Warrick; Spencer</span>
-      </div><div class="nat-alert-item" style="border-left-color:#ff6b35">
-        <span class="nat-alert-event" style="color:#ff6b35">⚠️ Extreme Heat Warning</span>
-        <span class="nat-alert-area">Nolan; Sterling; Coke; Irion</span>
+        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flood Warning</span>
+        <span class="nat-alert-area">Baldwin, AL; Escambia, FL</span>
       </div><div class="nat-alert-item" style="border-left-color:#4361ee">
         <span class="nat-alert-event" style="color:#4361ee">⚠️ Flood Warning</span>
-        <span class="nat-alert-area">Chelan, WA</span>
+        <span class="nat-alert-area">Covington, AL; Escambia, AL; Okaloosa, FL; Santa Rosa, FL</span>
+      </div><div class="nat-alert-item" style="border-left-color:#4361ee">
+        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flood Warning</span>
+        <span class="nat-alert-area">Okaloosa, FL</span>
+      </div><div class="nat-alert-item" style="border-left-color:#4361ee">
+        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flood Watch</span>
+        <span class="nat-alert-area">Gratiot; Ionia; Clinton</span>
+      </div><div class="nat-alert-item" style="border-left-color:#4361ee">
+        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flood Watch</span>
+        <span class="nat-alert-area">Allegan; Barry; Eaton; Ingham; Van Buren; Kalamazoo; Calhoun; Jackson</span>
+      </div><div class="nat-alert-item" style="border-left-color:#4361ee">
+        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flood Warning</span>
+        <span class="nat-alert-area">Escambia, AL; Escambia, FL; Santa Rosa, FL</span>
+      </div><div class="nat-alert-item" style="border-left-color:#ffe566">
+        <span class="nat-alert-event" style="color:#ffe566">⚠️ Fire Weather Watch</span>
+        <span class="nat-alert-area">Western Klamath National Forest; Central Siskiyou County Including Shasta Valley; Siskiyou County from the Cascade Mountains East and South to Mt Shasta; Modoc County Except for the Surprise Valley</span>
+      </div><div class="nat-alert-item" style="border-left-color:#ffe566">
+        <span class="nat-alert-event" style="color:#ffe566">⚠️ Fire Weather Watch</span>
+        <span class="nat-alert-area">Klamath Basin and the Fremont-Winema National Forest; South Central Oregon Desert including the BLM Land in Eastern Lake and Western Harney Counties</span>
+      </div><div class="nat-alert-item" style="border-left-color:#ffe566">
+        <span class="nat-alert-event" style="color:#ffe566">⚠️ Special Marine Warning</span>
+        <span class="nat-alert-area">Breton Sound; Barataria Bay; Coastal Waters from Boothville LA to Southwest Pass of the Mississippi River out 20 nm</span>
+      </div><div class="nat-alert-item" style="border-left-color:#ff9f1c">
+        <span class="nat-alert-event" style="color:#ff9f1c">⚠️ Tornado Watch</span>
+        <span class="nat-alert-area">Hancock, IL; McDonough, IL; Clark, MO; Scotland, MO</span>
+      </div><div class="nat-alert-item" style="border-left-color:#ffe566">
+        <span class="nat-alert-event" style="color:#ffe566">⚠️ Fire Weather Watch</span>
+        <span class="nat-alert-area">Northeastern Interior Humboldt and Southwestern Siskiyou Including Orleans; Eastern Interior Humboldt Including Willow Creek and Hoopa; Northwestern Trinity Including Salyer and Big Bar; Northeastern Trinity Including Trinity Lake</span>
+      </div><div class="nat-alert-item" style="border-left-color:#ffe566">
+        <span class="nat-alert-event" style="color:#ffe566">⚠️ Severe Thunderstorm Watch</span>
+        <span class="nat-alert-area">Allamakee, IA; Chickasaw, IA; Floyd, IA; Howard, IA; Mitchell, IA; Winneshiek, IA; Dodge, MN; Fillmore, MN; Houston, MN; Mower, MN; Olmsted, MN; Wabasha, MN; Winona, MN; Buffalo, WI; Crawford, WI; La Crosse, WI; Trempealeau, WI; Vernon, WI</span>
+      </div><div class="nat-alert-item" style="border-left-color:#ffe566">
+        <span class="nat-alert-event" style="color:#ffe566">⚠️ Severe Thunderstorm Watch</span>
+        <span class="nat-alert-area">Dakota, MN; Freeborn, MN; Goodhue, MN; Le Sueur, MN; Rice, MN; Scott, MN; Steele, MN; Waseca, MN; Pepin, WI; Pierce, WI</span>
       </div><div class="nat-alert-item" style="border-left-color:#f72585">
         <span class="nat-alert-event" style="color:#f72585">⚠️ Severe Thunderstorm Warning</span>
-        <span class="nat-alert-area">Coffee, AL; Dale, AL; Geneva, AL; Houston, AL</span>
+        <span class="nat-alert-area">Coffee, AL; Dale, AL; Houston, AL</span>
       </div><div class="nat-alert-item" style="border-left-color:#4361ee">
         <span class="nat-alert-event" style="color:#4361ee">⚠️ Flood Watch</span>
-        <span class="nat-alert-area">Choctaw; Washington; Clarke; Wilcox; Monroe; Conecuh; Butler; Crenshaw; Escambia; Covington; Mobile Inland; Baldwin Inland; Mobile Central; Baldwin Central; Mobile Coastal; Baldwin Coastal; Escambia Inland; Escambia Coastal; Santa Rosa Inland; Santa Rosa Coastal; Okaloosa Inland; Okaloosa Coastal; Wayne; Perry; Greene; Stone; George</span>
-      </div><div class="nat-alert-item" style="border-left-color:#4361ee">
-        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flood Watch</span>
-        <span class="nat-alert-area">Ogle; Lee; De Kalb</span>
-      </div><div class="nat-alert-item" style="border-left-color:#4361ee">
-        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flood Watch</span>
-        <span class="nat-alert-area">Lake; Kane; DuPage; La Salle; Kendall; Grundy; Kankakee; Livingston; Iroquois; Ford; Northern Cook; Central Cook; Southern Cook; Northern Will; Southern Will; Eastern Will; Lake; Porter; Newton; Jasper; Benton</span>
-      </div><div class="nat-alert-item" style="border-left-color:#4361ee">
-        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flood Warning</span>
-        <span class="nat-alert-area">Pike, IL; Scott, IL</span>
-      </div><div class="nat-alert-item" style="border-left-color:#4361ee">
-        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flood Warning</span>
-        <span class="nat-alert-area">Calhoun, IL; Greene, IL; Jersey, IL</span>
-      </div><div class="nat-alert-item" style="border-left-color:#4361ee">
-        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flood Watch</span>
-        <span class="nat-alert-area">Fleming; Montgomery; Bath; Rowan</span>
-      </div><div class="nat-alert-item" style="border-left-color:#4361ee">
-        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flood Watch</span>
-        <span class="nat-alert-area">Livingston; Oakland; Macomb; Washtenaw; Wayne; Lenawee; Monroe</span>
-      </div><div class="nat-alert-item" style="border-left-color:#4361ee">
-        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flood Watch</span>
-        <span class="nat-alert-area">Saginaw; Tuscola; Sanilac; Shiawassee; Genesee; Lapeer; St. Clair</span>
-      </div><div class="nat-alert-item" style="border-left-color:#ffe566">
-        <span class="nat-alert-event" style="color:#ffe566">⚠️ High Wind Warning</span>
-        <span class="nat-alert-area">South Laramie Range</span>
-      </div><div class="nat-alert-item" style="border-left-color:#ffe566">
-        <span class="nat-alert-event" style="color:#ffe566">⚠️ High Wind Warning</span>
-        <span class="nat-alert-area">South Laramie Range Foothills</span>
-      </div><div class="nat-alert-item" style="border-left-color:#ff6b35">
-        <span class="nat-alert-event" style="color:#ff6b35">⚠️ Extreme Heat Warning</span>
-        <span class="nat-alert-area">La Salle; McMullen; Webb; Duval</span>
+        <span class="nat-alert-area">Elkhart; Lagrange; Steuben; Noble; De Kalb; Starke; Pulaski; Marshall; Fulton; Whitley; Allen; White; Cass; Miami; Wabash; Huntington; Northern La Porte; Eastern St. Joseph; Northern Kosciusko; Southern La Porte; Western St. Joseph; Southern Kosciusko; Cass; St. Joseph; Branch; Hillsdale; Northern Berrien; Southern Berrien; Williams; Fulton; Defiance; Henry; Paulding</span>
       </div>
   </div>
 
@@ -1384,7 +1429,7 @@ to extend the Tropical Storm Warning southward to Sargent, T</div>
           <span class="storm-basin">Atlantic</span>
         </div>
         <div class="storm-summary">Wind Speed Probabilities last updated Wed, 17 Jun 2026 16:33:40 GMT</div>
-        <a href="https://www.nhc.noaa.gov/refresh/graphics_at1+shtml/175535.shtml?cone" target="_blank" class="storm-link">Full Advisory →</a>
+        <a href="https://www.nhc.noaa.gov/refresh/graphics_at1+shtml/181418.shtml?cone" target="_blank" class="storm-link">Full Advisory →</a>
       </div>
   </div>
 </div>
@@ -1415,89 +1460,89 @@ to extend the Tropical Storm Warning southward to Sargent, T</div>
   <div class="section-header">🌍 Significant Earthquakes (Past 7 Days, M4.5+)</div>
   <div class="eq-list">
     <div class="eq-card">
+        <div class="eq-mag" style="color:#06d6a0">M4.6</div>
+        <div class="eq-info">
+          <div class="eq-place">78 km W of Panguna, Papua New Guinea</div>
+          <div class="eq-meta">58m ago &nbsp;|&nbsp; Depth: 96.026km</div>
+        </div>
+        <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000stpy" target="_blank" class="eq-link">Details</a>
+      </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.7</div>
         <div class="eq-info">
           <div class="eq-place">240 km ESE of Yamada, Japan</div>
-          <div class="eq-meta">3h 40m ago &nbsp;|&nbsp; Depth: 10km</div>
+          <div class="eq-meta">4h 0m ago &nbsp;|&nbsp; Depth: 10km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000stna" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.6</div>
         <div class="eq-info">
           <div class="eq-place">102 km W of Isangel, Vanuatu</div>
-          <div class="eq-meta">3h 47m ago &nbsp;|&nbsp; Depth: 10km</div>
+          <div class="eq-meta">4h 7m ago &nbsp;|&nbsp; Depth: 10km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000stn9" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#ffe566">M5.2</div>
         <div class="eq-info">
           <div class="eq-place">258 km SSE of Dunhuang, China</div>
-          <div class="eq-meta">3h 49m ago &nbsp;|&nbsp; Depth: 10km</div>
+          <div class="eq-meta">4h 9m ago &nbsp;|&nbsp; Depth: 10km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000stn8" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.5</div>
         <div class="eq-info">
           <div class="eq-place">17 km SE of Pāhala, Hawaii</div>
-          <div class="eq-meta">5h 54m ago &nbsp;|&nbsp; Depth: 33.07km</div>
+          <div class="eq-meta">6h 14m ago &nbsp;|&nbsp; Depth: 33.07km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/hv74984492" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.5</div>
         <div class="eq-info">
           <div class="eq-place">18 km W of Sarangani, Philippines</div>
-          <div class="eq-meta">7h 10m ago &nbsp;|&nbsp; Depth: 85.125km</div>
+          <div class="eq-meta">7h 30m ago &nbsp;|&nbsp; Depth: 85.125km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000stm3" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.7</div>
         <div class="eq-info">
           <div class="eq-place">1 km SE of Villanueva, Colombia</div>
-          <div class="eq-meta">7h 18m ago &nbsp;|&nbsp; Depth: 163.969km</div>
+          <div class="eq-meta">7h 38m ago &nbsp;|&nbsp; Depth: 163.969km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000stm0" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.5</div>
         <div class="eq-info">
           <div class="eq-place">10 km NNE of Luklukan, Philippines</div>
-          <div class="eq-meta">7h 37m ago &nbsp;|&nbsp; Depth: 61.724km</div>
+          <div class="eq-meta">7h 57m ago &nbsp;|&nbsp; Depth: 61.724km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000stlm" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.7</div>
         <div class="eq-info">
           <div class="eq-place">31 km SW of Balangonan, Philippines</div>
-          <div class="eq-meta">10h 5m ago &nbsp;|&nbsp; Depth: 80.209km</div>
+          <div class="eq-meta">10h 25m ago &nbsp;|&nbsp; Depth: 80.209km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000stl0" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.8</div>
         <div class="eq-info">
           <div class="eq-place">261 km SSE of Dunhuang, China</div>
-          <div class="eq-meta">11h 40m ago &nbsp;|&nbsp; Depth: 10km</div>
+          <div class="eq-meta">12h 0m ago &nbsp;|&nbsp; Depth: 10km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000stkl" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.7</div>
         <div class="eq-info">
           <div class="eq-place">238 km SE of Hihifo, Tonga</div>
-          <div class="eq-meta">12h 47m ago &nbsp;|&nbsp; Depth: 10km</div>
+          <div class="eq-meta">13h 7m ago &nbsp;|&nbsp; Depth: 10km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000stki" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#ffe566">M5.0</div>
         <div class="eq-info">
           <div class="eq-place">144 km SE of Pondaguitan, Philippines</div>
-          <div class="eq-meta">14h 22m ago &nbsp;|&nbsp; Depth: 35km</div>
+          <div class="eq-meta">14h 42m ago &nbsp;|&nbsp; Depth: 35km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000stka" target="_blank" class="eq-link">Details</a>
-      </div><div class="eq-card">
-        <div class="eq-mag" style="color:#ffe566">M5.1</div>
-        <div class="eq-info">
-          <div class="eq-place">25 km SSE of Tambolaka, Indonesia</div>
-          <div class="eq-meta">14h 24m ago &nbsp;|&nbsp; Depth: 35km</div>
-        </div>
-        <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000stk6" target="_blank" class="eq-link">Details</a>
       </div>
   </div>
 
@@ -1615,7 +1660,7 @@ to extend the Tropical Storm Warning southward to Sargent, T</div>
   
   // Poll for new data every 2 minutes — shows refresh banner when crawl has run
   (function() {
-    var GENERATED = '2026-06-17T18:09:06.891Z';
+    var GENERATED = '2026-06-17T18:29:07.373Z';
     setInterval(function() {
       fetch('/api/data', { cache: 'no-store' })
         .then(function(r) { return r.json(); })
