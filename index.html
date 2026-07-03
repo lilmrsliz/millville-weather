@@ -15,8 +15,8 @@
 <header class="site-header">
   <div class="site-title">⛅ Millville Weather</div>
   <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
-    
-    <div class="site-meta">Updated: Jul 3, 2026, 3:43 PM</div>
+    <span class="rapid-badge">⚡ ALERT MODE — Updating every 60s</span>
+    <div class="site-meta">Updated: Jul 3, 2026, 4:03 PM</div>
   </div>
 </header>
 
@@ -30,7 +30,7 @@
 <!-- ══ LOCAL TAB ══ -->
 <div id="tab-local" class="tab-content active">
 
-  <div class="summary-banner">⛅ 91°F in Bristol — Partly cloudy. ⚠️ Severe Thunderstorm Watch, Heat Advisory in effect.
+  <div class="summary-banner">⛅ 93°F in Bristol — Partly cloudy. ⚠️ Severe Thunderstorm Warning, Severe Thunderstorm Watch, Heat Advisory in effect.
     <div class="summary-mcas" style="border-top:1px solid #ff9f1c30;margin-top:10px;padding-top:10px">
       <span class="summary-mcas-label">🧬 Comfort Index:</span>
       <span class="summary-mcas-value" style="background:#ff9f1c20;border:1px solid #ff9f1c;color:#ff9f1c">🟠 Rough Day</span>
@@ -51,31 +51,46 @@
         </div>
       </div>
 
-      <div class="alert-banner" style="background:#1a1800;border-left:4px solid #ffe566;color:#ffe566">
+      <div class="alert-banner" style="background:#2a0818;border-left:4px solid #f72585;color:#f72585">
       <div class="alert-top" onclick="toggleAlert('alert-bristolinhttpsapiweathergovalertsurnoid0')" style="cursor:pointer">
+        <span class="alert-event">⚠️ Severe Thunderstorm Warning</span>
+        <span class="alert-area">Elkhart, IN; St. Joseph, IN; Cass, MI; St. Joseph, MI</span>
+        <div style="display:flex;align-items:center;gap:8px;margin-left:auto">
+          <span class="alert-expires">Until 5:00 PM</span>
+          <span class="alert-expand-toggle" id="alert-bristolinhttpsapiweathergovalertsurnoid0-toggle" style="color:#f72585;font-weight:900;font-size:0.8rem;transition:transform 0.2s;display:inline-block">▼</span>
+        </div>
+      </div>
+      <div class="alert-detail" id="alert-bristolinhttpsapiweathergovalertsurnoid0-body" style="display:none">
+        <div class="alert-detail-divider" style="border-top:1px solid #f7258540;margin:8px 0"></div>
+        <div class="alert-headline">Severe Thunderstorm Warning issued July 3 at 3:47PM EDT until July 3 at 5:00PM EDT by NWS Northern Indiana</div>
+        <div class="alert-desc">SVRIWX<br><br>The National Weather Service in Northern Indiana has issued a<br><br>* Severe Thunderstorm Warning for... Northern Elkhart County in north central Indiana... St. Joseph County in north central Indiana... Cass County in southwestern Michigan... Western St. Joseph County in southwestern Michigan...<br><br>* Until 500 PM EDT.<br><br>* At 347 PM EDT, a severe thunderstorm was located near Three Oaks, or 7 miles west of Buchanan, moving east at 40 mph.<br><br>HAZARD...70 mph wind gusts and nickel size hail.<br><br>SOURCE...Radar indicated.<br><br>IMPACT...Expect considerable tree damage. Damage is likely to mobile homes, roofs, and outbuildings.<br><br>* Locations impacted include... South Bend, Elkhart, Mishawaka, Goshen, Niles, Dowagiac, Gulivoire Park, Granger, Dunlap, Simonton Lake, Osceola, New Carlisle, Cassopolis, Wakarusa, Bristol, Edwardsburg, Marcellus, Roseland, Union, and Pokagon.<br><br>This includes Interstate 80 in Indiana between mile markers 62 and 103.</div>
+        <div class="alert-instr"><b>⚡ What to do:</b><br>For your protection move to an interior room on the lowest floor of a building.</div>
+      </div>
+    </div><div class="alert-banner" style="background:#1a1800;border-left:4px solid #ffe566;color:#ffe566">
+      <div class="alert-top" onclick="toggleAlert('alert-bristolinhttpsapiweathergovalertsurnoid1')" style="cursor:pointer">
         <span class="alert-event">⚠️ Severe Thunderstorm Watch</span>
         <span class="alert-area">De Kalb, IN; Elkhart, IN; Kosciusko, IN; Lagrange, IN; La Porte, IN; Marshall, IN; Noble, IN; St. Joseph, IN; Starke, IN; Steuben, IN; Berrien, MI; Branch, MI; Cass, MI; Hillsdale, MI; St. Joseph, MI; Fulton, OH; Williams, OH</span>
         <div style="display:flex;align-items:center;gap:8px;margin-left:auto">
           <span class="alert-expires">Until 10:00 PM</span>
-          <span class="alert-expand-toggle" id="alert-bristolinhttpsapiweathergovalertsurnoid0-toggle" style="color:#ffe566;font-weight:900;font-size:0.8rem;transition:transform 0.2s;display:inline-block">▼</span>
+          <span class="alert-expand-toggle" id="alert-bristolinhttpsapiweathergovalertsurnoid1-toggle" style="color:#ffe566;font-weight:900;font-size:0.8rem;transition:transform 0.2s;display:inline-block">▼</span>
         </div>
       </div>
-      <div class="alert-detail" id="alert-bristolinhttpsapiweathergovalertsurnoid0-body" style="display:none">
+      <div class="alert-detail" id="alert-bristolinhttpsapiweathergovalertsurnoid1-body" style="display:none">
         <div class="alert-detail-divider" style="border-top:1px solid #ffe56640;margin:8px 0"></div>
         <div class="alert-headline">Severe Thunderstorm Watch issued July 3 at 2:36PM EDT until July 3 at 10:00PM EDT by NWS Northern Indiana</div>
         <div class="alert-desc">THE NATIONAL WEATHER SERVICE HAS ISSUED SEVERE THUNDERSTORM WATCH 447 IN EFFECT UNTIL 10 PM EDT /9 PM CDT/ THIS EVENING FOR THE FOLLOWING AREAS<br><br>IN INDIANA THIS WATCH INCLUDES 10 COUNTIES<br><br>IN NORTH CENTRAL INDIANA<br><br>KOSCIUSKO             ST. JOSEPH<br><br>IN NORTHERN INDIANA<br><br>DE KALB               ELKHART               LA PORTE LAGRANGE              MARSHALL              NOBLE STARKE                STEUBEN<br><br>IN MICHIGAN THIS WATCH INCLUDES 5 COUNTIES<br><br>IN SOUTHWEST MICHIGAN<br><br>BERRIEN               BRANCH                CASS MI HILLSDALE             ST. JOSEPH MI<br><br>IN OHIO THIS WATCH INCLUDES 2 COUNTIES<br><br>IN NORTHWEST OHIO<br><br>FULTON OH             WILLIAMS<br><br>THIS INCLUDES THE CITIES OF ALBION, ANGOLA, ARCHBOLD, AUBURN, BASS LAKE, BENTON HARBOR, BENTON HEIGHTS, BREMEN, BRONSON, BRYAN, BUCHANAN, CASSOPOLIS, COLDWATER, CULVER, DELTA, DOWAGIAC, EDGERTON, EDWARDSBURG, ELKHART, FAIR PLAIN, FREMONT, GARRETT, GOSHEN, GRANGER, HILLSDALE, JONESVILLE, KENDALLVILLE, KNOX, LA PORTE, LAGRANGE, LIGONIER, LITCHFIELD, MARCELLUS, MENDON, MICHIGAN CITY, MISHAWAKA, MONTPELIER, NAPPANEE, NILES, NORTH JUDSON, PAW PAW LAKE, PLYMOUTH, SHIPSHEWANA, SOUTH BEND, ST. JOSEPH, STURGIS, SWANTON, THREE RIVERS, TOPEKA, WARSAW, WAUSEON, WHITE PIGEON, AND WINONA LAKE.</div>
         
       </div>
     </div><div class="alert-banner" style="background:#200800;border-left:4px solid #ff6b35;color:#ff6b35">
-      <div class="alert-top" onclick="toggleAlert('alert-bristolinhttpsapiweathergovalertsurnoid1')" style="cursor:pointer">
+      <div class="alert-top" onclick="toggleAlert('alert-bristolinhttpsapiweathergovalertsurnoid2')" style="cursor:pointer">
         <span class="alert-event">⚠️ Heat Advisory</span>
         <span class="alert-area">Elkhart; Lagrange; Steuben; Noble; Starke; Pulaski; Marshall; Fulton; White; Northern La Porte; Eastern St. Joseph; Northern Kosciusko; Southern La Porte; Western St. Joseph; Southern Kosciusko; Cass; St. Joseph; Branch; Hillsdale; Northern Berrien; Southern Berrien</span>
         <div style="display:flex;align-items:center;gap:8px;margin-left:auto">
           <span class="alert-expires">Until 8:00 PM</span>
-          <span class="alert-expand-toggle" id="alert-bristolinhttpsapiweathergovalertsurnoid1-toggle" style="color:#ff6b35;font-weight:900;font-size:0.8rem;transition:transform 0.2s;display:inline-block">▼</span>
+          <span class="alert-expand-toggle" id="alert-bristolinhttpsapiweathergovalertsurnoid2-toggle" style="color:#ff6b35;font-weight:900;font-size:0.8rem;transition:transform 0.2s;display:inline-block">▼</span>
         </div>
       </div>
-      <div class="alert-detail" id="alert-bristolinhttpsapiweathergovalertsurnoid1-body" style="display:none">
+      <div class="alert-detail" id="alert-bristolinhttpsapiweathergovalertsurnoid2-body" style="display:none">
         <div class="alert-detail-divider" style="border-top:1px solid #ff6b3540;margin:8px 0"></div>
         <div class="alert-headline">Heat Advisory issued July 3 at 1:40PM EDT until July 3 at 8:00PM EDT by NWS Northern Indiana</div>
         <div class="alert-desc">* WHAT...Heat index values up to 102.<br><br>* WHERE...Portions of northern Indiana and southwest Michigan.<br><br>* WHEN...Until 8 PM EDT /7 PM CDT/ this evening.<br><br>* IMPACTS...Hot temperatures and high humidity may cause heat illnesses.</div>
@@ -86,15 +101,15 @@
       <div class="current-main">
         <div class="current-big">
           <div class="current-emoji">⛅</div>
-          <div class="current-temp">91°F</div>
+          <div class="current-temp">93°F</div>
           <div class="current-desc">Partly cloudy</div>
-          <div class="current-feels">Feels like 98°F</div>
+          <div class="current-feels">Feels like 101°F</div>
         </div>
         <div class="current-details">
-          <div class="detail-row">💧 Humidity: <b>57%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>74°F</b></div>
-          <div class="detail-row">🌬 Wind: <b>9 mph WSW</b> (Gusts <b>16 mph</b>)</div>
-          <div class="detail-row">👁 Visibility: <b>63 mi</b></div>
-          <div class="detail-row">☀️ UV Index: <b>6.85</b></div>
+          <div class="detail-row">💧 Humidity: <b>59%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>76°F</b></div>
+          <div class="detail-row">🌬 Wind: <b>11 mph SW</b> (Gusts <b>19 mph</b>)</div>
+          <div class="detail-row">👁 Visibility: <b>67 mi</b></div>
+          <div class="detail-row">☀️ UV Index: <b>6.25</b></div>
           <div class="detail-row">🌡 Pressure: <b>989 hPa</b></div>
           <div class="detail-row">📈 High: <b>90°F</b> &nbsp;|&nbsp; 📉 Low: <b>71°F</b></div>
           <div class="detail-row">🌅 Sunrise: <b>6:13 AM</b> &nbsp;|&nbsp; 🌇 Sunset: <b>9:21 PM</b></div>
@@ -104,11 +119,11 @@
 
       <div class="metar-strip" style="margin-top:10px;padding:8px 12px;background:rgba(96,165,250,0.08);border-left:3px solid #60a5fa;border-radius:6px;font-size:0.85rem;color:#cbd5e1">
     <span style="color:#60a5fa;font-weight:700;font-size:0.78rem;letter-spacing:0.04em">✈ Goshen Airport</span>
-    <span style="opacity:0.55;font-size:0.75rem">&nbsp;51m ago</span>
+    <span style="opacity:0.55;font-size:0.75rem">&nbsp;10m ago</span>
     <div style="margin-top:4px">
-      🌤️ <b style="color:#e6e8ef">92°F</b>
-       &nbsp;·&nbsp; 💦 dew 74°
-       &nbsp;·&nbsp; 🌬 15mph WSW (G20)
+      ⛅ <b style="color:#e6e8ef">93°F</b>
+       &nbsp;·&nbsp; 💦 dew 73°
+       &nbsp;·&nbsp; 🌬 14mph SW (G25)
        &nbsp;·&nbsp; 👁 10+ mi
     </div>
   </div>
@@ -131,16 +146,16 @@
             <span class="mcas-factor-text">Mold season peak — Alternaria and Cladosporium at high levels, strong MCAS mast cell trigger</span>
           </div><div class="mcas-factor-row" style="color:#ff9f1ccc">
             <span class="mcas-factor-icon">💦</span>
-            <span class="mcas-factor-text">Dew point 74°F — oppressive moisture, histamine release risk</span>
+            <span class="mcas-factor-text">Dew point 76°F — oppressive moisture, histamine release risk</span>
           </div><div class="mcas-factor-row" style="color:#ff9f1ccc">
             <span class="mcas-factor-icon">🌬</span>
-            <span class="mcas-factor-text">Ozone 101 µg/m³ — elevated, airway inflammation risk</span>
+            <span class="mcas-factor-text">Ozone 104 µg/m³ — elevated, airway inflammation risk</span>
           </div>
         </div>
         <div class="mcas-good-factors" style="margin-top:6px">
           <div class="mcas-factor-row mcas-good" style="color:#06d6a090">
             <span class="mcas-factor-icon">💧</span>
-            <span class="mcas-factor-text">Humidity 57% — comfortable range</span>
+            <span class="mcas-factor-text">Humidity 59% — comfortable range</span>
           </div><div class="mcas-factor-row mcas-good" style="color:#06d6a090">
             <span class="mcas-factor-icon">💨</span>
             <span class="mcas-factor-text">PM2.5 5 µg/m³ — clean air</span>
@@ -414,31 +429,46 @@
         <span class="expand-toggle" id="expand-goshenin-toggle">details ▼</span>
       </div>
     </div>
-    <div class="alert-banner" style="background:#1a1800;border-left:4px solid #ffe566;color:#ffe566">
+    <div class="alert-banner" style="background:#2a0818;border-left:4px solid #f72585;color:#f72585">
       <div class="alert-top" onclick="toggleAlert('alert-gosheninhttpsapiweathergovalertsurnoid0')" style="cursor:pointer">
+        <span class="alert-event">⚠️ Severe Thunderstorm Warning</span>
+        <span class="alert-area">Elkhart, IN; St. Joseph, IN; Cass, MI; St. Joseph, MI</span>
+        <div style="display:flex;align-items:center;gap:8px;margin-left:auto">
+          <span class="alert-expires">Until 5:00 PM</span>
+          <span class="alert-expand-toggle" id="alert-gosheninhttpsapiweathergovalertsurnoid0-toggle" style="color:#f72585;font-weight:900;font-size:0.8rem;transition:transform 0.2s;display:inline-block">▼</span>
+        </div>
+      </div>
+      <div class="alert-detail" id="alert-gosheninhttpsapiweathergovalertsurnoid0-body" style="display:none">
+        <div class="alert-detail-divider" style="border-top:1px solid #f7258540;margin:8px 0"></div>
+        <div class="alert-headline">Severe Thunderstorm Warning issued July 3 at 3:47PM EDT until July 3 at 5:00PM EDT by NWS Northern Indiana</div>
+        <div class="alert-desc">SVRIWX<br><br>The National Weather Service in Northern Indiana has issued a<br><br>* Severe Thunderstorm Warning for... Northern Elkhart County in north central Indiana... St. Joseph County in north central Indiana... Cass County in southwestern Michigan... Western St. Joseph County in southwestern Michigan...<br><br>* Until 500 PM EDT.<br><br>* At 347 PM EDT, a severe thunderstorm was located near Three Oaks, or 7 miles west of Buchanan, moving east at 40 mph.<br><br>HAZARD...70 mph wind gusts and nickel size hail.<br><br>SOURCE...Radar indicated.<br><br>IMPACT...Expect considerable tree damage. Damage is likely to mobile homes, roofs, and outbuildings.<br><br>* Locations impacted include... South Bend, Elkhart, Mishawaka, Goshen, Niles, Dowagiac, Gulivoire Park, Granger, Dunlap, Simonton Lake, Osceola, New Carlisle, Cassopolis, Wakarusa, Bristol, Edwardsburg, Marcellus, Roseland, Union, and Pokagon.<br><br>This includes Interstate 80 in Indiana between mile markers 62 and 103.</div>
+        <div class="alert-instr"><b>⚡ What to do:</b><br>For your protection move to an interior room on the lowest floor of a building.</div>
+      </div>
+    </div><div class="alert-banner" style="background:#1a1800;border-left:4px solid #ffe566;color:#ffe566">
+      <div class="alert-top" onclick="toggleAlert('alert-gosheninhttpsapiweathergovalertsurnoid1')" style="cursor:pointer">
         <span class="alert-event">⚠️ Severe Thunderstorm Watch</span>
         <span class="alert-area">De Kalb, IN; Elkhart, IN; Kosciusko, IN; Lagrange, IN; La Porte, IN; Marshall, IN; Noble, IN; St. Joseph, IN; Starke, IN; Steuben, IN; Berrien, MI; Branch, MI; Cass, MI; Hillsdale, MI; St. Joseph, MI; Fulton, OH; Williams, OH</span>
         <div style="display:flex;align-items:center;gap:8px;margin-left:auto">
           <span class="alert-expires">Until 10:00 PM</span>
-          <span class="alert-expand-toggle" id="alert-gosheninhttpsapiweathergovalertsurnoid0-toggle" style="color:#ffe566;font-weight:900;font-size:0.8rem;transition:transform 0.2s;display:inline-block">▼</span>
+          <span class="alert-expand-toggle" id="alert-gosheninhttpsapiweathergovalertsurnoid1-toggle" style="color:#ffe566;font-weight:900;font-size:0.8rem;transition:transform 0.2s;display:inline-block">▼</span>
         </div>
       </div>
-      <div class="alert-detail" id="alert-gosheninhttpsapiweathergovalertsurnoid0-body" style="display:none">
+      <div class="alert-detail" id="alert-gosheninhttpsapiweathergovalertsurnoid1-body" style="display:none">
         <div class="alert-detail-divider" style="border-top:1px solid #ffe56640;margin:8px 0"></div>
         <div class="alert-headline">Severe Thunderstorm Watch issued July 3 at 2:36PM EDT until July 3 at 10:00PM EDT by NWS Northern Indiana</div>
         <div class="alert-desc">THE NATIONAL WEATHER SERVICE HAS ISSUED SEVERE THUNDERSTORM WATCH 447 IN EFFECT UNTIL 10 PM EDT /9 PM CDT/ THIS EVENING FOR THE FOLLOWING AREAS<br><br>IN INDIANA THIS WATCH INCLUDES 10 COUNTIES<br><br>IN NORTH CENTRAL INDIANA<br><br>KOSCIUSKO             ST. JOSEPH<br><br>IN NORTHERN INDIANA<br><br>DE KALB               ELKHART               LA PORTE LAGRANGE              MARSHALL              NOBLE STARKE                STEUBEN<br><br>IN MICHIGAN THIS WATCH INCLUDES 5 COUNTIES<br><br>IN SOUTHWEST MICHIGAN<br><br>BERRIEN               BRANCH                CASS MI HILLSDALE             ST. JOSEPH MI<br><br>IN OHIO THIS WATCH INCLUDES 2 COUNTIES<br><br>IN NORTHWEST OHIO<br><br>FULTON OH             WILLIAMS<br><br>THIS INCLUDES THE CITIES OF ALBION, ANGOLA, ARCHBOLD, AUBURN, BASS LAKE, BENTON HARBOR, BENTON HEIGHTS, BREMEN, BRONSON, BRYAN, BUCHANAN, CASSOPOLIS, COLDWATER, CULVER, DELTA, DOWAGIAC, EDGERTON, EDWARDSBURG, ELKHART, FAIR PLAIN, FREMONT, GARRETT, GOSHEN, GRANGER, HILLSDALE, JONESVILLE, KENDALLVILLE, KNOX, LA PORTE, LAGRANGE, LIGONIER, LITCHFIELD, MARCELLUS, MENDON, MICHIGAN CITY, MISHAWAKA, MONTPELIER, NAPPANEE, NILES, NORTH JUDSON, PAW PAW LAKE, PLYMOUTH, SHIPSHEWANA, SOUTH BEND, ST. JOSEPH, STURGIS, SWANTON, THREE RIVERS, TOPEKA, WARSAW, WAUSEON, WHITE PIGEON, AND WINONA LAKE.</div>
         
       </div>
     </div><div class="alert-banner" style="background:#200800;border-left:4px solid #ff6b35;color:#ff6b35">
-      <div class="alert-top" onclick="toggleAlert('alert-gosheninhttpsapiweathergovalertsurnoid1')" style="cursor:pointer">
+      <div class="alert-top" onclick="toggleAlert('alert-gosheninhttpsapiweathergovalertsurnoid2')" style="cursor:pointer">
         <span class="alert-event">⚠️ Heat Advisory</span>
         <span class="alert-area">Elkhart; Lagrange; Steuben; Noble; Starke; Pulaski; Marshall; Fulton; White; Northern La Porte; Eastern St. Joseph; Northern Kosciusko; Southern La Porte; Western St. Joseph; Southern Kosciusko; Cass; St. Joseph; Branch; Hillsdale; Northern Berrien; Southern Berrien</span>
         <div style="display:flex;align-items:center;gap:8px;margin-left:auto">
           <span class="alert-expires">Until 8:00 PM</span>
-          <span class="alert-expand-toggle" id="alert-gosheninhttpsapiweathergovalertsurnoid1-toggle" style="color:#ff6b35;font-weight:900;font-size:0.8rem;transition:transform 0.2s;display:inline-block">▼</span>
+          <span class="alert-expand-toggle" id="alert-gosheninhttpsapiweathergovalertsurnoid2-toggle" style="color:#ff6b35;font-weight:900;font-size:0.8rem;transition:transform 0.2s;display:inline-block">▼</span>
         </div>
       </div>
-      <div class="alert-detail" id="alert-gosheninhttpsapiweathergovalertsurnoid1-body" style="display:none">
+      <div class="alert-detail" id="alert-gosheninhttpsapiweathergovalertsurnoid2-body" style="display:none">
         <div class="alert-detail-divider" style="border-top:1px solid #ff6b3540;margin:8px 0"></div>
         <div class="alert-headline">Heat Advisory issued July 3 at 1:40PM EDT until July 3 at 8:00PM EDT by NWS Northern Indiana</div>
         <div class="alert-desc">* WHAT...Heat index values up to 102.<br><br>* WHERE...Portions of northern Indiana and southwest Michigan.<br><br>* WHEN...Until 8 PM EDT /7 PM CDT/ this evening.<br><br>* IMPACTS...Hot temperatures and high humidity may cause heat illnesses.</div>
@@ -447,21 +477,21 @@
     </div>
     <div class="small-temp-row">
       <span class="small-temp">92°F</span>
-      <span class="small-feels">feels 101°</span>
+      <span class="small-feels">feels 96°</span>
       <span class="small-hilo">91° / 70°</span>
     </div>
     <div class="small-detail">Clear sky</div>
-    <div class="small-detail">💧 53% &nbsp; 🌬 9mph SW</div>
+    <div class="small-detail">💧 48% &nbsp; 🌬 11mph SW</div>
     <div class="small-detail">🟢 Good</div>
     <div class="small-detail" style="color:#ff9f1c;font-weight:700;margin-top:4px">🟠 Rough Day</div>
 
     <div class="loc-expanded" id="expand-goshenin-body" style="display:none">
       <div class="expanded-divider"></div>
       <div class="current-details" style="margin:12px 0">
-        <div class="detail-row">💧 Humidity: <b>53%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>73°F</b></div>
-        <div class="detail-row">🌬 Wind: <b>9 mph SW</b> (Gusts <b>16 mph</b>)</div>
-        <div class="detail-row">👁 Visibility: <b>58 mi</b></div>
-        <div class="detail-row">☀️ UV Index: <b>6.9</b></div>
+        <div class="detail-row">💧 Humidity: <b>48%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>70°F</b></div>
+        <div class="detail-row">🌬 Wind: <b>11 mph SW</b> (Gusts <b>18 mph</b>)</div>
+        <div class="detail-row">👁 Visibility: <b>60 mi</b></div>
+        <div class="detail-row">☀️ UV Index: <b>6.45</b></div>
         <div class="detail-row">🌡 Pressure: <b>988 hPa</b></div>
         <div class="detail-row">📈 High: <b>91°F</b> &nbsp;|&nbsp; 📉 Low: <b>70°F</b></div>
         <div class="detail-row">🌅 Sunrise: <b>6:14 AM</b> &nbsp;|&nbsp; 🌇 Sunset: <b>9:21 PM</b></div>
@@ -469,11 +499,11 @@
       </div>
       <div class="metar-strip" style="margin-top:10px;padding:8px 12px;background:rgba(96,165,250,0.08);border-left:3px solid #60a5fa;border-radius:6px;font-size:0.85rem;color:#cbd5e1">
     <span style="color:#60a5fa;font-weight:700;font-size:0.78rem;letter-spacing:0.04em">✈ Goshen Airport</span>
-    <span style="opacity:0.55;font-size:0.75rem">&nbsp;51m ago</span>
+    <span style="opacity:0.55;font-size:0.75rem">&nbsp;10m ago</span>
     <div style="margin-top:4px">
-      🌤️ <b style="color:#e6e8ef">92°F</b>
-       &nbsp;·&nbsp; 💦 dew 74°
-       &nbsp;·&nbsp; 🌬 15mph WSW (G20)
+      ⛅ <b style="color:#e6e8ef">93°F</b>
+       &nbsp;·&nbsp; 💦 dew 73°
+       &nbsp;·&nbsp; 🌬 14mph SW (G25)
        &nbsp;·&nbsp; 👁 10+ mi
     </div>
   </div>
@@ -730,21 +760,21 @@
     </div>
     <div class="small-temp-row">
       <span class="small-temp">93°F</span>
-      <span class="small-feels">feels 100°</span>
+      <span class="small-feels">feels 95°</span>
       <span class="small-hilo">91° / 71°</span>
     </div>
     <div class="small-detail">Clear sky</div>
-    <div class="small-detail">💧 52% &nbsp; 🌬 11mph SW</div>
+    <div class="small-detail">💧 48% &nbsp; 🌬 14mph SW</div>
     <div class="small-detail">🟢 Good</div>
     <div class="small-detail" style="color:#ff9f1c;font-weight:700;margin-top:4px">🟠 Rough Day</div>
 
     <div class="loc-expanded" id="expand-syracusein-body" style="display:none">
       <div class="expanded-divider"></div>
       <div class="current-details" style="margin:12px 0">
-        <div class="detail-row">💧 Humidity: <b>52%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>72°F</b></div>
-        <div class="detail-row">🌬 Wind: <b>11 mph SW</b> (Gusts <b>17 mph</b>)</div>
-        <div class="detail-row">👁 Visibility: <b>67 mi</b></div>
-        <div class="detail-row">☀️ UV Index: <b>6.9</b></div>
+        <div class="detail-row">💧 Humidity: <b>48%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>70°F</b></div>
+        <div class="detail-row">🌬 Wind: <b>14 mph SW</b></div>
+        <div class="detail-row">👁 Visibility: <b>69 mi</b></div>
+        <div class="detail-row">☀️ UV Index: <b>6.45</b></div>
         <div class="detail-row">🌡 Pressure: <b>986 hPa</b></div>
         <div class="detail-row">📈 High: <b>91°F</b> &nbsp;|&nbsp; 📉 Low: <b>71°F</b></div>
         <div class="detail-row">🌅 Sunrise: <b>6:14 AM</b> &nbsp;|&nbsp; 🌇 Sunset: <b>9:20 PM</b></div>
@@ -752,11 +782,11 @@
       </div>
       <div class="metar-strip" style="margin-top:10px;padding:8px 12px;background:rgba(96,165,250,0.08);border-left:3px solid #60a5fa;border-radius:6px;font-size:0.85rem;color:#cbd5e1">
     <span style="color:#60a5fa;font-weight:700;font-size:0.78rem;letter-spacing:0.04em">✈ Goshen Airport</span>
-    <span style="opacity:0.55;font-size:0.75rem">&nbsp;51m ago</span>
+    <span style="opacity:0.55;font-size:0.75rem">&nbsp;10m ago</span>
     <div style="margin-top:4px">
-      🌤️ <b style="color:#e6e8ef">92°F</b>
-       &nbsp;·&nbsp; 💦 dew 74°
-       &nbsp;·&nbsp; 🌬 15mph WSW (G20)
+      ⛅ <b style="color:#e6e8ef">93°F</b>
+       &nbsp;·&nbsp; 💦 dew 73°
+       &nbsp;·&nbsp; 🌬 14mph SW (G25)
        &nbsp;·&nbsp; 👁 10+ mi
     </div>
   </div>
@@ -985,7 +1015,7 @@
     </div>
     <div class="alert-banner" style="background:#200800;border-left:4px solid #ff6b35;color:#ff6b35">
       <div class="alert-top" onclick="toggleAlert('alert-farmingtonmohttpsapiweathergovalertsurnoid0')" style="cursor:pointer">
-        <span class="alert-event">⚠️ Heat Advisory</span>
+        <span class="alert-event">⚠️ Extreme Heat Warning</span>
         <span class="alert-area">Greene; Macoupin; Montgomery; Bond; Fayette; Marion; Adams; Brown; Pike; Calhoun; Jersey; Knox; Lewis; Shelby; Marion; Monroe; Ralls; Pike; Audrain; Lincoln; Crawford; Washington; St. Francois; Iron; Madison; Reynolds</span>
         <div style="display:flex;align-items:center;gap:8px;margin-left:auto">
           <span class="alert-expires">Until 6:15 AM</span>
@@ -994,13 +1024,13 @@
       </div>
       <div class="alert-detail" id="alert-farmingtonmohttpsapiweathergovalertsurnoid0-body" style="display:none">
         <div class="alert-detail-divider" style="border-top:1px solid #ff6b3540;margin:8px 0"></div>
-        <div class="alert-headline">Heat Advisory issued July 3 at 2:06PM CDT until July 4 at 8:00PM CDT by NWS St Louis MO</div>
+        <div class="alert-headline">Extreme Heat Warning issued July 3 at 2:06PM CDT until July 3 at 10:00PM CDT by NWS St Louis MO</div>
         <div class="alert-desc">* WHAT...For the Extreme Heat Warning, dangerously hot conditions with heat index values up to 105. For the Heat Advisory, heat index values up to 102 expected.<br><br>* WHERE...Portions of south central, southwest, and west central Illinois and central, east central, northeast, and southeast Missouri.<br><br>* WHEN...For the Extreme Heat Warning, until 10 PM CDT this evening. For the Heat Advisory, from 10 PM this evening to 8 PM CDT Saturday.<br><br>* IMPACTS...Heat related illnesses increase significantly during extreme heat and high humidity events. Hot temperatures and high humidity may cause heat illnesses.</div>
         <div class="alert-instr"><b>⚡ What to do:</b><br>Drink plenty of fluids, stay in an air-conditioned room, stay out of the sun, and check up on relatives and neighbors. Young children and pets should never be left unattended in vehicles under any circumstances. Take extra precautions if you work or spend time outside. When possible reschedule strenuous activities to early morning or evening. Know the signs and symptoms of heat exhaustion and heat stroke. Wear lightweight and loose fitting clothing when possible. To reduce risk during outdoor work, the Occupational Safety and Health Administration recommends scheduling frequent rest breaks in shaded or air conditioned environments. Anyone overcome by heat should be moved to a cool and shaded location. Heat stroke is an emergency! Call 9 1 1.</div>
       </div>
     </div><div class="alert-banner" style="background:#200800;border-left:4px solid #ff6b35;color:#ff6b35">
       <div class="alert-top" onclick="toggleAlert('alert-farmingtonmohttpsapiweathergovalertsurnoid1')" style="cursor:pointer">
-        <span class="alert-event">⚠️ Extreme Heat Warning</span>
+        <span class="alert-event">⚠️ Heat Advisory</span>
         <span class="alert-area">Greene; Macoupin; Montgomery; Bond; Fayette; Marion; Adams; Brown; Pike; Calhoun; Jersey; Knox; Lewis; Shelby; Marion; Monroe; Ralls; Pike; Audrain; Lincoln; Crawford; Washington; St. Francois; Iron; Madison; Reynolds</span>
         <div style="display:flex;align-items:center;gap:8px;margin-left:auto">
           <span class="alert-expires">Until 6:15 AM</span>
@@ -1009,43 +1039,34 @@
       </div>
       <div class="alert-detail" id="alert-farmingtonmohttpsapiweathergovalertsurnoid1-body" style="display:none">
         <div class="alert-detail-divider" style="border-top:1px solid #ff6b3540;margin:8px 0"></div>
-        <div class="alert-headline">Extreme Heat Warning issued July 3 at 2:06PM CDT until July 3 at 10:00PM CDT by NWS St Louis MO</div>
+        <div class="alert-headline">Heat Advisory issued July 3 at 2:06PM CDT until July 4 at 8:00PM CDT by NWS St Louis MO</div>
         <div class="alert-desc">* WHAT...For the Extreme Heat Warning, dangerously hot conditions with heat index values up to 105. For the Heat Advisory, heat index values up to 102 expected.<br><br>* WHERE...Portions of south central, southwest, and west central Illinois and central, east central, northeast, and southeast Missouri.<br><br>* WHEN...For the Extreme Heat Warning, until 10 PM CDT this evening. For the Heat Advisory, from 10 PM this evening to 8 PM CDT Saturday.<br><br>* IMPACTS...Heat related illnesses increase significantly during extreme heat and high humidity events. Hot temperatures and high humidity may cause heat illnesses.</div>
         <div class="alert-instr"><b>⚡ What to do:</b><br>Drink plenty of fluids, stay in an air-conditioned room, stay out of the sun, and check up on relatives and neighbors. Young children and pets should never be left unattended in vehicles under any circumstances. Take extra precautions if you work or spend time outside. When possible reschedule strenuous activities to early morning or evening. Know the signs and symptoms of heat exhaustion and heat stroke. Wear lightweight and loose fitting clothing when possible. To reduce risk during outdoor work, the Occupational Safety and Health Administration recommends scheduling frequent rest breaks in shaded or air conditioned environments. Anyone overcome by heat should be moved to a cool and shaded location. Heat stroke is an emergency! Call 9 1 1.</div>
       </div>
     </div>
     <div class="small-temp-row">
-      <span class="small-temp">92°F</span>
+      <span class="small-temp">93°F</span>
       <span class="small-feels">feels 100°</span>
       <span class="small-hilo">94° / 74°</span>
     </div>
     <div class="small-detail">Clear sky</div>
-    <div class="small-detail">💧 49% &nbsp; 🌬 10mph S</div>
+    <div class="small-detail">💧 48% &nbsp; 🌬 10mph SSW</div>
     <div class="small-detail">🟢 Good</div>
     <div class="small-detail" style="color:#ef233c;font-weight:700;margin-top:4px">🔴 Stay In</div>
 
     <div class="loc-expanded" id="expand-farmingtonmo-body" style="display:none">
       <div class="expanded-divider"></div>
       <div class="current-details" style="margin:12px 0">
-        <div class="detail-row">💧 Humidity: <b>49%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>70°F</b></div>
-        <div class="detail-row">🌬 Wind: <b>10 mph S</b></div>
-        <div class="detail-row">👁 Visibility: <b>69 mi</b></div>
-        <div class="detail-row">☀️ UV Index: <b>7.45</b></div>
+        <div class="detail-row">💧 Humidity: <b>48%</b> &nbsp;|&nbsp; 💦 Dew Point: <b>70°F</b></div>
+        <div class="detail-row">🌬 Wind: <b>10 mph SSW</b></div>
+        <div class="detail-row">👁 Visibility: <b>78 mi</b></div>
+        <div class="detail-row">☀️ UV Index: <b>7.15</b></div>
         <div class="detail-row">🌡 Pressure: <b>985 hPa</b></div>
         <div class="detail-row">📈 High: <b>94°F</b> &nbsp;|&nbsp; 📉 Low: <b>74°F</b></div>
         <div class="detail-row">🌅 Sunrise: <b>6:44 AM</b> &nbsp;|&nbsp; 🌇 Sunset: <b>9:27 PM</b></div>
         <div class="detail-row">🌗 Last Quarter</div>
       </div>
-      <div class="metar-strip" style="margin-top:10px;padding:8px 12px;background:rgba(96,165,250,0.08);border-left:3px solid #60a5fa;border-radius:6px;font-size:0.85rem;color:#cbd5e1">
-    <span style="color:#60a5fa;font-weight:700;font-size:0.78rem;letter-spacing:0.04em">✈ Farmington Regional</span>
-    <span style="opacity:0.55;font-size:0.75rem">&nbsp;48m ago</span>
-    <div style="margin-top:4px">
-      ⛅ <b style="color:#e6e8ef">92°F</b>
-       &nbsp;·&nbsp; 💦 dew 73°
-       &nbsp;·&nbsp; 🌬 10mph SSW
-       &nbsp;·&nbsp; 👁 10+ mi
-    </div>
-  </div>
+      
       <div class="aq-row" style="margin-bottom:12px;margin-top:12px">
         <span class="aq-pill">🟢 Air Quality: <b>Good</b></span>
         <a href="pollen.html" class="aq-pill aq-pill-link" title="View full pollen breakdown">🌿 Pollen: <b>None</b> <span style="font-size:0.75em;opacity:0.7">↗</span></a>
@@ -1283,51 +1304,51 @@
 
   <div class="section-header">⚠️ Active National Alerts — Extreme &amp; Severe</div>
   <div class="nat-alert-list">
-    <div class="nat-alert-item" style="border-left-color:#f72585">
-        <span class="nat-alert-event" style="color:#f72585">⚠️ Severe Thunderstorm Warning</span>
-        <span class="nat-alert-area">Walker, GA</span>
+    <div class="nat-alert-item" style="border-left-color:#4361ee">
+        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flash Flood Warning</span>
+        <span class="nat-alert-area">Catoosa, GA; Walker, GA</span>
       </div><div class="nat-alert-item" style="border-left-color:#f72585">
         <span class="nat-alert-event" style="color:#f72585">⚠️ Severe Thunderstorm Warning</span>
-        <span class="nat-alert-area">Crook, WY</span>
+        <span class="nat-alert-area">Bartow, GA</span>
       </div><div class="nat-alert-item" style="border-left-color:#f72585">
         <span class="nat-alert-event" style="color:#f72585">⚠️ Severe Thunderstorm Warning</span>
-        <span class="nat-alert-area">Steuben, NY</span>
-      </div><div class="nat-alert-item" style="border-left-color:#4361ee">
-        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flood Watch</span>
-        <span class="nat-alert-area">Guam; Rota; Tinian; Saipan</span>
-      </div><div class="nat-alert-item" style="border-left-color:#ffe566">
-        <span class="nat-alert-event" style="color:#ffe566">⚠️ Special Marine Warning</span>
-        <span class="nat-alert-area">Calumet Harbor IL to Gary IN; Gary to Burns Harbor IN; Burns Harbor to Michigan City IN; Lake Michigan from Wilmette Harbor to Michigan City in 5NM offshore to Mid Lake</span>
-      </div><div class="nat-alert-item" style="border-left-color:#f72585">
-        <span class="nat-alert-event" style="color:#f72585">⚠️ Severe Thunderstorm Warning</span>
-        <span class="nat-alert-area">Maury, TN</span>
-      </div><div class="nat-alert-item" style="border-left-color:#ffe566">
-        <span class="nat-alert-event" style="color:#ffe566">⚠️ Special Marine Warning</span>
-        <span class="nat-alert-area">Calumet Harbor IL to Gary IN; Gary to Burns Harbor IN; Burns Harbor to Michigan City IN; Lake Michigan from Wilmette Harbor to Michigan City in 5NM offshore to Mid Lake</span>
+        <span class="nat-alert-area">Giles, TN; Marshall, TN; Maury, TN</span>
       </div><div class="nat-alert-item" style="border-left-color:#f72585">
         <span class="nat-alert-event" style="color:#f72585">⚠️ Severe Thunderstorm Warning</span>
         <span class="nat-alert-area">Will, IL; Lake, IN; Porter, IN</span>
       </div><div class="nat-alert-item" style="border-left-color:#f72585">
         <span class="nat-alert-event" style="color:#f72585">⚠️ Severe Thunderstorm Warning</span>
-        <span class="nat-alert-area">Butler, KY; Warren, KY</span>
+        <span class="nat-alert-area">Tioga, PA</span>
+      </div><div class="nat-alert-item" style="border-left-color:#f72585">
+        <span class="nat-alert-event" style="color:#f72585">⚠️ Severe Thunderstorm Warning</span>
+        <span class="nat-alert-area">Muhlenberg, KY; Todd, KY</span>
       </div><div class="nat-alert-item" style="border-left-color:#f72585">
         <span class="nat-alert-event" style="color:#f72585">⚠️ Severe Thunderstorm Warning</span>
         <span class="nat-alert-area">Schuyler, NY; Tompkins, NY</span>
+      </div><div class="nat-alert-item" style="border-left-color:#ffe566">
+        <span class="nat-alert-event" style="color:#ffe566">⚠️ Special Marine Warning</span>
+        <span class="nat-alert-area">Calumet Harbor IL to Gary IN; Gary to Burns Harbor IN; Burns Harbor to Michigan City IN; Lake Michigan from Wilmette Harbor to Michigan City in 5NM offshore to Mid Lake</span>
+      </div><div class="nat-alert-item" style="border-left-color:#f72585">
+        <span class="nat-alert-event" style="color:#f72585">⚠️ Severe Thunderstorm Warning</span>
+        <span class="nat-alert-area">Dickson, TN; Hickman, TN; Humphreys, TN</span>
       </div><div class="nat-alert-item" style="border-left-color:#f72585">
         <span class="nat-alert-event" style="color:#f72585">⚠️ Severe Thunderstorm Warning</span>
         <span class="nat-alert-area">Cook, IL</span>
-      </div><div class="nat-alert-item" style="border-left-color:#ffe566">
-        <span class="nat-alert-event" style="color:#ffe566">⚠️ Severe Thunderstorm Watch</span>
-        <span class="nat-alert-area">New Castle, DE; Burlington, NJ; Camden, NJ; Gloucester, NJ; Hunterdon, NJ; Mercer, NJ; Middlesex, NJ; Monmouth, NJ; Morris, NJ; Ocean, NJ; Salem, NJ; Somerset, NJ; Sussex, NJ; Warren, NJ; Berks, PA; Bucks, PA; Carbon, PA; Chester, PA; Delaware, PA; Lehigh, PA; Monroe, PA; Montgomery, PA; Northampton, PA; Philadelphia, PA</span>
-      </div><div class="nat-alert-item" style="border-left-color:#ffe566">
-        <span class="nat-alert-event" style="color:#ffe566">⚠️ Severe Thunderstorm Watch</span>
-        <span class="nat-alert-area">Delaware Bay waters north of East Point NJ to Slaughter Beach DE</span>
       </div><div class="nat-alert-item" style="border-left-color:#f72585">
         <span class="nat-alert-event" style="color:#f72585">⚠️ Severe Thunderstorm Warning</span>
-        <span class="nat-alert-area">Bartow, GA; Cherokee, GA; Cobb, GA; Paulding, GA</span>
+        <span class="nat-alert-area">Broome, NY; Tioga, NY</span>
+      </div><div class="nat-alert-item" style="border-left-color:#ffe566">
+        <span class="nat-alert-event" style="color:#ffe566">⚠️ Special Marine Warning</span>
+        <span class="nat-alert-area">St Joseph to South Haven MI; South Haven to Holland MI; Holland to Grand Haven MI; Lake Michigan from Holland to Grand Haven MI 5NM offshore to Mid Lake; Lake Michigan from South Haven to Holland MI 5NM offshore to Mid lake; Lake Michigan from St Joseph to South Haven MI 5NM offshore to Mid Lake</span>
+      </div><div class="nat-alert-item" style="border-left-color:#4361ee">
+        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flood Warning</span>
+        <span class="nat-alert-area">Polk, IA</span>
       </div><div class="nat-alert-item" style="border-left-color:#f72585">
         <span class="nat-alert-event" style="color:#f72585">⚠️ Severe Thunderstorm Warning</span>
-        <span class="nat-alert-area">Graham, NC; Macon, NC; Swain, NC</span>
+        <span class="nat-alert-area">Catoosa, GA; Walker, GA</span>
+      </div><div class="nat-alert-item" style="border-left-color:#f72585">
+        <span class="nat-alert-event" style="color:#f72585">⚠️ Severe Thunderstorm Warning</span>
+        <span class="nat-alert-area">Hamilton, TN; Marion, TN</span>
       </div>
   </div>
 
@@ -1350,12 +1371,12 @@
   <div class="sw-grid"><div class="sw-card">
       <div class="sw-card-header">
         <span class="sw-card-title">🌍 Geomagnetic Activity</span>
-        <span class="sw-value" style="color:#facc15">Kp 4.0</span>
+        <span class="sw-value" style="color:#a3e635">Kp 2.7</span>
       </div>
-      <div class="sw-label" style="color:#facc15">Active</div>
-      <div class="sw-bar-track"><div class="sw-bar-fill" style="width:44%;background:#facc15"></div></div>
+      <div class="sw-label" style="color:#a3e635">Unsettled</div>
+      <div class="sw-bar-track"><div class="sw-bar-fill" style="width:30%;background:#a3e635"></div></div>
       <div class="sw-desc">The Kp index measures geomagnetic disturbance on a scale of 0–9. Values below 4 are normal. G-storm levels (G1–G5) begin at Kp 5 and can disrupt GPS, radio, power grids, and satellite operations.</div>
-      <div class="sw-aurora">🌌 Aurora likely visible from northern Canada only</div>
+      
     </div><div class="sw-card">
       <div class="sw-card-header">
         <span class="sw-card-title">☀️ Solar X-Ray Activity</span>
@@ -1372,86 +1393,86 @@
         <div class="eq-mag" style="color:#06d6a0">M4.8</div>
         <div class="eq-info">
           <div class="eq-place">42 km SW of Balangonan, Philippines</div>
-          <div class="eq-meta">34m ago &nbsp;|&nbsp; Depth: 59.785km</div>
+          <div class="eq-meta">54m ago &nbsp;|&nbsp; Depth: 59.785km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9zf" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.8</div>
         <div class="eq-info">
           <div class="eq-place">24 km SE of Tambolaka, Indonesia</div>
-          <div class="eq-meta">2h 28m ago &nbsp;|&nbsp; Depth: 41.705km</div>
+          <div class="eq-meta">2h 48m ago &nbsp;|&nbsp; Depth: 41.705km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9yy" target="_blank" class="eq-link">Details</a>
+      </div><div class="eq-card">
+        <div class="eq-mag" style="color:#06d6a0">M4.5</div>
+        <div class="eq-info">
+          <div class="eq-place">158 km ENE of Beauséjour, Guadeloupe</div>
+          <div class="eq-meta">5h 18m ago &nbsp;|&nbsp; Depth: 10km</div>
+        </div>
+        <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9um" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.9</div>
         <div class="eq-info">
           <div class="eq-place">18 km SW of Sarangani, Philippines</div>
-          <div class="eq-meta">9h 32m ago &nbsp;|&nbsp; Depth: 67.627km</div>
+          <div class="eq-meta">9h 52m ago &nbsp;|&nbsp; Depth: 67.627km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9tw" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.9</div>
         <div class="eq-info">
           <div class="eq-place">36 km WSW of Sarangani, Philippines</div>
-          <div class="eq-meta">9h 34m ago &nbsp;|&nbsp; Depth: 61.466km</div>
+          <div class="eq-meta">9h 54m ago &nbsp;|&nbsp; Depth: 61.466km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9tv" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.6</div>
         <div class="eq-info">
           <div class="eq-place">west of Macquarie Island</div>
-          <div class="eq-meta">10h 26m ago &nbsp;|&nbsp; Depth: 10km</div>
+          <div class="eq-meta">10h 46m ago &nbsp;|&nbsp; Depth: 10km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9ts" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#ffe566">M5.9</div>
         <div class="eq-info">
           <div class="eq-place">296 km SSW of Severo-Kuril’sk, Russia</div>
-          <div class="eq-meta">11h 20m ago &nbsp;|&nbsp; Depth: 75.804km</div>
+          <div class="eq-meta">11h 40m ago &nbsp;|&nbsp; Depth: 75.804km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9tf" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.7</div>
         <div class="eq-info">
           <div class="eq-place">67 km W of Tobelo, Indonesia</div>
-          <div class="eq-meta">11h 31m ago &nbsp;|&nbsp; Depth: 141.078km</div>
+          <div class="eq-meta">11h 51m ago &nbsp;|&nbsp; Depth: 141.078km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9ta" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.6</div>
         <div class="eq-info">
           <div class="eq-place">78 km W of Tobelo, Indonesia</div>
-          <div class="eq-meta">15h 25m ago &nbsp;|&nbsp; Depth: 89.021km</div>
+          <div class="eq-meta">15h 45m ago &nbsp;|&nbsp; Depth: 89.021km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9sk" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#ff9f1c">M6.1</div>
         <div class="eq-info">
           <div class="eq-place">136 km NNE of Hirara, Japan</div>
-          <div class="eq-meta">15h 38m ago &nbsp;|&nbsp; Depth: 10km</div>
+          <div class="eq-meta">15h 58m ago &nbsp;|&nbsp; Depth: 10km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9sj" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#06d6a0">M4.9</div>
         <div class="eq-info">
           <div class="eq-place">149 km NNE of Hirara, Japan</div>
-          <div class="eq-meta">15h 50m ago &nbsp;|&nbsp; Depth: 10km</div>
+          <div class="eq-meta">16h 10m ago &nbsp;|&nbsp; Depth: 10km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9si" target="_blank" class="eq-link">Details</a>
       </div><div class="eq-card">
         <div class="eq-mag" style="color:#ff9f1c">M6.2</div>
         <div class="eq-info">
           <div class="eq-place">58 km W of Tobelo, Indonesia</div>
-          <div class="eq-meta">17h 12m ago &nbsp;|&nbsp; Depth: 120.932km</div>
+          <div class="eq-meta">17h 32m ago &nbsp;|&nbsp; Depth: 120.932km</div>
         </div>
         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9r5" target="_blank" class="eq-link">Details</a>
-      </div><div class="eq-card">
-        <div class="eq-mag" style="color:#06d6a0">M4.6</div>
-        <div class="eq-info">
-          <div class="eq-place">South Sandwich Islands region</div>
-          <div class="eq-meta">17h 53m ago &nbsp;|&nbsp; Depth: 44.666km</div>
-        </div>
-        <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9qz" target="_blank" class="eq-link">Details</a>
       </div>
   </div>
 
@@ -1464,7 +1485,65 @@
 </div>
 
 <!-- ══ WARNING OVERLAY ══ -->
+<div id="warning-overlay" style="display:flex">
+    <div class="overlay-inner">
+      <div class="overlay-badge" style="color:#f72585">⛈️ SEVERE THUNDERSTORM WARNING</div>
+      <div class="overlay-area">Elkhart, IN; St. Joseph, IN; Cass, MI; St. Joseph, MI</div>
+      <div class="overlay-meta">
+        <span>⏰ Expires: <b>5:00 PM</b></span>
+        <span>🌀 0.88</span>
+      </div>
+      <div class="overlay-headline">Severe Thunderstorm Warning issued July 3 at 3:47PM EDT until July 3 at 5:00PM EDT by NWS Northern Indiana</div>
+      <div id="warning-map"></div>
+      <button class="overlay-close" onclick="document.getElementById('warning-overlay').style.display='none'">
+        Close overlay (warning still active)
+      </button>
+    </div>
+  </div>
+  <script>
+    (function() {
+      const polygon = [[-85.75,42.07],[-85.74,41.74],[-85.75,41.54],[-86.48,41.55],[-86.49,41.57],[-86.49,41.65],[-86.53,41.65],[-86.52,41.76],[-86.22,41.76],[-86.22,42.07],[-85.75,42.07]];
+      const center = [41.7206, -85.8197];
+      const wmap = L.map('warning-map').setView(center, 8);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap'
+      }).addTo(wmap);
 
+      // Animated RainViewer radar on warning map — preload all frames, animate via opacity
+      fetch('https://api.rainviewer.com/public/weather-maps.json')
+        .then(r => r.json())
+        .then(rv => {
+          const past = rv.radar?.past || [];
+          if (!past.length) return;
+          const wlayers = past.map(function(frame) {
+            return L.tileLayer('https://tilecache.rainviewer.com' + frame.path + '/256/{z}/{x}/{y}/2/1_1.png', {
+              opacity: 0, attribution: 'RainViewer'
+            }).addTo(wmap);
+          });
+          let widx = wlayers.length - 1;
+          function showWFrame(i) {
+            wlayers.forEach(function(l, j) { l.setOpacity(j === i ? 0.7 : 0); });
+          }
+          showWFrame(widx);
+          setInterval(function() { widx = (widx + 1) % wlayers.length; showWFrame(widx); }, 600);
+        }).catch(function() {});
+
+      if (polygon && polygon.length > 2) {
+        const latlngs = polygon.map(([lon, lat]) => [lat, lon]);
+        L.polygon(latlngs, {
+          color: '#f72585',
+          fillColor: '#f72585',
+          fillOpacity: 0.15,
+          weight: 3
+        }).addTo(wmap);
+        wmap.fitBounds(latlngs, { padding: [40, 40] });
+      }
+
+      L.circleMarker([41.7206, -85.8197], {
+        radius: 8, color: '#fff', fillColor: '#f72585', fillOpacity: 1, weight: 2
+      }).bindPopup('<b>Bristol, IN</b>').addTo(wmap);
+    })();
+  </script>
 
 <!-- ══ NEW DATA BANNER ══ -->
 <div id="update-banner" onclick="location.reload()">🔄 New weather data available — refresh</div>
@@ -1566,23 +1645,7 @@
 
   window.addEventListener('load', function() { initLocalMap(); });
 
-  
-  // Poll for new data every 2 minutes — shows refresh banner when crawl has run
-  (function() {
-    var GENERATED = '2026-07-03T19:43:34.695Z';
-    setInterval(function() {
-      fetch('/api/data', { cache: 'no-store' })
-        .then(function(r) { return r.json(); })
-        .then(function(d) {
-          if (d.generated && d.generated !== GENERATED) {
-            var b = document.getElementById('update-banner');
-            if (b) b.style.display = 'flex';
-          }
-        })
-        .catch(function() {}); // fails silently on GitHub Pages
-    }, 2 * 60 * 1000);
-  })();
-  
+  setTimeout(function() { location.reload(); }, 60000);
 </script>
 </body>
 </html>
