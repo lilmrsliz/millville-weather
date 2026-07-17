@@ -16,7 +16,7 @@
   <div class="site-title">⛅ Millville Weather</div>
   <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
     
-    <div class="site-meta">Updated: Jul 17, 2026, 12:54 AM</div>
+    <div class="site-meta">Updated: Jul 17, 2026, 1:16 AM</div>
   </div>
 </header>
 
@@ -46,7 +46,7 @@
           <span class="loc-county">Elkhart County</span>
         </div>
         <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
-          
+          <span class="stale-badge">⚠️ 21m old</span>
           <div class="mcas-pill" style="background:#ef233c20;color:#ef233c;border:1px solid #ef233c">🔴 Stay In · Mold + Humidity</div>
         </div>
       </div>
@@ -448,7 +448,7 @@
     <div class="loc-header-small" onclick="toggleLocCard('expand-goshenin')" style="cursor:pointer">
       <div>
         <span class="loc-name-small">Goshen, IN</span>
-        
+        <span style="margin-left:8px"><span class="stale-badge">⚠️ 21m old</span></span>
       </div>
       <div style="display:flex;align-items:center;gap:10px">
         <span class="loc-emoji-small">☀️</span>
@@ -707,7 +707,7 @@
     <div class="loc-header-small" onclick="toggleLocCard('expand-syracusein')" style="cursor:pointer">
       <div>
         <span class="loc-name-small">Syracuse, IN</span>
-        
+        <span style="margin-left:8px"><span class="stale-badge">⚠️ 21m old</span></span>
       </div>
       <div style="display:flex;align-items:center;gap:10px">
         <span class="loc-emoji-small">☀️</span>
@@ -969,7 +969,7 @@
     <div class="loc-header-small" onclick="toggleLocCard('expand-farmingtonmo')" style="cursor:pointer">
       <div>
         <span class="loc-name-small">Farmington, MO</span>
-        
+        <span style="margin-left:8px"><span class="stale-badge">⚠️ 21m old</span></span>
       </div>
       <div style="display:flex;align-items:center;gap:10px">
         <span class="loc-emoji-small">☀️</span>
@@ -1246,12 +1246,15 @@
 
   <div class="section-header">⚠️ Active National Alerts — Extreme &amp; Severe</div>
   <div class="nat-alert-list">
-    <div class="nat-alert-item" style="border-left-color:#ffe566">
-        <span class="nat-alert-event" style="color:#ffe566">⚠️ Severe Thunderstorm Watch</span>
-        <span class="nat-alert-area">Eddy, ND</span>
-      </div><div class="nat-alert-item" style="border-left-color:#f72585">
+    <div class="nat-alert-item" style="border-left-color:#f72585">
         <span class="nat-alert-event" style="color:#f72585">⚠️ Severe Thunderstorm Warning</span>
         <span class="nat-alert-area">Rosebud, MT</span>
+      </div><div class="nat-alert-item" style="border-left-color:#4361ee">
+        <span class="nat-alert-event" style="color:#4361ee">⚠️ Flash Flood Warning</span>
+        <span class="nat-alert-area">Maricopa, AZ</span>
+      </div><div class="nat-alert-item" style="border-left-color:#ef233c">
+        <span class="nat-alert-event" style="color:#ef233c">⚠️ Tornado Warning</span>
+        <span class="nat-alert-area">Real, TX</span>
       </div><div class="nat-alert-item" style="border-left-color:#4361ee">
         <span class="nat-alert-event" style="color:#4361ee">⚠️ Flash Flood Warning</span>
         <span class="nat-alert-area">Uvalde, TX</span>
@@ -1288,9 +1291,6 @@
       </div><div class="nat-alert-item" style="border-left-color:#ffe566">
         <span class="nat-alert-event" style="color:#ffe566">⚠️ Red Flag Warning</span>
         <span class="nat-alert-area">Methow Valley</span>
-      </div><div class="nat-alert-item" style="border-left-color:#ffe566">
-        <span class="nat-alert-event" style="color:#ffe566">⚠️ Red Flag Warning</span>
-        <span class="nat-alert-area">Lower Palouse / Snake River</span>
       </div>
   </div>
 
@@ -1300,101 +1300,9 @@
 <div id="tab-storms" class="tab-content">
   <div class="section-header">🌀 Active Tropical Cyclones</div>
   <p style="font-size:0.8rem;color:var(--text-dim);margin-bottom:12px">Atlantic, Eastern Pacific, and Central Pacific basins — via NHC</p>
-  <div class="storm-list">
-    <div class="storm-card" style="border-top:3px solid #ff9f1c">
-        <div class="storm-header">
-          <span class="storm-name" style="color:#ff9f1c">Tropical Storm Elida</span>
-          <span class="storm-basin">Eastern Pacific</span>
-        </div>
-        <div class="storm-summary">...ELIDA FORECAST TO BECOME A HURRICANE ON FRIDAY... As of 8:00 PM PDT Thu Jul 16 the center of Elida was located near 15.9, -119.1 with movement W at 10 mph. The minimum central pressure was 994 mb with maximum sustained winds of about 65 mph.</div>
-        <a href="https://www.nhc.noaa.gov/text/refresh/MIATCPEP5+shtml/170234.shtml" target="_blank" class="storm-link">Full Advisory →</a>
-      </div><div class="storm-card" style="border-top:3px solid #ff9f1c">
-        <div class="storm-header">
-          <span class="storm-name" style="color:#ff9f1c">Tropical Storm Elida</span>
-          <span class="storm-basin">Eastern Pacific</span>
-        </div>
-        <div class="storm-summary">Issued at 800 PM PDT Thu Jul 16 2026 
-263 
-WTPZ35 KNHC 170234
-TCPEP5
- 
-BULLETIN
-Tropical Storm Elida Advisory Number  10
-NWS National Hurricane Center Miami FL       EP052026
-800 PM PDT Thu Jul 16 2026
- 
-...ELIDA FORECAST TO BECOME A HURRICANE ON FRIDAY...
- 
- 
-SUMMARY OF 800 PM PDT...0300 UTC...INFORMATION
-----------------------------------------------
-LOCATION...15.9N 119.1W
-ABOUT 770 MI...1240 K</div>
-        <a href="https://www.nhc.noaa.gov/text/refresh/MIATCPEP5+shtml/170234.shtml" target="_blank" class="storm-link">Full Advisory →</a>
-      </div><div class="storm-card" style="border-top:3px solid #ff9f1c">
-        <div class="storm-header">
-          <span class="storm-name" style="color:#ff9f1c">Tropical Storm Elida</span>
-          <span class="storm-basin">Eastern Pacific</span>
-        </div>
-        <div class="storm-summary">Issued at 0300 UTC FRI JUL 17 2026 
-161 
-WTPZ25 KNHC 170234
-TCMEP5
- 
-TROPICAL STORM ELIDA FORECAST/ADVISORY NUMBER  10
-NWS NATIONAL HURRICANE CENTER MIAMI FL       EP052026
-0300 UTC FRI JUL 17 2026
- 
-TROPICAL STORM CENTER LOCATED NEAR 15.9N 119.1W AT 17/0300Z
-POSITION ACCURATE WITHIN  30 NM
- 
-PRESENT MOVEMENT TOWARD THE WEST OR 280 DEGREES AT   9 KT
- 
-ESTIMATED MINIMUM CENTRAL PRESSURE  994 MB
-MAX</div>
-        <a href="https://www.nhc.noaa.gov/text/refresh/MIATCMEP5+shtml/170234.shtml" target="_blank" class="storm-link">Full Advisory →</a>
-      </div><div class="storm-card" style="border-top:3px solid #ff9f1c">
-        <div class="storm-header">
-          <span class="storm-name" style="color:#ff9f1c">Tropical Storm Elida</span>
-          <span class="storm-basin">Eastern Pacific</span>
-        </div>
-        <div class="storm-summary">Issued at 800 PM PDT Thu Jul 16 2026 
-426 
-WTPZ45 KNHC 170236
-TCDEP5
- 
-Tropical Storm Elida Discussion Number  10
-NWS National Hurricane Center Miami FL       EP052026
-800 PM PDT Thu Jul 16 2026
- 
-The satellite presentation of Elida consists of a large convective 
-band that wraps around the eastern and southern portions of the 
-circulation. Earlier AMSR2 passive microwave images showed that 
-Elida</div>
-        <a href="https://www.nhc.noaa.gov/text/refresh/MIATCDEP5+shtml/170236.shtml" target="_blank" class="storm-link">Full Advisory →</a>
-      </div><div class="storm-card" style="border-top:3px solid #ff9f1c">
-        <div class="storm-header">
-          <span class="storm-name" style="color:#ff9f1c">Tropical Storm Elida</span>
-          <span class="storm-basin">Eastern Pacific</span>
-        </div>
-        <div class="storm-summary">Issued at 0300 UTC FRI JUL 17 2026 
-739 
-FOPZ15 KNHC 170235
-PWSEP5
-                                                                    
-TROPICAL STORM ELIDA WIND SPEED PROBABILITIES NUMBER  10            
-NWS NATIONAL HURRICANE CENTER MIAMI FL       EP052026               
-0300 UTC FRI JUL 17 2026                                            
-                                                         </div>
-        <a href="https://www.nhc.noaa.gov/text/refresh/MIAPWSEP5+shtml/170235.shtml" target="_blank" class="storm-link">Full Advisory →</a>
-      </div><div class="storm-card" style="border-top:3px solid #ff9f1c">
-        <div class="storm-header">
-          <span class="storm-name" style="color:#ff9f1c">Tropical Storm Elida</span>
-          <span class="storm-basin">Eastern Pacific</span>
-        </div>
-        <div class="storm-summary">Wind Speed Probabilities last updated Fri, 17 Jul 2026 03:22:28 GMT</div>
-        <a href="https://www.nhc.noaa.gov/refresh/graphics_ep5+shtml/032228.shtml?cone" target="_blank" class="storm-link">Full Advisory →</a>
-      </div>
+  <div class="no-storms-card">
+    <div class="no-storms-emoji">🌊</div>
+    <div class="no-storms-text">No active tropical cyclones</div>
   </div>
 </div>
 
@@ -1402,169 +1310,16 @@ NWS NATIONAL HURRICANE CENTER MIAMI FL       EP052026
 <div id="tab-earth" class="tab-content">
 
   <div class="section-header">☀️ Space Weather</div>
-  <div class="sw-grid"><div class="sw-card">
-      <div class="sw-card-header">
-        <span class="sw-card-title">🌍 Geomagnetic Activity</span>
-        <span class="sw-value" style="color:#4ade80">Kp 0.0</span>
-      </div>
-      <div class="sw-label" style="color:#4ade80">Quiet</div>
-      <div class="sw-bar-track"><div class="sw-bar-fill" style="width:0%;background:#4ade80"></div></div>
-      <div class="sw-desc">The Kp index measures geomagnetic disturbance on a scale of 0–9. Values below 4 are normal. G-storm levels (G1–G5) begin at Kp 5 and can disrupt GPS, radio, power grids, and satellite operations.</div>
-      
-    </div><div class="sw-card">
-      <div class="sw-card-header">
-        <span class="sw-card-title">☀️ Solar X-Ray Activity</span>
-        <span class="sw-value" style="color:#a3e635">B-class</span>
-      </div>
-      <div class="sw-label" style="color:#a3e635">Minor flare — no significant effects</div>
-      <div class="sw-bar-track"><div class="sw-bar-fill" style="width:25%;background:#a3e635"></div></div>
-      <div class="sw-desc">Solar flares are classified A→B→C→M→X by X-ray intensity. A and B are background noise. C is moderate. M flares can cause brief radio blackouts. X flares are major events that can affect communications globally.</div>
-    </div></div>
+  <p class="no-data">Space weather data unavailable.</p>
 
   <div class="section-header">🌍 Significant Earthquakes (Past 7 Days, M4.5+)</div>
-  <div class="eq-list">
-    <div class="eq-card">
-        <div class="eq-mag" style="color:#06d6a0">M4.8</div>
-        <div class="eq-info">
-          <div class="eq-place">southern Mid-Atlantic Ridge</div>
-          <div class="eq-meta">2h 23m ago &nbsp;|&nbsp; Depth: 10km</div>
-        </div>
-        <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000t17h" target="_blank" class="eq-link">Details</a>
-      </div><div class="eq-card">
-        <div class="eq-mag" style="color:#06d6a0">M4.5</div>
-        <div class="eq-info">
-          <div class="eq-place">Owen Fracture Zone region</div>
-          <div class="eq-meta">2h 50m ago &nbsp;|&nbsp; Depth: 10km</div>
-        </div>
-        <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000t17e" target="_blank" class="eq-link">Details</a>
-      </div><div class="eq-card">
-        <div class="eq-mag" style="color:#ffe566">M5.2</div>
-        <div class="eq-info">
-          <div class="eq-place">42 km NE of Shwebo, Burma (Myanmar)</div>
-          <div class="eq-meta">3h 28m ago &nbsp;|&nbsp; Depth: 10km</div>
-        </div>
-        <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000t173" target="_blank" class="eq-link">Details</a>
-      </div><div class="eq-card">
-        <div class="eq-mag" style="color:#06d6a0">M4.8</div>
-        <div class="eq-info">
-          <div class="eq-place">262 km SSE of Dunhuang, China</div>
-          <div class="eq-meta">3h 46m ago &nbsp;|&nbsp; Depth: 10km</div>
-        </div>
-        <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000t171" target="_blank" class="eq-link">Details</a>
-      </div><div class="eq-card">
-        <div class="eq-mag" style="color:#ffe566">M5.0</div>
-        <div class="eq-info">
-          <div class="eq-place">southern Mid-Atlantic Ridge</div>
-          <div class="eq-meta">7h 0m ago &nbsp;|&nbsp; Depth: 10km</div>
-        </div>
-        <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000t15z" target="_blank" class="eq-link">Details</a>
-      </div><div class="eq-card">
-        <div class="eq-mag" style="color:#ffe566">M5.2</div>
-        <div class="eq-info">
-          <div class="eq-place">48 km E of Nishinoomote, Japan</div>
-          <div class="eq-meta">7h 4m ago &nbsp;|&nbsp; Depth: 35km</div>
-        </div>
-        <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000t15t" target="_blank" class="eq-link">Details</a>
-      </div><div class="eq-card">
-        <div class="eq-mag" style="color:#06d6a0">M4.7</div>
-        <div class="eq-info">
-          <div class="eq-place">southern Mid-Atlantic Ridge</div>
-          <div class="eq-meta">7h 24m ago &nbsp;|&nbsp; Depth: 10km</div>
-        </div>
-        <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000t15s" target="_blank" class="eq-link">Details</a>
-      </div><div class="eq-card">
-        <div class="eq-mag" style="color:#ffe566">M5.0</div>
-        <div class="eq-info">
-          <div class="eq-place">southern Mid-Atlantic Ridge</div>
-          <div class="eq-meta">7h 37m ago &nbsp;|&nbsp; Depth: 10km</div>
-        </div>
-        <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000t15b" target="_blank" class="eq-link">Details</a>
-      </div><div class="eq-card">
-        <div class="eq-mag" style="color:#ffe566">M5.3</div>
-        <div class="eq-info">
-          <div class="eq-place">southern Mid-Atlantic Ridge</div>
-          <div class="eq-meta">8h 32m ago &nbsp;|&nbsp; Depth: 10km</div>
-        </div>
-        <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000t14v" target="_blank" class="eq-link">Details</a>
-      </div><div class="eq-card">
-        <div class="eq-mag" style="color:#06d6a0">M4.9</div>
-        <div class="eq-info">
-          <div class="eq-place">southern Mid-Atlantic Ridge</div>
-          <div class="eq-meta">8h 51m ago &nbsp;|&nbsp; Depth: 10km</div>
-        </div>
-        <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000t14r" target="_blank" class="eq-link">Details</a>
-      </div><div class="eq-card">
-        <div class="eq-mag" style="color:#ffe566">M5.0</div>
-        <div class="eq-info">
-          <div class="eq-place">southern Mid-Atlantic Ridge</div>
-          <div class="eq-meta">8h 58m ago &nbsp;|&nbsp; Depth: 11.86km</div>
-        </div>
-        <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000t14m" target="_blank" class="eq-link">Details</a>
-      </div><div class="eq-card">
-        <div class="eq-mag" style="color:#ffe566">M5.0</div>
-        <div class="eq-info">
-          <div class="eq-place">southern Mid-Atlantic Ridge</div>
-          <div class="eq-meta">9h 9m ago &nbsp;|&nbsp; Depth: 10km</div>
-        </div>
-        <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000t14l" target="_blank" class="eq-link">Details</a>
-      </div>
-  </div>
+  <p class="no-data">No significant earthquakes in the past 7 days.</p>
 
   <div class="section-header">🌋 US Volcano Activity</div>
   <p class="no-data">No elevated US volcano activity reported.</p>
 
   <div class="section-header">⚠️ Major Global Disasters (GDACS Orange &amp; Red)</div>
-  <div class="gdacs-list">
-    <div class="gdacs-card" style="border-left-color:#ff9f1c">
-        <div class="gdacs-header">
-          <span class="gdacs-type">🌋 Volcano</span>
-          <span class="gdacs-level" style="color:#ff9f1c">ORANGE</span>
-          <span class="gdacs-country">📍 Philippines</span>
-        </div>
-        <div class="gdacs-title">Volcanic eruption is on going for Mayon in Philippines</div>
-        <div class="gdacs-summary">Volcano Mayon is emitting ash clouds according to the regional VAAC. The aviation alert level is Orange.</div>
-      </div><div class="gdacs-card" style="border-left-color:#ff9f1c">
-        <div class="gdacs-header">
-          <span class="gdacs-type">🔥 Wildfire</span>
-          <span class="gdacs-level" style="color:#ff9f1c">ORANGE</span>
-          <span class="gdacs-country">📍 France</span>
-        </div>
-        <div class="gdacs-title">Orange forest fire notification in France</div>
-        <div class="gdacs-summary">On 12/07/2026, a forest fire started in France,  until 14/07/2026.</div>
-      </div><div class="gdacs-card" style="border-left-color:#ff9f1c">
-        <div class="gdacs-header">
-          <span class="gdacs-type">🌊 Flood</span>
-          <span class="gdacs-level" style="color:#ff9f1c">ORANGE</span>
-          <span class="gdacs-country">📍 China</span>
-        </div>
-        <div class="gdacs-title">Orange flood alert in China</div>
-        <div class="gdacs-summary">On 06/06/2026, a flood started in China, lasting until 14/07/2026 (last update). The flood caused 12 deaths and 782166 displaced .</div>
-      </div><div class="gdacs-card" style="border-left-color:#ff9f1c">
-        <div class="gdacs-header">
-          <span class="gdacs-type">🏜️ Drought</span>
-          <span class="gdacs-level" style="color:#ff9f1c">ORANGE</span>
-          <span class="gdacs-country">📍 Ethiopia, Kenya, Somalia</span>
-        </div>
-        <div class="gdacs-title">Drought is on going in Ethiopia, Kenya, Somalia</div>
-        <div class="gdacs-summary">The  Drought notification level is Orange.</div>
-      </div><div class="gdacs-card" style="border-left-color:#ff9f1c">
-        <div class="gdacs-header">
-          <span class="gdacs-type">🏜️ Drought</span>
-          <span class="gdacs-level" style="color:#ff9f1c">ORANGE</span>
-          <span class="gdacs-country">📍 Albania, Austria, Bosnia & Herzegovina, Bulgaria, Belarus, Switzerland, Czech Republic, Germany, Denmark, Spain, France, Croatia, Hungary, Italy, Liechtenstein, Monaco, Montenegro, The Republic of North Macedonia, Poland, Romania, Serbia, Russia, Sweden, Slovakia, San Marino, Ukraine, , </span>
-        </div>
-        <div class="gdacs-title">Drought is on going in Albania, Austria, Bosnia & Herzegovina, Bulgaria, Belarus, Switzerland, Czech Republic, Germany, Denmark, Spain, France, Croatia, Hungary, Italy, Liechtenstein, Monaco, Montenegro, The Republic of North Macedonia, Poland, Romania, Serbia, Russia, Sweden, Slovakia, San Marino, Ukraine, , </div>
-        <div class="gdacs-summary">The  Drought notification level is Orange.</div>
-      </div><div class="gdacs-card" style="border-left-color:#ff9f1c">
-        <div class="gdacs-header">
-          <span class="gdacs-type">🏜️ Drought</span>
-          <span class="gdacs-level" style="color:#ff9f1c">ORANGE</span>
-          <span class="gdacs-country">📍 Madagascar</span>
-        </div>
-        <div class="gdacs-title">Drought is on going in Madagascar</div>
-        <div class="gdacs-summary">The  Drought notification level is Orange.</div>
-      </div>
-  </div>
+  <p class="no-data">No major global disaster events currently reported.</p>
 
 </div>
 
@@ -1674,7 +1429,7 @@ NWS NATIONAL HURRICANE CENTER MIAMI FL       EP052026
   
   // Poll for new data every 2 minutes — shows refresh banner when crawl has run
   (function() {
-    var GENERATED = '2026-07-17T04:54:31.510Z';
+    var GENERATED = '2026-07-17T05:16:55.604Z';
     setInterval(function() {
       fetch('/api/data', { cache: 'no-store' })
         .then(function(r) { return r.json(); })
